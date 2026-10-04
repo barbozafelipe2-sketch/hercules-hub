@@ -32,7 +32,30 @@ function targetExerciseCount(plan:any,trainingAction:string,cycle:number){
   if(trainingAction==="consolidate")return 1;
   return 0;
 }
+export function dietaryPreferenceFlags(profile:any){
+  const text=norm(profile?.foodPreferences||"");
+  return {
+    vegan:/\b(vegan|vegano|vegana)\b/.test(text),
+    vegetarian:/\b(vegetarian|vegetariano|vegetariana|vegetarien)\b/.test(text),
+    pescatarian:/\b(pescatarian|pescetarian|pescetariano|pescetariana)\b/.test(text),
+    dairyFree:/(dairy[- ]?free|lactose[- ]?free|sem lactose|sin lactosa|sem leite|no dairy)/.test(text),
+    glutenFree:/(gluten[- ]?free|sem gl[uú]ten|sin gluten)/.test(text),
+    porkFree:/(no pork|pork[- ]?free|sem porco|sin cerdo|halal|kosher)/.test(text)
+  };
+}
+export function mealAllowedByPreferences(profile:any,meal:any){
+  const flags=dietaryPreferenceFlags(profile),protein=norm(meal?.protein),grain=norm(meal?.grain),search=norm(`${meal?.title?.pt||""} ${meal?.title?.en||""} ${meal?.title?.es||""} ${(meal?.ingredients||[]).join(" ")}`);
+  const meat=new Set(["chicken","turkey","beef","pork"]),seafood=new Set(["fish","salmon","shrimp","tuna"]),animal=new Set([...meat,...seafood,"eggs","dairy"]);
+  if(flags.vegan&&animal.has(protein))return false;
+  if((flags.vegetarian||flags.vegan)&&(meat.has(protein)||seafood.has(protein)))return false;
+  if(flags.pescatarian&&meat.has(protein))return false;
+  if(flags.porkFree&&(protein==="pork"||/(pork|cerdo|porco|ham|bacon|prosciutto)/.test(search)))return false;
+  if(flags.dairyFree&&(protein==="dairy"||/(milk|leite|leche|yogurt|iogurte|yogur|cheese|queijo|queso|cottage)/.test(search)))return false;
+  if(flags.glutenFree&&(["bread_tortilla","pasta","couscous"].includes(grain)||/(bread|p[aã]o|pan |bagel|tortilla|pita|pasta|macarr|couscous|cuscuz)/.test(search)))return false;
+  return true;
+}
 function filterMeal(profile:any, meal:any){
+  if(!mealAllowedByPreferences(profile,meal))return false;
   const title=norm(`${meal?.title?.pt||""} ${meal?.title?.en||""} ${meal?.title?.es||""} ${(meal?.ingredients||[]).join(" ")}`);
   if(tokens(profile?.dislikes).some(t=>title.includes(t)))return false;
   const pp=profile?.proteinPreferences||[],gp=profile?.grainPreferences||[],vp=profile?.veggiePreferences||[];

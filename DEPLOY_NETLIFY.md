@@ -1,4 +1,4 @@
-# Netlify deployment — Hercules Hub v0.14.0
+# Netlify deployment — Hercules Hub v0.14.1
 
 Deploy the complete repository. `public/` is the static/PWA UI; device sessions, persistent state, AI review, Coach, restore and next-cycle logic run through Netlify Functions.
 
@@ -37,7 +37,7 @@ Run `npm run check` (it prepares the verified asset bundle automatically). After
 - adaptive catalog candidates are traced when created;
 - Month 2+ remains locked until 28 days + final training week + Final Mark;
 - symptom/safety HOLD cannot be auto-released;
-- the service worker updates to the current `hercules-hub-v0.14.0` cache.
+- the service worker updates to the current `hercules-hub-v0.14.1` cache.
 
 ## 5. Rollback
-Revert/redeploy the parent commit of v0.14.0. The Supabase table migration is additive; do not delete user state during an application rollback. A user can also restore from their latest Hercules PDF if local browser data is lost.
+Revert/redeploy the parent commit of v0.14.1. The Supabase table migration is additive; do not delete user state during an application rollback. A user can also restore from their latest Hercules PDF if local browser data is lost.

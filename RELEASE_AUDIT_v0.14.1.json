@@ -1,0 +1,32 @@
+{
+  "version": "0.14.1",
+  "scope": "family-friends-beta-hardening",
+  "generatedAt": "2026-10-04T07:48:23.353610Z",
+  "status": "PASS",
+  "passed": 225,
+  "total": 225,
+  "suites": [
+    {
+      "file": "QA_REPORT_v0.14.1.json",
+      "passed": 161,
+      "total": 161,
+      "failed": 0
+    },
+    {
+      "file": "ADAPTIVE_REPORT_v0.14.1.json",
+      "passed": 30,
+      "total": 30,
+      "failed": 0
+    },
+    {
+      "file": "SECURITY_STATE_REPORT_v0.14.1.json",
+      "passed": 34,
+      "total": 34,
+      "failed": 0
+    }
+  ],
+  "notes": [
+    "Clean-clone build also passed after deleting public/assets and the local asset tarball; 90 files were reconstructed under public/assets including asset-manifest.json.",
+    "Asset payload remains the verified v0.14.0 image bundle; application/runtime release is v0.14.1."
+  ]
+}

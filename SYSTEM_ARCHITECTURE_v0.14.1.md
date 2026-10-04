@@ -1,4 +1,4 @@
-# Hercules Hub — System Architecture v0.14.0
+# Hercules Hub — System Architecture v0.14.1
 
 ## Product flow
 `First launch -> language -> onboarding -> Month 1 generation -> Home -> daily use -> Month review -> Month N+1 adaptation`.
@@ -18,13 +18,13 @@ Each later month is rebuilt from validated evidence rather than copied blindly. 
 Routine non-safety adaptation may use a deterministic validated fallback when Gateway reviewers are unavailable. Safety holds, explicit concerning symptoms or explicit AI rejection require review and cannot auto-progress.
 
 ## Adaptive catalog
-Google Drive is the master/editorial library, not a runtime dependency. The deployed release uses `public/assets/asset-manifest.json` and bundled assets first. The server can add schema-validated `GEN-MEAL-*` and `GEN-EX-*` entries when a plan needs coverage or purposeful variation. Generated entries are carried forward with provenance and appear in Trace Lab.
+Google Drive is the master/editorial library, not a runtime dependency. The deployed release uses `public/assets/asset-manifest.json` and bundled assets first. The server can add schema-validated `GEN-MEAL-*` and `GEN-EX-*` entries when a plan needs coverage or purposeful variation. Common free-text dietary patterns are deterministically filtered before bundled or generated meals can be selected. Generated entries are carried forward with provenance and appear in Trace Lab.
 
 ## Decision Trace Lab
 `hercules-trace-v2` stores hashes, deterministic gates, reviewer route/model/verdict metadata, catalog provenance and the final decision. It intentionally excludes raw prompts and raw profile payloads.
 
 ## Persistence and recovery
-Local storage is the device continuity layer. Optional Supabase persistence is keyed by a hashed device subject and written only by server-side Functions using a secret key. Monthly PDF export embeds an integrity-checked `hercules-backup-v1` payload; Restore Progress validates it server-side before applying it.
+Local storage is the device continuity layer. Optional Supabase persistence is keyed by a hashed device subject and written only by server-side Functions using a secret key. Ordinary state saves cannot advance the month; `/api/next-cycle` stages an approved transition server-side and the dedicated activation action advances the persistent cycle. Monthly PDF export embeds an integrity-checked `hercules-backup-v1` payload; Restore Progress validates it server-side before applying it.
 
 ## Netlify AI Gateway
 Provider REST calls honor Netlify-injected `*_API_KEY` and `*_BASE_URL` variables. Direct provider routing is disabled by default. Provider attempts and fallback chains are time-bounded so one failing model cannot stall the product indefinitely.

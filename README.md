@@ -1,4 +1,4 @@
-# Hercules Hub v0.14.0
+# Hercules Hub v0.14.1
 
 Hercules Hub is a device-first adaptive fitness, nutrition, recovery and progress system for Netlify. There is no user-facing login/password flow: first launch goes to language/onboarding, creates Month 1, then returns directly to Home on later launches.
 
@@ -34,8 +34,13 @@ npm run check:syntax
 ```
 
 Deployment: `DEPLOY_NETLIFY.md`  
-Architecture: `SYSTEM_ARCHITECTURE_v0.14.0.md`  
-Release changes: `CHANGELOG_v0.14.0.md`
+Architecture: `SYSTEM_ARCHITECTURE_v0.14.1.md`  
+Release changes: `CHANGELOG_v0.14.1.md`
 
 ## Repository hygiene
 This repository contains the current release only. Obsolete pre-v0.14 audit scripts and stale reports were removed so future verification cannot accidentally run against the retired login/password architecture.
+
+
+## Family & friends beta scope
+
+v0.14.1 is intentionally device-first for controlled family/friends testing. It does not include commercial login, Stripe billing or account recovery. Those belong in the later production repository. This beta hardening keeps month advancement server-approved when persistence is enabled, enforces common free-text dietary patterns in deterministic menu selection, improves mobile legibility and reports per-cycle Trace Lab generation counts.

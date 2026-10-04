@@ -39,10 +39,10 @@ const trace=read('netlify/functions/trace-lib.mts');
 const supa=read('netlify/functions/supabase-lib.mts');
 
 // Release/version coherence.
-add('package_version_0140',pkg.version==='0.14.0',pkg.version);
-add('app_version_0140',js.includes("const APP_VERSION='0.14.0'"));
-add('index_asset_versions_0140',html.includes('app.css?v=0.14.0')&&html.includes('app.js?v=0.14.0'));
-add('service_worker_cache_0140',sw.includes("hercules-hub-v0.14.0")&&sw.includes('/app.js?v=0.14.0')&&sw.includes('/app.css?v=0.14.0'));
+add('package_version_0141',pkg.version==='0.14.1',pkg.version);
+add('app_version_0141',js.includes("const APP_VERSION='0.14.1'"));
+add('index_asset_versions_0141',html.includes('app.css?v=0.14.1')&&html.includes('app.js?v=0.14.1'));
+add('service_worker_cache_0141',sw.includes("hercules-hub-v0.14.1")&&sw.includes('/app.js?v=0.14.1')&&sw.includes('/app.css?v=0.14.1'));
 add('asset_manifest_release_0140',assetManifest.release==='0.14.0');
 const assetChunkDir=path.join(root,'asset-bundle-v0.14.0');
 const assetChunkFiles=fs.existsSync(assetChunkDir)?fs.readdirSync(assetChunkDir).filter(x=>/^part\d+\.b64$/.test(x)).sort():[];
@@ -55,11 +55,12 @@ try{
 add('asset_chunk_transport_integrity',chunkBundleHash==='84548c65c9d996ca50b80c9d4752a63832cf69f58c56ddb0b0579f4bd1d9682b',chunkBundleHash);
 const prepareAssets=read('scripts/prepare-assets.mjs');
 add('asset_prepare_reconstructs_chunks',includes(prepareAssets,'asset-bundle-v0.14.0','Buffer.from(encoded,\'base64\')','writeFileSync(bundle,bytes)'));
-add('release_check_script_exists',[pkg.scripts?.check,pkg.scripts?.['check:core']].some(x=>String(x||'').includes('node scripts/release-audit-v0140.mjs'))&&exists('scripts/release-audit-v0140.mjs'));
-add('readme_0140',read('README.md').includes('# Hercules Hub v0.14.0'));
-add('deploy_doc_0140',read('DEPLOY_NETLIFY.md').includes('v0.14.0'));
-add('architecture_0140',exists('SYSTEM_ARCHITECTURE_v0.14.0.md'));
-add('changelog_0140',exists('CHANGELOG_v0.14.0.md'));
+add('package_lock_present',exists('package-lock.json'));
+add('release_check_script_exists',[pkg.scripts?.check,pkg.scripts?.['check:core']].some(x=>String(x||'').includes('node scripts/release-audit-v0141.mjs'))&&exists('scripts/release-audit-v0141.mjs'));
+add('readme_0141',read('README.md').includes('# Hercules Hub v0.14.1'));
+add('deploy_doc_0141',read('DEPLOY_NETLIFY.md').includes('v0.14.1'));
+add('architecture_0141',exists('SYSTEM_ARCHITECTURE_v0.14.1.md'));
+add('changelog_0141',exists('CHANGELOG_v0.14.1.md'));
 
 // Device-first UX, no credential/logout UI.
 add('no_login_screen',!html.includes('loginScreen')&&!html.includes('loginForm'));
@@ -137,7 +138,7 @@ add('csp_frame_object_block',includes(netlify,"object-src 'none'","frame-ancesto
 // Continuous adaptation Month 2..N.
 add('cycle_number_high_bound',schema.includes('cycleNumber:z.number().int().min(1).max(600)'));
 add('next_cycle_increments_generic',next.includes('targetCycle=Number(effectiveState.cycleNumber||1)+1'));
-add('frontend_activation_increments_generic',js.includes('state.cycleNumber=Number(state.cycleNumber||1)+1'));
+add('frontend_activation_uses_server_when_persistent',js.includes("action:'activate-cycle'")&&js.includes('systemStatus.supabaseState'));
 add('month28_gate_server',includes(next,'elapsed<28','week4Complete','milestoneComplete("finalMark"','milestoneTimeValid("finalMark"'));
 add('month28_gate_client',includes(js,'day>=28&&lastWeekComplete()&&milestoneComplete'));
 add('signals_rebuilt_server_side',includes(next,'buildSignals(effectiveState,currentPlan,{},elapsed)','Browser summaries are display hints only'));
@@ -155,9 +156,11 @@ add('catalog_can_fill_meal_gaps',includes(catalog,'gapRoles(plan)','targetMealCo
 add('catalog_can_add_exercise_variations',includes(catalog,'targetExerciseCount','createExercises','conservative accessory or variation candidates'));
 add('catalog_mts_generic_syntax',catalog.includes('const uniq=<T,>(xs:T[])'));
 add('catalog_preserves_preferences',includes(catalog,'proteinPreferences','grainPreferences','veggiePreferences','openToOtherVeggies','filterMeal'));
+add('free_text_dietary_preferences_enforced',includes(catalog,'dietaryPreferenceFlags','mealAllowedByPreferences','foodPreferences')&&includes(js,'dietaryPreferenceFlagsFor','foodAllowedByPreferences'));
 add('catalog_allergy_conservative',includes(catalog,'if(plan?.allergyReview)return 0','!plan?.allergyReview'));
 add('catalog_carries_forward',includes(catalog,'...existing.meals,...generatedMeals','...existing.exercises,...generatedExercises','carried-forward'));
 add('catalog_trace_provenance',includes(next,'generatedMealCount','generatedExerciseCount','bundled-assets+adaptive-catalog'));
+add('trace_counts_current_cycle_only',next.includes('generatedMeals:catalogMeta.generatedMealCount||0')&&next.includes('generatedExercises:catalogMeta.generatedExerciseCount||0'));
 add('drive_not_runtime_dependency',assetManifest.liveGoogleDriveDependency===false&&assetManifest.runtimeSource==='bundled-release-assets');
 add('no_drive_runtime_url',!/(drive\.google\.com|docs\.google\.com)/i.test(html+js+ai+catalog+generate+next));
 
@@ -182,7 +185,7 @@ add('report_privacy_documented',read('README.md').includes('Treat exported repor
 // Persistence semantics.
 add('supabase_server_secret_only',includes(supa,'SUPABASE_SECRET_KEY','SUPABASE_SERVICE_ROLE_KEY')&&!frontend.includes('SUPABASE_SECRET_KEY'));
 add('state_owner_device_subject',includes(auth,'deviceSubject','device:'));
-add('state_cycle_transition_guard',stateFn.includes('Invalid or stale cycle transition'));
+add('state_cycle_transition_guard',includes(stateFn,'stateCycleWriteAllowed','Cycle changes require approved next-month activation','action==="activate-cycle"'));
 add('state_server_started_at',includes(stateFn,'canonicalizeState(payload.state,startedAt)','payload.state.cycleNumber=incomingCycle'));
 add('reset_system_server_delete',includes(stateFn,'action==="reset"','stateDelete(session.subject)'));
 add('reset_progress_preserves_profile_plan',includes(stateFn,'action==="reset-progress"','profile:existing.profile??null','plan:existing.plan??null'));
@@ -212,7 +215,7 @@ const missingRefs=literalAssetRefs.filter(r=>!exists('public/'+r));
 add('all_literal_asset_refs_exist',missingRefs.length===0,missingRefs.join(','));
 
 // Documentation semantics.
-const docs=read('README.md')+'\n'+read('DEPLOY_NETLIFY.md')+'\n'+read('SYSTEM_ARCHITECTURE_v0.14.0.md');
+const docs=read('README.md')+'\n'+read('DEPLOY_NETLIFY.md')+'\n'+read('SYSTEM_ARCHITECTURE_v0.14.1.md');
 add('docs_no_password_setup',!docs.includes('HERCULES_ADMIN_PASSWORD')&&!/email\/password auth/i.test(docs));
 add('docs_gateway_credit_truth',docs.includes('consumes Netlify credits'));
 add('docs_drive_master_not_runtime',docs.includes('master/editorial')&&docs.includes('not a runtime dependency'));
@@ -220,6 +223,6 @@ add('docs_drive_master_not_runtime',docs.includes('master/editorial')&&docs.incl
 const failed=checks.filter(x=>!x.pass);
 for(const c of checks)console.log(`${c.pass?'PASS':'FAIL'}  ${c.name}${c.detail?' :: '+c.detail:''}`);
 console.log(`\n${checks.length-failed.length}/${checks.length} checks passed`);
-const report={version:'0.14.0',generatedAt:new Date().toISOString(),status:failed.length?'FAIL':'PASS',passed:checks.length-failed.length,total:checks.length,checks};
-fs.writeFileSync(path.join(root,'QA_REPORT_v0.14.0.json'),JSON.stringify(report,null,2));
+const report={version:'0.14.1',generatedAt:new Date().toISOString(),status:failed.length?'FAIL':'PASS',passed:checks.length-failed.length,total:checks.length,checks};
+fs.writeFileSync(path.join(root,'QA_REPORT_v0.14.1.json'),JSON.stringify(report,null,2));
 if(failed.length)process.exit(1);

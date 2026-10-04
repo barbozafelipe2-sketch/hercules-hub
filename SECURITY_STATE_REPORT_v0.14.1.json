@@ -1,10 +1,10 @@
 {
-  "release": "0.14.0",
+  "release": "0.14.1",
   "suite": "security-state",
-  "generatedAt": "2026-10-04T06:54:31.433Z",
-  "passed": 32,
+  "generatedAt": "2026-10-04T07:46:56.538Z",
+  "passed": 34,
   "failed": 0,
-  "total": 32,
+  "total": 34,
   "checks": [
     {
       "name": "bounded JSON accepts small body",
@@ -107,7 +107,17 @@
       "detail": ""
     },
     {
-      "name": "state prevents skipped/backward month transitions",
+      "name": "state save cannot advance month directly",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "next month uses server-approved activation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "client cannot overwrite staged next month",
       "pass": true,
       "detail": ""
     },

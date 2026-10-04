@@ -84,3 +84,8 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 .topLogo{flex:0 0 auto}.topLogoLight{width:48px;height:38px;object-fit:contain}.topLogoDark{width:38px;height:38px;border-radius:11px;object-fit:contain}
 .darkOnlyLogo{display:none}body[data-theme="dark"] .lightOnlyLogo{display:none}body[data-theme="dark"] .darkOnlyLogo{display:block}
 @media(max-width:360px){.topLogoLight{width:42px}.topLogoDark{width:34px;height:34px}.languageLogo{width:168px}}
+/* v0.14.1 family beta legibility pass — keep premium density without sub-8px UI text */
+.bottomNav button{font-size:clamp(8px,2.1vw,9px)}
+.topBrand small,.metric span,.mealTypeTabs button,.weekTabs button,.daySelector button,.dayMealRow small,.mealSlotTag,.mealSource,.labBadge,.syncNote,.settingsSection{font-size:9.5px}
+.settingsRow small,.ex small,.historyRow small,.traceRow summary small,.traceBody div,.dayMealRow em{font-size:10px}
+@media(max-width:380px){.mealTypeTabs button{font-size:9px}.bottomNav button{font-size:8px}}

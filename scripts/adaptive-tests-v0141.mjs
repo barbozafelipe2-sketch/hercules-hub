@@ -1,11 +1,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import {buildSignals,deterministicDelta,clampDelta,validateDelta,applyDelta,dedupeDailyCheckins,week4Complete,milestoneTimeValid} from '../netlify/functions/cycle-lib.mts';
+import {buildSignals,deterministicDelta,clampDelta,validateDelta,applyDelta,dedupeDailyCheckins,week4Complete,milestoneTimeValid,stateCycleWriteAllowed} from '../netlify/functions/cycle-lib.mts';
 import {digest,makeTrace} from '../netlify/functions/trace-lib.mts';
 const checks=[];const check=(name,ok,detail='')=>{checks.push({name,pass:!!ok,detail});if(!ok)console.error('FAIL',name,detail)};
 const now=Date.now(),iso=d=>new Date(now-d*86400000).toISOString();
 const pattern=['fullA','fullB','fullC'];
-const basePlan={version:'0.14.0',risk:'green',trainingHold:false,training:{pattern,sets:2,reviewRequired:false},nutrition:{reviewRequired:false,principles:['role-stable meals']},recover:{},mind:{},evolve:{safetyReleaseAutomatic:false},catalog:{schema:'hercules-catalog-v1',strategy:{ingredientReuse:'balanced',variety:'balanced',reason:'test'},meals:[],exercises:[],lastAdaptedCycle:1,provenance:'bundled-only'}};
+const basePlan={version:'0.14.1',risk:'green',trainingHold:false,training:{pattern,sets:2,reviewRequired:false},nutrition:{reviewRequired:false,principles:['role-stable meals']},recover:{},mind:{},evolve:{safetyReleaseAutomatic:false},catalog:{schema:'hercules-catalog-v1',strategy:{ingredientReuse:'balanced',variety:'balanced',reason:'test'},meals:[],exercises:[],lastAdaptedCycle:1,provenance:'bundled-only'}};
 const profile={level:'intermediate',minutes:'60',mealPrepPreference:'mixed',proteinPreferences:['chicken'],grainPreferences:['rice'],veggiePreferences:['broccoli'],openToOtherVeggies:true,foodStyles:['grilled'],eatOutFrequency:'1-2_week'};
 function sessions(){const out={};for(let w=1;w<=4;w++)for(const p of pattern)out[`w${w}:x:${p}`]=true;return out}
 function checkins(value=4,n=14,symptom=false){return Array.from({length:n},(_,i)=>({ts:iso(i+1),dayKey:new Date(now-(i+1)*86400000).toISOString().slice(0,10),energy:value,sleep:value,training:value,nutrition:value,symptomFlag:symptom&&i===0,note:i===0?'bounded note':''}))}
@@ -36,7 +36,7 @@ check('model evidence cannot replace deterministic evidence',JSON.stringify(clam
 const month2=applyDelta(basePlan,hiDelta,profile,state(1,4));
 check('Month 1 adapts to Month 2',month2.adaptation?.cycle===2);
 check('Month 2 can expand catalog',month2.adaptation?.catalogMayExpand===true);
-const month7=applyDelta({...basePlan,version:'0.14.0-cycle-6'},hiDelta,profile,state(6,4));
+const month7=applyDelta({...basePlan,version:'0.14.1-cycle-6'},hiDelta,profile,state(6,4));
 check('adaptation continues beyond Month 2',month7.adaptation?.cycle===7);
 check('month 7 optimizer tracks month',month7.nutrition?.optimizer?.cycle===7);
 check('month 7 training design tracks month',month7.training?.adaptiveDesign?.cycle===7);
@@ -54,13 +54,18 @@ const d1=await digest({b:2,a:1}),d2=await digest({a:1,b:2}),d3=await digest({a:2
 check('stable digest ignores key order',d1===d2);
 check('digest changes with content',d1!==d3);
 const secretProfile={name:'Private Name',allergies:'private allergy note'};
-const t=await makeTrace({kind:'next-cycle',appVersion:'0.14.0',cycleNumber:7,input:secretProfile,output:{ok:true},deterministic:{gate:'PASS'},reviewers:[{provider:'openai',model:'gpt-5.6-luna',route:'netlify-gateway',verdict:'PASS'}],decision:'APPROVED',authority:'SUPERVISED_NEXT_MONTH'});
+const t=await makeTrace({kind:'next-cycle',appVersion:'0.14.1',cycleNumber:7,input:secretProfile,output:{ok:true},deterministic:{gate:'PASS'},reviewers:[{provider:'openai',model:'gpt-5.6-luna',route:'netlify-gateway',verdict:'PASS'}],decision:'APPROVED',authority:'SUPERVISED_NEXT_MONTH'});
 check('trace uses sha256 digests',/^sha256:[a-f0-9]{64}$/.test(t.inputDigest)&&/^sha256:[a-f0-9]{64}$/.test(t.outputDigest));
 check('trace privacy flags false',t.privacy.rawProfileStoredInTrace===false&&t.privacy.rawPromptStoredInTrace===false);
 check('trace does not copy raw private profile',!JSON.stringify(t).includes('Private Name')&&!JSON.stringify(t).includes('private allergy note'));
 check('trace records Gateway route',t.reviewers[0].route==='netlify-gateway');
 
+
+check('state save permits same cycle only',stateCycleWriteAllowed(true,3,3)===true);
+check('state save rejects direct next-cycle write',stateCycleWriteAllowed(true,3,4)===false);
+check('fresh persistent state starts at cycle 1 only',stateCycleWriteAllowed(false,1,1)===true&&stateCycleWriteAllowed(false,1,2)===false);
+
 const passed=checks.filter(x=>x.pass).length,failed=checks.length-passed;
-const report={release:'0.14.0',suite:'adaptive-engine',generatedAt:new Date().toISOString(),passed,failed,total:checks.length,checks};
-fs.writeFileSync(path.join(process.cwd(),'ADAPTIVE_REPORT_v0.14.0.json'),JSON.stringify(report,null,2)+'\n');
+const report={release:'0.14.1',suite:'adaptive-engine',generatedAt:new Date().toISOString(),passed,failed,total:checks.length,checks};
+fs.writeFileSync(path.join(process.cwd(),'ADAPTIVE_REPORT_v0.14.1.json'),JSON.stringify(report,null,2)+'\n');
 console.log(`adaptive-engine: ${passed}/${checks.length} PASS`);if(failed)process.exit(1);

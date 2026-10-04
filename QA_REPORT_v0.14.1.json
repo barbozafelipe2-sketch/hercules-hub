@@ -1,27 +1,27 @@
 {
-  "version": "0.14.0",
-  "generatedAt": "2026-10-04T06:54:31.188Z",
+  "version": "0.14.1",
+  "generatedAt": "2026-10-04T07:46:56.297Z",
   "status": "PASS",
-  "passed": 158,
-  "total": 158,
+  "passed": 161,
+  "total": 161,
   "checks": [
     {
-      "name": "package_version_0140",
+      "name": "package_version_0141",
       "pass": true,
-      "detail": "0.14.0"
+      "detail": "0.14.1"
     },
     {
-      "name": "app_version_0140",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "index_asset_versions_0140",
+      "name": "app_version_0141",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "service_worker_cache_0140",
+      "name": "index_asset_versions_0141",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "service_worker_cache_0141",
       "pass": true,
       "detail": ""
     },
@@ -46,27 +46,32 @@
       "detail": ""
     },
     {
+      "name": "package_lock_present",
+      "pass": true,
+      "detail": ""
+    },
+    {
       "name": "release_check_script_exists",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "readme_0140",
+      "name": "readme_0141",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "deploy_doc_0140",
+      "name": "deploy_doc_0141",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "architecture_0140",
+      "name": "architecture_0141",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "changelog_0140",
+      "name": "changelog_0141",
       "pass": true,
       "detail": ""
     },
@@ -521,7 +526,7 @@
       "detail": ""
     },
     {
-      "name": "frontend_activation_increments_generic",
+      "name": "frontend_activation_uses_server_when_persistent",
       "pass": true,
       "detail": ""
     },
@@ -601,6 +606,11 @@
       "detail": ""
     },
     {
+      "name": "free_text_dietary_preferences_enforced",
+      "pass": true,
+      "detail": ""
+    },
+    {
       "name": "catalog_allergy_conservative",
       "pass": true,
       "detail": ""
@@ -612,6 +622,11 @@
     },
     {
       "name": "catalog_trace_provenance",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "trace_counts_current_cycle_only",
       "pass": true,
       "detail": ""
     },

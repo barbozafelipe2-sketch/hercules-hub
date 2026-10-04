@@ -1,6 +1,6 @@
 import { readSession } from "./auth-lib.mts";
 import { StateSyncSchema } from "./schemas.mts";
-import { dedupeDailyCheckins, milestoneTimeValid } from "./cycle-lib.mts";
+import { dedupeDailyCheckins, milestoneTimeValid, stateCycleWriteAllowed } from "./cycle-lib.mts";
 import { readJsonBounded, rateLimit } from "./request-lib.mts";
 import { stateDelete, stateLoad, stateSave, supabaseConfig } from "./supabase-lib.mts";
 function json(data:unknown,status=200,headers:Record<string,string>={}){return new Response(JSON.stringify(data),{status,headers:{"Content-Type":"application/json; charset=utf-8","Cache-Control":"no-store",...headers}})}
@@ -33,14 +33,32 @@ export default async(req:Request)=>{
       await stateSave(session.subject,checked.data);return json({ok:true,persistent:true,state:checked.data.state,cycleNumber,authoritativeStartedAt:now});
     }catch{return json({ok:false,error:"Progress reset unavailable"},503)}
   }
+  if(action==="activate-cycle"){
+    try{
+      const c=supabaseConfig();if(!c.stateReady)return json({ok:false,error:"Persistent state is required for server-approved cycle activation"},409);
+      const existing=await stateLoad(session.subject);if(!existing?.state||!existing?.plan||!existing?.profile)return json({ok:false,error:"Current cycle state is not available"},409);
+      const prior=existing.state||{},pending=prior.nextCycle||null,priorCycle=Number(existing.cycle_number||prior.cycleNumber||1),targetCycle=priorCycle+1;
+      if(!pending?.nextPlan||pending?.requiresReview===true)return json({ok:false,error:"No approved next month is staged"},409);
+      if(Number(pending?.trace?.cycleNumber||0)!==targetCycle)return json({ok:false,error:"Staged next month does not match the expected cycle"},409);
+      const now=new Date().toISOString(),targetWeight=String(existing.profile?.targetWeight||"").trim(),finalMark=prior.finalMark||null;
+      const carriedBaseline=finalMark?.weight&&targetWeight?{ts:now,height:String(existing.profile?.height||""),weight:String(finalMark.weight),targetWeight,waist:String(finalMark.waist||""),note:"Baseline carried from the prior month final mark."}:null;
+      const historyEntry={cycleNumber:priorCycle,startedAt:prior.startedAt||null,endedAt:now,trackedDays:dedupeDailyCheckins(prior.checkins||[]).length,completedSessionCount:Object.values(prior.completedSessions||{}).filter(Boolean).length,completedExerciseCount:Object.values(prior.completedExercises||{}).filter(Boolean).length,baseline:prior.baseline||null,checkpoint:prior.checkpoint||null,finalMark:prior.finalMark||null};
+      const traceLab=[...(Array.isArray(prior.traceLab)?prior.traceLab:[]).filter((x:any)=>x?.traceId!==pending?.trace?.traceId),...(pending?.trace?[pending.trace]:[])].slice(-40);
+      const state={...prior,startedAt:now,cycleNumber:targetCycle,week:1,nav:"HOME",completedExercises:{},completedSessions:{},habits:{},checkins:[],mealWeek:1,mealDay:0,mealSlot:0,audit:null,baseline:carriedBaseline,checkpoint:null,finalMark:null,nextCycle:null,postWorkout:{pending:false,session:"",mindDone:false},traceLab,cycleHistory:[...(Array.isArray(prior.cycleHistory)?prior.cycleHistory:[]),historyEntry].slice(-120),sync:{persistent:true,lastSyncedAt:now}};
+      const checked=StateSyncSchema.safeParse({profile:existing.profile,plan:pending.nextPlan,state,chat:Array.isArray(existing.chat)?existing.chat:[],cycleNumber:targetCycle});if(!checked.success)return json({ok:false,error:"Approved next month failed state validation"},409);
+      await stateSave(session.subject,checked.data);return json({ok:true,persistent:true,profile:checked.data.profile,plan:checked.data.plan,state:checked.data.state,cycleNumber:targetCycle,authoritativeStartedAt:now});
+    }catch{return json({ok:false,error:"Next month activation unavailable"},503)}
+  }
   if(action==="save"){
     const parsed=StateSyncSchema.safeParse(raw?.payload);if(!parsed.success)return json({error:"Invalid state payload"},400);
     try{
       const payload:any=structuredClone(parsed.data),c=supabaseConfig();
       if(c.stateReady){
-        const existing=await stateLoad(session.subject),now=new Date().toISOString();const incomingCycle=Number(payload.cycleNumber||payload.state?.cycleNumber||1);let startedAt=now;
-        if(existing?.state){const priorCycle=Number(existing.cycle_number||existing.state?.cycleNumber||1);if(incomingCycle<priorCycle||incomingCycle>priorCycle+1)return json({error:"Invalid or stale cycle transition",saved:false},409);startedAt=incomingCycle===priorCycle?String(existing.state.startedAt||now):now}
+        const existing=await stateLoad(session.subject),now=new Date().toISOString();const incomingCycle=Number(payload.cycleNumber||payload.state?.cycleNumber||1),priorCycle=Number(existing?.cycle_number||existing?.state?.cycleNumber||1),hasExisting=!!existing?.state;
+        if(!stateCycleWriteAllowed(hasExisting,priorCycle,incomingCycle))return json({error:"Cycle changes require approved next-month activation",saved:false},409);
+        const startedAt=hasExisting?String(existing.state.startedAt||now):now;
         payload.state=canonicalizeState(payload.state,startedAt);payload.state.cycleNumber=incomingCycle;payload.cycleNumber=incomingCycle;
+        if(hasExisting)payload.state.nextCycle=existing.state.nextCycle??null;
       } else payload.state.checkins=dedupeDailyCheckins(payload.state.checkins||[]).slice(0,90);
       const result=await stateSave(session.subject,payload);return json({ok:true,...result,authoritativeStartedAt:payload.state?.startedAt||null,cycleNumber:payload.cycleNumber||payload.state?.cycleNumber||1});
     }catch{return json({ok:false,saved:false,error:"State storage unavailable"},200)}

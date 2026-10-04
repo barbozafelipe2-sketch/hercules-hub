@@ -38,6 +38,12 @@ export type NextCycleDelta = {
   unknowns:string[];
 };
 
+export function stateCycleWriteAllowed(hasExisting:boolean,priorCycle:number,incomingCycle:number){
+  const prior=Math.trunc(Number(priorCycle)),incoming=Math.trunc(Number(incomingCycle));
+  if(!Number.isFinite(prior)||!Number.isFinite(incoming)||prior<1||incoming<1)return false;
+  return hasExisting?incoming===prior:incoming===1;
+}
+
 export function dayKey(value:string|Date){
   const d=value instanceof Date?value:new Date(value);
   if(!Number.isFinite(d.getTime()))return "";
@@ -201,6 +207,6 @@ export function applyDelta(currentPlan:any,delta:NextCycleDelta,profile:any,stat
   next.recover={...next.recover,cycleFocus:delta.recoveryAction};
   next.mind={...next.mind,cycleFocus:delta.mindAction};
   next.evolve={...next.evolve,mode:"validated-adaptive-cycles",materialChangesAutomatic:true,safetyReleaseAutomatic:false};
-  next.adaptation={version:"cycle-delta-v0.14.0",cycle,delta,evidencePolicy:"explicit-structured+bounded-notes",coreExerciseAnchorsChanged:false,catalogMayExpand:true};
+  next.adaptation={version:"cycle-delta-v0.14.1",cycle,delta,evidencePolicy:"explicit-structured+bounded-notes",coreExerciseAnchorsChanged:false,catalogMayExpand:true};
   return next;
 }

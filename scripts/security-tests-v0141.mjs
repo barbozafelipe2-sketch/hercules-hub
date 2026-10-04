@@ -32,7 +32,9 @@ check('restore validates wrapper + decoded data',restore.includes('RestoreReques
 check('restore validates sha256 integrity',restore.includes('Backup integrity check failed')&&restore.includes('crypto.subtle.digest("SHA-256"'));
 check('restore requires device session',restore.includes('Device session required'));
 check('restore is rate-limited',restore.includes('rateLimit(req,"restore"'));
-check('state prevents skipped/backward month transitions',state.includes('incomingCycle<priorCycle||incomingCycle>priorCycle+1'));
+check('state save cannot advance month directly',state.includes('stateCycleWriteAllowed')&&state.includes('Cycle changes require approved next-month activation'));
+check('next month uses server-approved activation',state.includes('action==="activate-cycle"')&&next.includes('Prepared next month could not be safely staged'));
+check('client cannot overwrite staged next month',state.includes('payload.state.nextCycle=existing.state.nextCycle??null'));
 check('month range is bounded to 600',schemas.includes('cycleNumber:z.number().int().min(1).max(600)'));
 check('trace privacy schema requires false',schemas.includes('rawProfileStoredInTrace:z.literal(false)')&&schemas.includes('rawPromptStoredInTrace:z.literal(false)'));
 
@@ -48,6 +50,6 @@ check('camera/mic/geolocation denied',toml.includes('Permissions-Policy = "camer
 check('service worker is no-store at deploy edge',toml.includes('for = "/sw.js"')&&toml.includes('no-cache, no-store'));
 
 const passed=checks.filter(x=>x.pass).length,failed=checks.length-passed;
-const report={release:'0.14.0',suite:'security-state',generatedAt:new Date().toISOString(),passed,failed,total:checks.length,checks};
-fs.writeFileSync(path.join(root,'SECURITY_STATE_REPORT_v0.14.0.json'),JSON.stringify(report,null,2)+'\n');
+const report={release:'0.14.1',suite:'security-state',generatedAt:new Date().toISOString(),passed,failed,total:checks.length,checks};
+fs.writeFileSync(path.join(root,'SECURITY_STATE_REPORT_v0.14.1.json'),JSON.stringify(report,null,2)+'\n');
 console.log(`security-state: ${passed}/${checks.length} PASS`);if(failed)process.exit(1);

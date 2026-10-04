@@ -1,10 +1,10 @@
 {
-  "release": "0.14.0",
+  "release": "0.14.1",
   "suite": "adaptive-engine",
-  "generatedAt": "2026-10-04T06:54:31.308Z",
-  "passed": 27,
+  "generatedAt": "2026-10-04T07:46:56.416Z",
+  "passed": 30,
   "failed": 0,
-  "total": 27,
+  "total": 30,
   "checks": [
     {
       "name": "high adherence supports progress",
@@ -138,6 +138,21 @@
     },
     {
       "name": "trace records Gateway route",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "state save permits same cycle only",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "state save rejects direct next-cycle write",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "fresh persistent state starts at cycle 1 only",
       "pass": true,
       "detail": ""
     }
