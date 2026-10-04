@@ -1,0 +1,7 @@
+const CACHE='hercules-hub-v0.14.0';
+const CORE=['/','/index.html','/app.css?v=0.14.0','/app.js?v=0.14.0','/manifest.webmanifest','/assets/asset-manifest.json','/assets/hercules-hub-logo.png','/assets/hercules-hub-logo-light.png','/assets/hercules-hub-mark-light.png'];
+self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting()))});
+self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
+async function networkFirst(req){try{const res=await fetch(req);if(res&&res.status===200){const copy=res.clone();caches.open(CACHE).then(c=>c.put(req,copy))}return res}catch{return (await caches.match(req))||(await caches.match('/index.html'))}}
+async function cacheAsset(req){const hit=await caches.match(req);if(hit)return hit;const res=await fetch(req);if(res&&res.status===200){const copy=res.clone();caches.open(CACHE).then(c=>c.put(req,copy))}return res}
+self.addEventListener('fetch',event=>{const req=event.request;if(req.method!=='GET')return;const url=new URL(req.url);if(url.origin!==location.origin||url.pathname.startsWith('/api/'))return;const dynamic=req.mode==='navigate'||url.pathname==='/'||url.pathname.endsWith('.html')||url.pathname.endsWith('.js')||url.pathname.endsWith('.css')||url.pathname.endsWith('.webmanifest');event.respondWith(dynamic?networkFirst(req):cacheAsset(req))});

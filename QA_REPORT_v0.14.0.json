@@ -1,0 +1,799 @@
+{
+  "version": "0.14.0",
+  "generatedAt": "2026-10-04T06:54:31.188Z",
+  "status": "PASS",
+  "passed": 158,
+  "total": 158,
+  "checks": [
+    {
+      "name": "package_version_0140",
+      "pass": true,
+      "detail": "0.14.0"
+    },
+    {
+      "name": "app_version_0140",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "index_asset_versions_0140",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "service_worker_cache_0140",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "asset_manifest_release_0140",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "asset_chunk_transport_present",
+      "pass": true,
+      "detail": "13"
+    },
+    {
+      "name": "asset_chunk_transport_integrity",
+      "pass": true,
+      "detail": "84548c65c9d996ca50b80c9d4752a63832cf69f58c56ddb0b0579f4bd1d9682b"
+    },
+    {
+      "name": "asset_prepare_reconstructs_chunks",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "release_check_script_exists",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "readme_0140",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "deploy_doc_0140",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "architecture_0140",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "changelog_0140",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no_login_screen",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no_logout_ui",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "first_launch_language_onboarding",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "returning_user_direct_home",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "device_bootstrap_auth",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "device_cookie_httponly",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "device_id_hashed_server_side",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no_password_admin_auth",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "official_brand_hercules-hub-logo.png",
+      "pass": true,
+      "detail": "19c6349de536046dc5c34fe21c319b3ba65081ffb0e0376f57de7ad75bc3855f"
+    },
+    {
+      "name": "official_brand_hercules-hub-logo-light.png",
+      "pass": true,
+      "detail": "216ef0a208fc0f916eb890ec3848328a7624bf446f28bd165d46411417b54ae7"
+    },
+    {
+      "name": "official_brand_hercules-hub-mark-light.png",
+      "pass": true,
+      "detail": "c9d8082cbb21cf010994e7e19cd3b7dc4f96ec83fc0e76af1983418ccc91f757"
+    },
+    {
+      "name": "language_logo_rendered",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "topbar_logo_rendered",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "brand_css_retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "browser_js_syntax",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "required_dom_languageScreen",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "required_dom_onboardingScreen",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "required_dom_auditScreen",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "required_dom_shell",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "required_dom_settingsBtn",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "required_dom_homeContent",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "required_dom_trainContent",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "required_dom_nourishContent",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "required_dom_recoverContent",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "required_dom_mindContent",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "required_dom_trackContent",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "required_dom_evolveContent",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "required_dom_settingsOverlay",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "required_dom_settingsRows",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "required_dom_coachOverlay",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "required_dom_coachText",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "required_dom_coachSend",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "required_dom_exerciseOverlay",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "required_dom_exerciseDetail",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "required_dom_postWorkoutOverlay",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "required_dom_restoreFile",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "required_dom_toast",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "coach_enter_newline_behavior",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "accessible_live_toast",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "focus_visible_css",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reduced_motion_css",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "safe_area_layout",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "server_syntax_ai-lib.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "server_syntax_auth-lib.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "server_syntax_auth.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "server_syntax_catalog-lib.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "server_syntax_coach.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "server_syntax_cycle-lib.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "server_syntax_generate.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "server_syntax_next-cycle.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "server_syntax_request-lib.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "server_syntax_restore.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "server_syntax_schemas.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "server_syntax_state.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "server_syntax_status.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "server_syntax_supabase-lib.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "server_syntax_trace-lib.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "server_syntax_usage-lib.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "secret_not_frontend_OPENAI_API_KEY",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "secret_not_frontend_GEMINI_API_KEY",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "secret_not_frontend_ANTHROPIC_API_KEY",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "secret_not_frontend_OPENROUTER_API_KEY",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "secret_not_frontend_SUPABASE_SECRET_KEY",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "secret_not_frontend_SUPABASE_SERVICE_ROLE_KEY",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "secret_not_frontend_HERCULES_SESSION_SECRET",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "gateway_provider_envs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "direct_ai_default_blocked",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "provider_attempt_abort",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "fallback_budget_bounded",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "latency_defaults",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "next_cycle_stage_budgets",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "coach_budget",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "catalog_budgets",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "generate_parallel_reviews",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "all_custom_envs_documented",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "bounded_json_reader",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "rate_limit_memory_cleanup",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "daily_ai_quota",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "generate_rate_and_quota",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "coach_rate_and_quota",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "next_cycle_rate_and_quota",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "restore_rate_limit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "state_payload_zod",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "profile_strict_zod",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "bounded_client_state",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "csp_self_only_connect",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "csp_no_unsafe_script",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "csp_frame_object_block",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "cycle_number_high_bound",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "next_cycle_increments_generic",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "frontend_activation_increments_generic",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "month28_gate_server",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "month28_gate_client",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "signals_rebuilt_server_side",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "deterministic_delta_caps_ai",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "safety_hold_controls_delta",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "safety_never_auto_release",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "deterministic_nonsafety_fallback",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "explicit_ai_reject_blocks",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "prior_cycle_history_retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "generated_meal_schema",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "generated_exercise_schema",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "catalog_can_fill_meal_gaps",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "catalog_can_add_exercise_variations",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "catalog_mts_generic_syntax",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "catalog_preserves_preferences",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "catalog_allergy_conservative",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "catalog_carries_forward",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "catalog_trace_provenance",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "drive_not_runtime_dependency",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no_drive_runtime_url",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "trace_v2_schema",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "trace_hashes",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "trace_privacy_flags",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "trace_initial_generation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "trace_next_cycle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "trace_ui",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "pdf_export_present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "pdf_integrity_hash",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "restore_server_integrity",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "restore_rejects_oversize_client",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "restore_request_bounded_server",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "first_launch_restore",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "settings_export_restore",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "report_privacy_documented",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "supabase_server_secret_only",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "state_owner_device_subject",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "state_cycle_transition_guard",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "state_server_started_at",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reset_system_server_delete",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reset_progress_preserves_profile_plan",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no_logout_action_backend",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "manifest_valid",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "apple_touch_icon_present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "sw_precaches_brand",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "manifest_icon_exists_384x384",
+      "pass": true,
+      "detail": "/assets/hercules-hub-logo.png"
+    },
+    {
+      "name": "sw_no_api_cache",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "sw_old_cache_cleanup",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "asset_manifest_fingerprints_match",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "catalog_asset_counts",
+      "pass": true,
+      "detail": "{\"total\":89,\"exercise\":27,\"home\":13,\"food\":46,\"brand\":3}"
+    },
+    {
+      "name": "asset_payload_under_10mb",
+      "pass": true,
+      "detail": "1727530"
+    },
+    {
+      "name": "all_literal_asset_refs_exist",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "docs_no_password_setup",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "docs_gateway_credit_truth",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "docs_drive_master_not_runtime",
+      "pass": true,
+      "detail": ""
+    }
+  ]
+}

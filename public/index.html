@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f8f4ec">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Hercules Hub">
+  <meta name="application-name" content="Hercules Hub">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/hercules-hub-logo.png">
+  <title>Hercules Hub</title>
+<link rel="stylesheet" href="app.css?v=0.14.0">
+</head>
+<body data-theme="light">
+<div class="app">
+  <section id="languageScreen" class="screen languageWrap">
+    <div class="card languageCard">
+      <div class="languageLogoWrap">
+        <img class="languageLogo lightOnlyLogo logoLight" src="assets/hercules-hub-logo-light.png" alt="Hercules Hub">
+        <img class="languageLogo darkOnlyLogo" src="assets/hercules-hub-logo.png" alt="Hercules Hub">
+      </div>
+      <h1 class="title" style="font-size:30px;text-align:center">Choose your language</h1>
+      <p class="subtitle" style="text-align:center">Escolha seu idioma • Elige tu idioma</p>
+      <div class="languageOptions">
+        <button class="btn btnGhost" data-lang="pt-BR"><div><b>Português</b><small>Brasil</small></div><span>›</span></button>
+        <button class="btn btnGhost" data-lang="en-US"><div><b>English</b><small>United States</small></div><span>›</span></button>
+        <button class="btn btnGhost" data-lang="es"><div><b>Español</b><small>Latinoamérica / España</small></div><span>›</span></button>
+      </div>
+      <div class="firstLaunchRecovery">
+        <span></span><b>or</b><span></span>
+      </div>
+      <button class="btn btnGhost restoreFirstLaunch" id="restoreFirstLaunch" type="button">Restore Hercules progress</button>
+      <p class="firstLaunchHint">Use your latest Hercules PDF or backup after reinstalling, changing phones, or clearing browser data.</p>
+    </div>
+  </section>
+
+  <section id="onboardingScreen" class="screen hidden">
+    <div class="brandRow" style="margin-bottom:14px"><img class="brandLogoLight lightOnlyLogo logoLight" src="assets/hercules-hub-mark-light.png" alt=""><img class="brandLogoDark darkOnlyLogo" src="assets/hercules-hub-logo.png" alt=""><div><b>HERCULES HUB</b><small id="onboardingSmall"></small></div></div>
+    <div class="progressBar"><span id="onboardProgress"></span></div>
+    <div class="card onboardCard"><div class="kicker" id="stepKicker"></div><h1 class="stepTitle" id="stepTitle"></h1><p class="stepCopy" id="stepCopy"></p><form id="onboardForm"><div id="stepFields"></div><div class="navRow"><button type="button" class="btn btnGhost" id="stepBack"></button><button type="button" class="btn btnGold" id="stepNext"></button></div></form></div>
+  </section>
+
+  <section id="auditScreen" class="screen hidden">
+    <div class="card auditCard" style="width:100%">
+      <div class="brandRow"><img class="brandLogoLight lightOnlyLogo logoLight" src="assets/hercules-hub-mark-light.png" alt=""><img class="brandLogoDark darkOnlyLogo" src="assets/hercules-hub-logo.png" alt=""><div><b>HERCULES HUB</b><small id="auditSmall"></small></div></div>
+      <div class="kicker" style="margin-top:18px" id="auditKicker"></div><h1 class="title" style="font-size:30px" id="auditTitle"></h1><p class="subtitle" id="auditCopy"></p>
+      <div class="auditList">
+        <div class="auditRow" id="audit1"><div class="auditIcon">1</div><div><b id="audit1Title"></b><small id="audit1Copy"></small></div><div class="auditState">—</div></div>
+        <div class="auditRow" id="audit2"><div class="auditIcon">2</div><div><b id="audit2Title"></b><small id="audit2Copy"></small></div><div class="auditState">—</div></div>
+        <div class="auditRow" id="audit3"><div class="auditIcon">3</div><div><b id="audit3Title"></b><small id="audit3Copy"></small></div><div class="auditState">—</div></div>
+      </div>
+      <div id="auditMessage" class="notice" style="margin-top:14px"></div><div style="margin-top:9px"><span class="labBadge" id="labBadge">TRACE LAB • SUPERVISED • HASHED</span></div>
+      <button id="enterGenerated" class="btn btnGold hidden" style="width:100%;margin-top:12px"></button>
+    </div>
+  </section>
+
+  <main id="shell" class="hidden">
+    <header class="topbar"><div class="topBrand"><img class="topLogo topLogoLight lightOnlyLogo logoLight" src="assets/hercules-hub-mark-light.png" alt=""><img class="topLogo topLogoDark darkOnlyLogo" src="assets/hercules-hub-logo.png" alt=""><div><b>HERCULES HUB</b><small id="topIdentity">MY MONTH</small></div></div><div class="topActions"><button class="iconBtn" data-theme-toggle aria-label="Theme">◐</button><button class="iconBtn" id="settingsBtn" aria-label="Settings">⚙</button></div></header>
+    <section class="view active" data-view="HOME"><div id="homeContent"></div></section><section class="view" data-view="TRAIN"><div id="trainContent"></div></section><section class="view" data-view="NOURISH"><div id="nourishContent"></div></section><section class="view" data-view="RECOVER"><div id="recoverContent"></div></section><section class="view" data-view="MIND"><div id="mindContent"></div></section><section class="view" data-view="TRACK"><div id="trackContent"></div></section><section class="view" data-view="EVOLVE"><div id="evolveContent"></div></section>
+    <button class="coachBubble" id="coachBtn" aria-label="Coach Hercules"><span class="coachGlyph" aria-hidden="true">AI</span><span class="srOnly">Coach Hercules</span></button>
+    <nav class="bottomNav" aria-label="Main navigation"><button class="active" data-nav="HOME"><span>⌂</span><b></b></button><button data-nav="TRAIN"><span>◆</span><b></b></button><button data-nav="NOURISH"><span>◒</span><b></b></button><button data-nav="MIND"><span>✦</span><b></b></button><button data-nav="TRACK"><span>▥</span><b></b></button><button data-nav="EVOLVE"><span>↗</span><b></b></button></nav>
+  </main>
+
+  <div class="overlay" id="settingsOverlay" aria-hidden="true"><div class="sheet"><div class="sheetHandle"></div><div class="sheetHead"><h2 id="settingsTitle"></h2><button class="iconBtn" data-close="settings">×</button></div><div class="settingsRows" id="settingsRows"></div></div></div>
+  <div class="overlay" id="coachOverlay" aria-hidden="true"><div class="sheet"><div class="sheetHandle"></div><div class="sheetHead"><div><h2>Coach Hercules</h2><div class="kicker" id="coachKicker"></div></div><button class="iconBtn" data-close="coach">×</button></div><div class="coachLog" id="coachLog"></div><div class="coachInput"><textarea id="coachText"></textarea><button class="btn btnGold" id="coachSend">→</button></div><div class="notice" style="margin-top:9px" id="coachNotice"></div></div></div>
+  <div class="overlay" id="exerciseOverlay" aria-hidden="true"><div class="sheet exerciseSheet"><div class="sheetHandle"></div><div class="sheetHead"><div><h2 id="exerciseSheetHead"></h2><div class="kicker" id="exerciseSheetKicker"></div></div><button class="iconBtn" data-close="exercise">×</button></div><div id="exerciseDetail"></div></div></div>
+  <div class="overlay" id="postWorkoutOverlay" aria-hidden="true"><div class="sheet"><div class="sheetHandle"></div><div class="sheetHead"><div><h2 id="postWorkoutTitle"></h2><div class="kicker">TRAIN → RECOVER → MIND → TRACK</div></div><button class="iconBtn" data-close="postWorkout">×</button></div><div id="postWorkoutContent"></div></div></div>
+  <input id="restoreFile" class="visuallyHiddenInput" type="file" accept=".pdf,.hercules,.json,application/pdf,application/json" aria-hidden="true" tabindex="-1">
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</div>
+<script src="app.js?v=0.14.0" defer></script>
+</body>
+</html>

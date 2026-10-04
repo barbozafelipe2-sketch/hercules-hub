@@ -1,0 +1,170 @@
+{
+  "release": "0.14.0",
+  "suite": "security-state",
+  "generatedAt": "2026-10-04T06:54:31.433Z",
+  "passed": 32,
+  "failed": 0,
+  "total": 32,
+  "checks": [
+    {
+      "name": "bounded JSON accepts small body",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "bounded JSON rejects oversized body",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "invalid JSON rejected",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "rate limiter returns structured result",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "rate limiter blocks after limit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no password UI or credential constants",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "auth accepts only bootstrap action",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "session cookie HttpOnly",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "device ids are hashed before subject storage",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "session signature uses HMAC SHA-256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "session has expiration validation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "browser never reads AI provider secrets",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "direct AI disabled by env default",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "direct provider route requires explicit allow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Gateway route requires injected base + key",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "AI timeouts and total fallback budget bounded",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "restore validates wrapper + decoded data",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "restore validates sha256 integrity",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "restore requires device session",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "restore is rate-limited",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "state prevents skipped/backward month transitions",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "month range is bounded to 600",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "trace privacy schema requires false",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "next-month endpoint requires 28 days",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "next-month endpoint requires final Week 4",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "next-month endpoint requires valid Final Mark time",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "browser summary is not canonical evidence",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "safety review prevents deterministic auto approval",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "CSP blocks remote runtime connections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "CSP blocks objects + framing",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "camera/mic/geolocation denied",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "service worker is no-store at deploy edge",
+      "pass": true,
+      "detail": ""
+    }
+  ]
+}

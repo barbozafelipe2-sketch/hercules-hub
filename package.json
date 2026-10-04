@@ -1,0 +1,19 @@
+{
+  "name": "hercules-hub",
+  "version": "0.14.0",
+  "private": true,
+  "engines": {
+    "node": "22.x"
+  },
+  "dependencies": {
+    "@netlify/blobs": "10.7.12",
+    "zod": "3.24.2"
+  },
+  "scripts": {
+    "prepare:assets": "node scripts/prepare-assets.mjs",
+    "check:core": "node scripts/release-audit-v0140.mjs && node --experimental-strip-types scripts/adaptive-tests-v0140.mjs && node --experimental-strip-types scripts/security-tests-v0140.mjs",
+    "check": "npm run prepare:assets && npm run check:core",
+    "build": "npm run check",
+    "check:syntax": "node --check public/app.js && node --check public/sw.js && node --experimental-strip-types --check netlify/functions/ai-lib.mts && node --experimental-strip-types --check netlify/functions/catalog-lib.mts && node --experimental-strip-types --check netlify/functions/cycle-lib.mts && node --experimental-strip-types --check netlify/functions/next-cycle.mts && node --experimental-strip-types --check netlify/functions/restore.mts && node --experimental-strip-types --check netlify/functions/schemas.mts"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "release": "0.14.0",
+  "suite": "adaptive-engine",
+  "generatedAt": "2026-10-04T06:54:31.308Z",
+  "passed": 27,
+  "failed": 0,
+  "total": 27,
+  "checks": [
+    {
+      "name": "high adherence supports progress",
+      "pass": true,
+      "detail": "progress"
+    },
+    {
+      "name": "high nutrition feedback rotates menu",
+      "pass": true,
+      "detail": "rotate"
+    },
+    {
+      "name": "high signals validate",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "low recovery consolidates training",
+      "pass": true,
+      "detail": "consolidate"
+    },
+    {
+      "name": "low nutrition simplifies",
+      "pass": true,
+      "detail": "simplify"
+    },
+    {
+      "name": "low sleep prioritizes recovery",
+      "pass": true,
+      "detail": "prioritize"
+    },
+    {
+      "name": "symptom forces HOLD",
+      "pass": true,
+      "detail": "hold"
+    },
+    {
+      "name": "HOLD validates",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "safety validator rejects progress under symptom",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "AI training cannot be more aggressive",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "AI nutrition cannot be more aggressive",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "model evidence cannot replace deterministic evidence",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Month 1 adapts to Month 2",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Month 2 can expand catalog",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "adaptation continues beyond Month 2",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "month 7 optimizer tracks month",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "month 7 training design tracks month",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "existing safety hold is preserved",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "daily checkins deduplicate",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Week 4 completion detected",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "future final mark rejected",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "stable digest ignores key order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "digest changes with content",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "trace uses sha256 digests",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "trace privacy flags false",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "trace does not copy raw private profile",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "trace records Gateway route",
+      "pass": true,
+      "detail": ""
+    }
+  ]
+}

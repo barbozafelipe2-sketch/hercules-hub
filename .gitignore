@@ -1,0 +1,5 @@
+/public/assets/
+/hercules-assets-v0.14.0.tar.gz
+node_modules/
+.netlify/
+.DS_Store

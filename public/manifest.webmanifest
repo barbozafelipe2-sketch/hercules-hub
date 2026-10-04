@@ -1,0 +1,19 @@
+{
+  "name": "Hercules Hub",
+  "short_name": "Hercules Hub",
+  "description": "Adaptive fitness, nutrition, recovery and progress system that evolves from onboarding and explicit monthly feedback.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f8f4ec",
+  "theme_color": "#f8f4ec",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/hercules-hub-logo.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
