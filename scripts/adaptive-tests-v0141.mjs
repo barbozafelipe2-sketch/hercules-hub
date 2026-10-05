@@ -3,6 +3,7 @@ import path from 'node:path';
 import {buildSignals,deterministicDelta,clampDelta,validateDelta,applyDelta,dedupeDailyCheckins,dedupeSessionCompletions,week4Complete,milestoneTimeValid,stateCycleWriteAllowed} from '../netlify/functions/cycle-lib.mts';
 import {digest,makeTrace} from '../netlify/functions/trace-lib.mts';
 import {safetyRouting} from '../netlify/functions/safety-lib.mts';
+import {mealAllowedByPreferences} from '../netlify/functions/catalog-lib.mts';
 const checks=[];const check=(name,ok,detail='')=>{checks.push({name,pass:!!ok,detail});if(!ok)console.error('FAIL',name,detail)};
 const now=Date.now(),iso=d=>new Date(now-d*86400000).toISOString();
 const pattern=['fullA','fullB','fullC'];
@@ -18,6 +19,12 @@ const noExerciseRoute=safetyRouting({currentPain:'no',painAreas:[],redFlags:'no'
 check('professional no-exercise guidance restricts TRAIN',noExerciseRoute.status==='RESTRICTED'&&noExerciseRoute.trainingRestricted);
 const redFlagRoute=safetyRouting({currentPain:'no',painAreas:[],redFlags:'yes',professionalRestrictions:'no',professionalRestrictionScope:'',safetyDetails:'red flag'});
 check('red-flag route remains restricted',redFlagRoute.status==='RESTRICTED'&&redFlagRoute.trainingRestricted);
+
+const dietBase={foodPreferences:'',proteinPreferences:[],grainPreferences:[],veggiePreferences:['broccoli'],openToOtherVeggies:false};
+check('vegan text blocks hidden dairy metadata gap',mealAllowedByPreferences({...dietBase,foodPreferences:'vegan'},{protein:'',grain:'',veggies:[],title:{pt:'Cottage cheese',en:'Cottage cheese',es:'Cottage cheese'},ingredients:['cottage cheese','pineapple']})===false);
+check('vegetarian text blocks hidden meat metadata gap',mealAllowedByPreferences({...dietBase,foodPreferences:'vegetarian'},{protein:'',grain:'',veggies:[],title:{pt:'Chicken bowl',en:'Chicken bowl',es:'Chicken bowl'},ingredients:['chicken','rice']})===false);
+check('closed veggie preference is a hard gate',mealAllowedByPreferences(dietBase,{protein:'',grain:'',veggies:['tomato'],title:{pt:'Bowl',en:'Bowl',es:'Bowl'},ingredients:['rice','tomato']})===false);
+check('selected protein preference is enforced when metadata exists',mealAllowedByPreferences({...dietBase,proteinPreferences:['tofu'],openToOtherVeggies:true},{protein:'chicken',grain:'',veggies:[],title:{pt:'Frango',en:'Chicken',es:'Pollo'},ingredients:['chicken']})===false);
 
 const hi=buildSignals(state(1,4),basePlan,{},30),hiDelta=deterministicDelta(hi,basePlan);
 check('high adherence supports progress',hiDelta.trainingAction==='progress',hiDelta.trainingAction);

@@ -21,7 +21,7 @@ const LocalizedTextSchema=z.object({pt:z.string().min(1).max(180),en:z.string().
 export const GeneratedMealSchema=z.object({
   id:z.string().regex(/^GEN-MEAL-[A-Z0-9-]{6,40}$/),role:z.enum(["breakfast","lunch","snack","dinner"]),title:LocalizedTextSchema,
   ingredients:z.array(z.string().min(1).max(80)).min(2).max(12),protein:z.string().max(80).default(""),grain:z.string().max(80).default(""),veggies:textList(10),styles:textList(8),
-  prep:LocalizedTextSchema,substitutions:LocalizedTextSchema,source:z.literal("ai-generated"),createdForCycle:z.number().int().min(1).max(600),image:z.string().max(180).default("")
+  prep:LocalizedTextSchema,substitutions:LocalizedTextSchema,source:z.literal("ai-generated"),createdForCycle:z.number().int().min(1).max(600),image:z.string().max(180).default(""),assetStatus:z.enum(["new_asset_required","approved_asset"]).default("new_asset_required")
 }).strict();
 export const GeneratedExerciseSchema=z.object({
   id:z.string().regex(/^GEN-EX-[A-Z0-9-]{6,40}$/),session:z.enum(["fullA","fullB","fullC","upperA","upperB","lowerA","lowerB"]),mode:z.enum(["gym","home","both"]),title:LocalizedTextSchema,
