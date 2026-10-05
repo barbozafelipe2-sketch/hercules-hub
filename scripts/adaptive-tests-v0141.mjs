@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import {buildSignals,deterministicDelta,clampDelta,validateDelta,applyDelta,dedupeDailyCheckins,week4Complete,milestoneTimeValid,stateCycleWriteAllowed} from '../netlify/functions/cycle-lib.mts';
+import {buildSignals,deterministicDelta,clampDelta,validateDelta,applyDelta,dedupeDailyCheckins,dedupeSessionCompletions,week4Complete,milestoneTimeValid,stateCycleWriteAllowed} from '../netlify/functions/cycle-lib.mts';
 import {digest,makeTrace} from '../netlify/functions/trace-lib.mts';
 import {safetyRouting} from '../netlify/functions/safety-lib.mts';
 const checks=[];const check=(name,ok,detail='')=>{checks.push({name,pass:!!ok,detail});if(!ok)console.error('FAIL',name,detail)};
@@ -56,6 +56,8 @@ check('existing safety hold is preserved',holdNext.trainingHold===true&&holdNext
 const dup=[...checkins(4,3),{...checkins(4,1)[0],energy:2}];
 check('daily checkins deduplicate',dedupeDailyCheckins(dup).length===3);
 check('Week 4 completion detected',week4Complete(state(),pattern));
+const dupSessions={'w1:gym:fullA':true,'w1:home:fullA':true,'w1:fullB':true};check('gym/home duplicate session counts once',Object.values(dedupeSessionCompletions(dupSessions)).filter(Boolean).length===2);
+const painState=state(2,4);painState.checkins=[{...painState.checkins[0],painFlag:true,redFlagSymptom:false,symptomFlag:false}];const painSignals=buildSignals(painState,basePlan,{},30),painDelta=deterministicDelta(painSignals,basePlan);check('pain review consolidates instead of HOLD',painSignals.painFlag===true&&painDelta.trainingAction==='consolidate');
 check('future final mark rejected',!milestoneTimeValid('finalMark',iso(30),{ts:new Date(now+86400000).toISOString(),weight:'176'},now));
 
 const d1=await digest({b:2,a:1}),d2=await digest({a:1,b:2}),d3=await digest({a:2,b:2});

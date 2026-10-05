@@ -5,6 +5,8 @@ export type TrackCheckin = {
   sleep:number;
   training:number;
   nutrition:number;
+  painFlag?:boolean;
+  redFlagSymptom?:boolean;
   symptomFlag?:boolean;
   note?:string;
 };
@@ -20,6 +22,7 @@ export type CycleSignals = {
   avgSleep:number|null;
   avgTraining:number|null;
   avgNutrition:number|null;
+  painFlag:boolean;
   symptomFlag:boolean;
   completedSessions:number;
   plannedSessions:number;
@@ -60,7 +63,7 @@ export function dedupeDailyCheckins(rows:any[]):TrackCheckin[]{
     const vals=["energy","sleep","training","nutrition"].map(x=>Number(row?.[x]));
     if(vals.some(v=>!Number.isFinite(v)||v<1||v>5))continue;
     seen.add(k);
-    out.push({ts:String(row.ts),dayKey:k,energy:vals[0],sleep:vals[1],training:vals[2],nutrition:vals[3],symptomFlag:row?.symptomFlag===true,note:String(row?.note||"").slice(0,1200)});
+    out.push({ts:String(row.ts),dayKey:k,energy:vals[0],sleep:vals[1],training:vals[2],nutrition:vals[3],painFlag:row?.painFlag===true,redFlagSymptom:row?.redFlagSymptom===true,symptomFlag:row?.redFlagSymptom===true||(row?.symptomFlag===true&&row?.painFlag!==true),note:String(row?.note||"").slice(0,1200)});
   }
   return out;
 }
@@ -88,10 +91,9 @@ export function milestoneTimeValid(type:"baseline"|"checkpoint"|"finalMark",star
   return ts>=min;
 }
 
-export function week4Complete(state:any,pattern:string[]){
-  const done=state?.completedSessions||{};
-  return pattern.length>0&&pattern.every(p=>Object.entries(done).some(([k,v])=>v===true&&String(k).startsWith("w4:")&&String(k).endsWith(`:${p}`)));
-}
+export function canonicalSessionIdentity(k:string){const m=String(k||"").match(/^w(\d+):(?:(?:gym|home):)?(.+)$/);return m?`w${m[1]}:${m[2]}`:String(k||"")}
+export function dedupeSessionCompletions(src:any){const out:Record<string,boolean>={};for(const [k,v] of Object.entries(src||{}))if(v===true)out[canonicalSessionIdentity(k)]=true;return out}
+export function week4Complete(state:any,pattern:string[]){const done=dedupeSessionCompletions(state?.completedSessions||{});return pattern.length>0&&pattern.every(p=>done[`w4:${p}`]===true)}
 
 function average(rows:TrackCheckin[],key:keyof Pick<TrackCheckin,"energy"|"sleep"|"training"|"nutrition">){
   const vals=rows.map(x=>Number(x[key])).filter(Number.isFinite);
@@ -101,7 +103,7 @@ function average(rows:TrackCheckin[],key:keyof Pick<TrackCheckin,"energy"|"sleep
 export function buildSignals(state:any,currentPlan:any,cycleSummary:any,elapsedOverride?:number):CycleSignals{
   const checkins=dedupeDailyCheckins(state?.checkins||[]).slice(0,45);
   const pattern=Array.isArray(currentPlan?.training?.pattern)?currentPlan.training.pattern:[];
-  const completed=Object.values(state?.completedSessions||{}).filter(Boolean).length;
+  const completed=Object.values(dedupeSessionCompletions(state?.completedSessions||{})).filter(Boolean).length;
   const planned=Math.max(0,pattern.length*4);
   const trainingCompletion=planned?Math.min(100,Math.round(completed/planned*100)):0;
   return {
@@ -115,7 +117,8 @@ export function buildSignals(state:any,currentPlan:any,cycleSummary:any,elapsedO
     avgSleep:average(checkins,"sleep"),
     avgTraining:average(checkins,"training"),
     avgNutrition:average(checkins,"nutrition"),
-    symptomFlag:checkins.some(x=>x.symptomFlag===true),
+    painFlag:checkins.some(x=>x.painFlag===true),
+    symptomFlag:checkins.some(x=>x.redFlagSymptom===true||x.symptomFlag===true),
     completedSessions:completed,
     plannedSessions:planned,
     trainingCompletion,
@@ -135,10 +138,12 @@ export function deterministicDelta(signals:CycleSignals,currentPlan:any):NextCyc
   if(signals.avgSleep!==null)evidence.push(`avg_sleep=${signals.avgSleep.toFixed(2)}/5`);
   if(signals.avgTraining!==null)evidence.push(`avg_training=${signals.avgTraining.toFixed(2)}/5`);
   if(signals.avgNutrition!==null)evidence.push(`avg_nutrition=${signals.avgNutrition.toFixed(2)}/5`);
+  if(signals.painFlag)evidence.push("explicit_pain_review=true");
   if(signals.symptomFlag)evidence.push("explicit_concerning_symptom=true");
 
   let trainingAction:NextCycleDelta["trainingAction"]="maintain";
   if(currentPlan?.trainingHold||signals.symptomFlag)trainingAction="hold";
+  else if(signals.painFlag)trainingAction="consolidate";
   else if(signals.trainingCompletion<60||(signals.avgTraining!==null&&signals.avgTraining<2.6)||(signals.avgEnergy!==null&&signals.avgEnergy<2.6)||(signals.avgSleep!==null&&signals.avgSleep<2.6))trainingAction="consolidate";
   else if(signals.trainingCompletion>=80&&signals.avgTraining!==null&&signals.avgTraining>=3.4&&signals.avgEnergy!==null&&signals.avgEnergy>=3&&signals.avgSleep!==null&&signals.avgSleep>=3)trainingAction="progress";
 

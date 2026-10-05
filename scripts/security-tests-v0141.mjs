@@ -3,7 +3,7 @@ import path from 'node:path';
 import {readJsonBounded,rateLimit} from '../netlify/functions/request-lib.mts';
 const root=process.cwd(),read=p=>fs.readFileSync(path.join(root,p),'utf8');
 const checks=[];const check=(name,ok,detail='')=>{checks.push({name,pass:!!ok,detail});if(!ok)console.error('FAIL',name,detail)};
-const html=read('public/index.html'),js=read('public/app.js'),auth=read('netlify/functions/auth.mts'),authlib=read('netlify/functions/auth-lib.mts'),state=read('netlify/functions/state.mts'),restore=read('netlify/functions/restore.mts'),ai=read('netlify/functions/ai-lib.mts'),next=read('netlify/functions/next-cycle.mts'),schemas=read('netlify/functions/schemas.mts'),toml=read('netlify.toml'),env=read('.env.example');
+const html=read('public/index.html'),js=read('public/app.js'),auth=read('netlify/functions/auth.mts'),authlib=read('netlify/functions/auth-lib.mts'),state=read('netlify/functions/state.mts'),restore=read('netlify/functions/restore.mts'),ai=read('netlify/functions/ai-lib.mts'),next=read('netlify/functions/next-cycle.mts'),coach=read('netlify/functions/coach.mts'),schemas=read('netlify/functions/schemas.mts'),toml=read('netlify.toml'),env=read('.env.example');
 
 const okReq=new Request('https://example.test/api',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({ok:true})});
 check('bounded JSON accepts small body',(await readJsonBounded(okReq,1000)).ok===true);
@@ -43,6 +43,8 @@ check('next-month endpoint requires final Week 4',next.includes('if(!lastWeek)')
 check('next-month endpoint requires valid Final Mark time',next.includes('milestoneTimeValid("finalMark"'));
 check('browser summary is not canonical evidence',next.includes('Browser summaries are display hints only'));
 check('safety review prevents deterministic auto approval',next.includes('const deterministicApproved=hardValidation.ok&&!safetyReview&&!explicitAIReject'));
+check('state preserves authoritative safety restriction',state.includes('existing?.plan?.trainingHold')&&state.includes('queueOwnerReview'));
+check('coach prefers authoritative server state',coach.includes('stateLoad(session.subject)')&&coach.includes('authoritativeState=true'));
 
 check('CSP blocks remote runtime connections',toml.includes("connect-src 'self'"));
 check('CSP blocks objects + framing',toml.includes("object-src 'none'")&&toml.includes("frame-ancestors 'none'")&&toml.includes('X-Frame-Options = "DENY"'));

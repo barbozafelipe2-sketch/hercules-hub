@@ -49,7 +49,7 @@ export const CoachRequestSchema=z.object({question:z.string().min(1).max(1500),p
 
 const MetricString=z.string().trim().max(24);
 export const CheckinSchema=z.object({
-  ts:z.string().datetime(),dayKey:z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),energy:z.number().min(1).max(5),sleep:z.number().min(1).max(5),training:z.number().min(1).max(5),nutrition:z.number().min(1).max(5),symptomFlag:z.boolean().default(false),note:z.string().max(1200).optional().default("")
+  ts:z.string().datetime(),dayKey:z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),energy:z.number().min(1).max(5),sleep:z.number().min(1).max(5),training:z.number().min(1).max(5),nutrition:z.number().min(1).max(5),painFlag:z.boolean().default(false),redFlagSymptom:z.boolean().default(false),symptomFlag:z.boolean().default(false),note:z.string().max(1200).optional().default("")
 }).strict();
 export const BaselineMilestoneSchema=z.object({ts:z.string().datetime(),height:MetricString.optional().default(""),weight:MetricString.min(1),targetWeight:MetricString.min(1),waist:MetricString.optional().default(""),note:z.string().max(1200).optional().default("")}).passthrough();
 export const FollowupMilestoneSchema=z.object({ts:z.string().datetime(),weight:MetricString.min(1),waist:MetricString.optional().default(""),note:z.string().max(1200).optional().default("")}).passthrough();

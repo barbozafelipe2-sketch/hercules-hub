@@ -1,11 +1,13 @@
 import { readSession } from "./auth-lib.mts";
 import { StateSyncSchema } from "./schemas.mts";
-import { dedupeDailyCheckins, milestoneTimeValid, stateCycleWriteAllowed } from "./cycle-lib.mts";
+import { dedupeDailyCheckins, dedupeSessionCompletions, milestoneTimeValid, stateCycleWriteAllowed } from "./cycle-lib.mts";
+import { safetyRouting } from "./safety-lib.mts";
+import { queueOwnerReview } from "./review-lib.mts";
 import { readJsonBounded, rateLimit } from "./request-lib.mts";
 import { stateDelete, stateLoad, stateSave, supabaseConfig } from "./supabase-lib.mts";
 function json(data:unknown,status=200,headers:Record<string,string>={}){return new Response(JSON.stringify(data),{status,headers:{"Content-Type":"application/json; charset=utf-8","Cache-Control":"no-store",...headers}})}
 function canonicalizeState(state:any,startedAt:string){
-  const out=structuredClone(state);out.startedAt=startedAt;out.checkins=dedupeDailyCheckins(out.checkins||[]).slice(0,90);const now=Date.now();
+  const out=structuredClone(state);out.startedAt=startedAt;out.checkins=dedupeDailyCheckins(out.checkins||[]).slice(0,90);out.completedSessions=dedupeSessionCompletions(out.completedSessions||{});const now=Date.now();
   if(out.baseline&&!milestoneTimeValid("baseline",startedAt,out.baseline,now))out.baseline=null;
   if(out.checkpoint&&!milestoneTimeValid("checkpoint",startedAt,out.checkpoint,now))out.checkpoint=null;
   if(out.finalMark&&!milestoneTimeValid("finalMark",startedAt,out.finalMark,now))out.finalMark=null;
@@ -59,8 +61,10 @@ export default async(req:Request)=>{
         const startedAt=hasExisting?String(existing.state.startedAt||now):now;
         payload.state=canonicalizeState(payload.state,startedAt);payload.state.cycleNumber=incomingCycle;payload.cycleNumber=incomingCycle;
         if(hasExisting)payload.state.nextCycle=existing.state.nextCycle??null;
+        const effectiveProfile=payload.profile||existing?.profile||null,effectivePlan=payload.plan||existing?.plan||null;
+        if(effectiveProfile&&effectivePlan){const route=safetyRouting(effectiveProfile),priorRouting=existing?.plan?.reviewRouting||{},latest=payload.state.checkins?.[0]||{},trackPain=latest?.painFlag===true,trackRed=latest?.redFlagSymptom===true||latest?.symptomFlag===true,reasons=[...new Set([...(priorRouting.ownerReviewRequired?priorRouting.reasons||[]:[]),...route.reasons,...(trackPain?["TRACK_PAIN"]:[]),...(trackRed?["TRACK_RED_FLAG"]:[])])],restricted=!!existing?.plan?.trainingHold||route.trainingRestricted||trackRed,ownerReviewRequired=reasons.length>0;effectivePlan.trainingHold=restricted;effectivePlan.risk=restricted?"red":ownerReviewRequired?"yellow":effectivePlan.risk;effectivePlan.reviewRouting={...(effectivePlan.reviewRouting||{}),status:restricted?"RESTRICTED":ownerReviewRequired?"REVIEW_NOTIFY":"CLEAR",trainingRestricted:restricted,ownerReviewRequired,reasons,painAreas:route.painAreas,professionalRestrictionScope:route.professionalRestrictionScope};effectivePlan.training={...effectivePlan.training,reviewRequired:restricted||ownerReviewRequired,painAware:{areas:route.painAreas,reviewStatus:restricted?"RESTRICTED":ownerReviewRequired?"REVIEW_NOTIFY":"CLEAR"}};payload.profile=effectiveProfile;payload.plan=effectivePlan;if(ownerReviewRequired){try{const notice=await queueOwnerReview(req,session.subject,effectiveProfile,effectivePlan.reviewRouting);effectivePlan.reviewRouting.notification=notice}catch{}}}
       } else payload.state.checkins=dedupeDailyCheckins(payload.state.checkins||[]).slice(0,90);
-      const result=await stateSave(session.subject,payload);return json({ok:true,...result,authoritativeStartedAt:payload.state?.startedAt||null,cycleNumber:payload.cycleNumber||payload.state?.cycleNumber||1});
+      const result=await stateSave(session.subject,payload);return json({ok:true,...result,profile:payload.profile??null,plan:payload.plan??null,authoritativeStartedAt:payload.state?.startedAt||null,cycleNumber:payload.cycleNumber||payload.state?.cycleNumber||1});
     }catch{return json({ok:false,saved:false,error:"State storage unavailable"},200)}
   }
   if(action==="status"){const c=supabaseConfig();return json({ok:true,supabase:c.stateReady})}
