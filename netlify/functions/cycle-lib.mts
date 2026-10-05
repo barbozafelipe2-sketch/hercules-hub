@@ -91,7 +91,7 @@ export function milestoneTimeValid(type:"baseline"|"checkpoint"|"finalMark",star
   return ts>=min;
 }
 
-export function canonicalSessionIdentity(k:string){const m=String(k||"").match(/^w(\d+):(?:(?:gym|home):)?(.+)$/);return m?`w${m[1]}:${m[2]}`:String(k||"")}
+export function canonicalSessionIdentity(k:string){const m=String(k||"").match(/^w(\d+):(?:(?:gym|home|x):)?(.+)$/);return m?`w${m[1]}:${m[2]}`:String(k||"")}
 export function dedupeSessionCompletions(src:any){const out:Record<string,boolean>={};for(const [k,v] of Object.entries(src||{}))if(v===true)out[canonicalSessionIdentity(k)]=true;return out}
 export function week4Complete(state:any,pattern:string[]){const done=dedupeSessionCompletions(state?.completedSessions||{});return pattern.length>0&&pattern.every(p=>done[`w4:${p}`]===true)}
 
