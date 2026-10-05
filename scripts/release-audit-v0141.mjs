@@ -72,6 +72,8 @@ add('review_notify_nonblocking_pain',js.includes("status:trainingRestricted?'RES
 add('professional_no_exercise_restriction',read('netlify/functions/safety-lib.mts').includes('PROFESSIONAL_NO_EXERCISE'));
 add('owner_review_queue',exists('netlify/functions/review-lib.mts')&&html.includes('name="hercules-review"')&&html.includes('data-netlify-honeypot="bot-field"')&&generate.includes('queueOwnerReview'));
 add('review_blob_store_strong_consistency',read('netlify/functions/review-lib.mts').includes('getStore("hercules-reviews",{consistency:"strong"})')&&!read('netlify/functions/review-lib.mts').includes('type:"text",consistency'));
+add('review_submission_not_falsely_called_email_sent',read('netlify/functions/review-lib.mts').includes('formSubmitted')&&read('netlify/functions/review-lib.mts').includes('ownerReviewPending:true')&&!read('netlify/functions/review-lib.mts').includes('notificationSent:sent'));
+add('review_form_subject_versioned',html.includes('name="subject" value="Hercules review requested"'));
 add('fatal_block_prevents_entry',js.includes("fatalBlock=finalAudits.some")&&js.includes("$('#auditBack').classList.remove('hidden');return"));
 add('pdf_language_uses_selected_language',js.includes("L(\`RELATÓRIO MENSAL DE PROGRESSO")&&js.includes("'PRIVATE FILE: contains profile and progress data. Do not share publicly.'"));
 add('returning_user_direct_home',includes(js,'if(profile&&plan)', 'showApp()'));
