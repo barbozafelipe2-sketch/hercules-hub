@@ -13,7 +13,7 @@ export const ProfileSchema=z.object({
   units:z.enum(["metric","imperial"]).default("imperial"),height:z.string().max(12).optional().default(""),weight:z.string().max(12).optional().default(""),targetWeight:z.string().max(12).optional().default(""),
   meals:z.enum(["2","3","4","5"]),cooking:z.enum(["minimal","basic","comfortable"]),foodPreferences:z.string().max(1200).optional().default(""),dislikes:z.string().max(1200).optional().default(""),allergies:z.string().max(1200).optional().default(""),
   proteinPreferences:textList(),grainPreferences:textList(),veggiePreferences:textList(),openToOtherVeggies:z.boolean().default(true),foodStyles:textList(12),mealPrepPreference:z.enum(["mixed","fresh_daily","batch_cook"]).default("mixed"),eatOutFrequency:z.enum(["rare","1-2_week","3plus_week"]).default("1-2_week"),
-  sleep:z.enum(["<5","5","6","7","8","9+"]),stress:z.string().regex(/^[1-5]$/),currentPain:z.enum(["yes","no"]),redFlags:z.enum(["yes","no"]),professionalRestrictions:z.enum(["yes","no"]),safetyDetails:z.string().max(2000).optional().default(""),
+  sleep:z.enum(["<5","5","6","7","8","9+"]),stress:z.string().regex(/^[1-5]$/),currentPain:z.enum(["yes","no"]),painAreas:z.array(z.enum(["shoulder","elbow","wrist_hand","neck","upper_back","low_back","hip","knee","ankle_foot","other"])).max(10).default([]),redFlags:z.enum(["yes","no"]),professionalRestrictions:z.enum(["yes","no"]),professionalRestrictionScope:z.enum(["","avoid_specific","no_exercise","other_guidance"]).default(""),safetyDetails:z.string().max(2000).optional().default(""),
   accuracy:z.boolean(),prototypeAck:z.boolean()
 }).strict();
 

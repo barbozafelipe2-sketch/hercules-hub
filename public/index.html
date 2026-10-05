@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en-US">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -21,15 +21,15 @@
         <img class="languageLogo lightOnlyLogo logoLight" src="assets/hercules-hub-logo-light.png" alt="Hercules Hub">
         <img class="languageLogo darkOnlyLogo" src="assets/hercules-hub-logo.png" alt="Hercules Hub">
       </div>
-      <h1 class="title" style="font-size:30px;text-align:center">Choose your language</h1>
-      <p class="subtitle" style="text-align:center">Escolha seu idioma • Elige tu idioma</p>
+      <h1 class="title" id="languageTitle" style="font-size:30px;text-align:center">Choose your language</h1>
+      <p class="subtitle" id="languageSubtitle" style="text-align:center">Select your preferred language</p>
       <div class="languageOptions">
         <button class="btn btnGhost" data-lang="pt-BR"><div><b>Português</b><small>Brasil</small></div><span>›</span></button>
         <button class="btn btnGhost" data-lang="en-US"><div><b>English</b><small>United States</small></div><span>›</span></button>
         <button class="btn btnGhost" data-lang="es"><div><b>Español</b><small>Latinoamérica / España</small></div><span>›</span></button>
       </div>
       <div class="firstLaunchRecovery">
-        <span></span><b>or</b><span></span>
+        <span></span><b id="languageOr">or</b><span></span>
       </div>
       <button class="btn btnGhost restoreFirstLaunch" id="restoreFirstLaunch" type="button">Restore Hercules progress</button>
       <p class="firstLaunchHint">Use your latest Hercules PDF or backup after reinstalling, changing phones, or clearing browser data.</p>
@@ -52,7 +52,7 @@
         <div class="auditRow" id="audit3"><div class="auditIcon">3</div><div><b id="audit3Title"></b><small id="audit3Copy"></small></div><div class="auditState">—</div></div>
       </div>
       <div id="auditMessage" class="notice" style="margin-top:14px"></div><div style="margin-top:9px"><span class="labBadge" id="labBadge">TRACE LAB • SUPERVISED • HASHED</span></div>
-      <button id="enterGenerated" class="btn btnGold hidden" style="width:100%;margin-top:12px"></button>
+      <button id="enterGenerated" class="btn btnGold hidden" style="width:100%;margin-top:12px"></button><button id="auditBack" class="btn btnGhost hidden" style="width:100%;margin-top:9px"></button>
     </div>
   </section>
 
@@ -68,6 +68,7 @@
   <div class="overlay" id="exerciseOverlay" aria-hidden="true"><div class="sheet exerciseSheet"><div class="sheetHandle"></div><div class="sheetHead"><div><h2 id="exerciseSheetHead"></h2><div class="kicker" id="exerciseSheetKicker"></div></div><button class="iconBtn" data-close="exercise">×</button></div><div id="exerciseDetail"></div></div></div>
   <div class="overlay" id="postWorkoutOverlay" aria-hidden="true"><div class="sheet"><div class="sheetHandle"></div><div class="sheetHead"><div><h2 id="postWorkoutTitle"></h2><div class="kicker">TRAIN → RECOVER → MIND → TRACK</div></div><button class="iconBtn" data-close="postWorkout">×</button></div><div id="postWorkoutContent"></div></div></div>
   <input id="restoreFile" class="visuallyHiddenInput" type="file" accept=".pdf,.hercules,.json,application/pdf,application/json" aria-hidden="true" tabindex="-1">
+  <form name="hercules-review" method="POST" data-netlify="true" hidden aria-hidden="true"><input type="hidden" name="form-name" value="hercules-review"><input name="review_id"><input name="client"><input name="module"><input name="status"><input name="reason"><input name="created_at"></form>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </div>
 <script src="app.js?v=0.14.1" defer></script>

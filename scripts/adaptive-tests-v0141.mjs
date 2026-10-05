@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {buildSignals,deterministicDelta,clampDelta,validateDelta,applyDelta,dedupeDailyCheckins,week4Complete,milestoneTimeValid,stateCycleWriteAllowed} from '../netlify/functions/cycle-lib.mts';
 import {digest,makeTrace} from '../netlify/functions/trace-lib.mts';
+import {safetyRouting} from '../netlify/functions/safety-lib.mts';
 const checks=[];const check=(name,ok,detail='')=>{checks.push({name,pass:!!ok,detail});if(!ok)console.error('FAIL',name,detail)};
 const now=Date.now(),iso=d=>new Date(now-d*86400000).toISOString();
 const pattern=['fullA','fullB','fullC'];
@@ -10,6 +11,13 @@ const profile={level:'intermediate',minutes:'60',mealPrepPreference:'mixed',prot
 function sessions(){const out={};for(let w=1;w<=4;w++)for(const p of pattern)out[`w${w}:x:${p}`]=true;return out}
 function checkins(value=4,n=14,symptom=false){return Array.from({length:n},(_,i)=>({ts:iso(i+1),dayKey:new Date(now-(i+1)*86400000).toISOString().slice(0,10),energy:value,sleep:value,training:value,nutrition:value,symptomFlag:symptom&&i===0,note:i===0?'bounded note':''}))}
 function state(cycle=1,value=4,n=14,symptom=false){return {startedAt:iso(30),cycleNumber:cycle,completedSessions:sessions(),completedExercises:{},checkins:checkins(value,n,symptom),baseline:{ts:iso(30),weight:'180',targetWeight:'175'},checkpoint:{ts:iso(14),weight:'178'},finalMark:{ts:iso(1),weight:'176'},cycleHistory:Array.from({length:Math.max(0,cycle-1)},()=>({}))}}
+
+const painRoute=safetyRouting({currentPain:'yes',painAreas:['knee'],redFlags:'no',professionalRestrictions:'no',professionalRestrictionScope:'',safetyDetails:'knee discomfort'});
+check('ordinary pain routes to REVIEW_NOTIFY without global TRAIN restriction',painRoute.status==='REVIEW_NOTIFY'&&!painRoute.trainingRestricted&&painRoute.ownerReviewRequired);
+const noExerciseRoute=safetyRouting({currentPain:'no',painAreas:[],redFlags:'no',professionalRestrictions:'yes',professionalRestrictionScope:'no_exercise',safetyDetails:'active professional restriction'});
+check('professional no-exercise guidance restricts TRAIN',noExerciseRoute.status==='RESTRICTED'&&noExerciseRoute.trainingRestricted);
+const redFlagRoute=safetyRouting({currentPain:'no',painAreas:[],redFlags:'yes',professionalRestrictions:'no',professionalRestrictionScope:'',safetyDetails:'red flag'});
+check('red-flag route remains restricted',redFlagRoute.status==='RESTRICTED'&&redFlagRoute.trainingRestricted);
 
 const hi=buildSignals(state(1,4),basePlan,{},30),hiDelta=deterministicDelta(hi,basePlan);
 check('high adherence supports progress',hiDelta.trainingAction==='progress',hiDelta.trainingAction);
