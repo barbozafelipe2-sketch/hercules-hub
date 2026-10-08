@@ -1,0 +1,22 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node scripts/assert-report-consistency.mjs
+      - run: mkdir -p /tmp/hercules-reports && cp QA_REPORT_v0.14.1.json ADAPTIVE_REPORT_v0.14.1.json SECURITY_STATE_REPORT_v0.14.1.json /tmp/hercules-reports/
+      - run: npm run check:syntax
+      - run: npm run check
+      - run: node scripts/assert-reports-match.mjs /tmp/hercules-reports

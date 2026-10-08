@@ -1,11 +1,46 @@
 {
   "release": "0.14.1",
   "suite": "adaptive-engine",
-  "generatedAt": "2026-10-04T07:46:56.416Z",
-  "passed": 30,
+  "generatedAt": "2026-10-08T01:14:16.932Z",
+  "passed": 39,
   "failed": 0,
-  "total": 30,
+  "total": 39,
   "checks": [
+    {
+      "name": "ordinary pain routes to REVIEW_NOTIFY without global TRAIN restriction",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "professional no-exercise guidance restricts TRAIN",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "red-flag route remains restricted",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "vegan text blocks hidden dairy metadata gap",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "vegetarian text blocks hidden meat metadata gap",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "closed veggie preference is a hard gate",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "selected protein preference is enforced when metadata exists",
+      "pass": true,
+      "detail": ""
+    },
     {
       "name": "high adherence supports progress",
       "pass": true,
@@ -103,6 +138,16 @@
     },
     {
       "name": "Week 4 completion detected",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "gym/home duplicate session counts once",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "pain review consolidates instead of HOLD",
       "pass": true,
       "detail": ""
     },

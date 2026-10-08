@@ -1,9 +1,9 @@
 {
   "version": "0.14.1",
-  "generatedAt": "2026-10-04T07:46:56.297Z",
+  "generatedAt": "2026-10-08T01:15:16.263Z",
   "status": "PASS",
-  "passed": 161,
-  "total": 161,
+  "passed": 180,
+  "total": 180,
   "checks": [
     {
       "name": "package_version_0141",
@@ -87,6 +87,56 @@
     },
     {
       "name": "first_launch_language_onboarding",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "default_language_is_english",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "safety_answers_are_explicit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "review_notify_nonblocking_pain",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "professional_no_exercise_restriction",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "owner_review_queue",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "review_blob_store_strong_consistency",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "review_submission_not_falsely_called_email_sent",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "review_form_subject_versioned",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "fatal_block_prevents_entry",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "pdf_language_uses_selected_language",
       "pass": true,
       "detail": ""
     },
@@ -332,6 +382,16 @@
     },
     {
       "name": "server_syntax_restore.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "server_syntax_review-lib.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "server_syntax_safety-lib.mts",
       "pass": true,
       "detail": ""
     },
@@ -611,6 +671,36 @@
       "detail": ""
     },
     {
+      "name": "closed_veggie_preference_hard_gate",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "month_menu_cross_week_rotation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "nutrition_triple_audit_runtime",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "generated_meal_asset_status",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "broken_asset_branded_fallback",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reset_copy_mentions_server_sync",
+      "pass": true,
+      "detail": ""
+    },
+    {
       "name": "catalog_allergy_conservative",
       "pass": true,
       "detail": ""
@@ -757,6 +847,11 @@
     },
     {
       "name": "sw_precaches_brand",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "sw_precaches_release_assets_best_effort",
       "pass": true,
       "detail": ""
     },

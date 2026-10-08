@@ -1,32 +1,33 @@
 {
   "version": "0.14.1",
   "scope": "family-friends-beta-hardening",
-  "generatedAt": "2026-10-04T07:48:23.353610Z",
+  "generatedAt": "2026-10-08T01:15:15.853642Z",
   "status": "PASS",
-  "passed": 225,
-  "total": 225,
+  "passed": 255,
+  "total": 255,
   "suites": [
     {
       "file": "QA_REPORT_v0.14.1.json",
-      "passed": 161,
-      "total": 161,
+      "passed": 180,
+      "total": 180,
       "failed": 0
     },
     {
       "file": "ADAPTIVE_REPORT_v0.14.1.json",
-      "passed": 30,
-      "total": 30,
+      "passed": 39,
+      "total": 39,
       "failed": 0
     },
     {
       "file": "SECURITY_STATE_REPORT_v0.14.1.json",
-      "passed": 34,
-      "total": 34,
+      "passed": 36,
+      "total": 36,
       "failed": 0
     }
   ],
   "notes": [
-    "Clean-clone build also passed after deleting public/assets and the local asset tarball; 90 files were reconstructed under public/assets including asset-manifest.json.",
-    "Asset payload remains the verified v0.14.0 image bundle; application/runtime release is v0.14.1."
+    "Reports regenerated on main after the post-release QA commits. Suite totals are 180/39/36, not the 161/30/34 snapshot from 2026-10-04.",
+    "Asset payload remains the verified v0.14.0 image bundle; application/runtime release is v0.14.1.",
+    "GitHub Actions on main runs npm ci, check:syntax and check, then fails if committed reports differ from the suite except for generatedAt."
   ]
 }
