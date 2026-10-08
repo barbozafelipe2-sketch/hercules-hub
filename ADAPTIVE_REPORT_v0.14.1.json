@@ -1,10 +1,10 @@
 {
   "release": "0.14.1",
   "suite": "adaptive-engine",
-  "generatedAt": "2026-10-08T01:14:16.932Z",
-  "passed": 39,
+  "generatedAt": "2026-10-08T01:40:16.114Z",
+  "passed": 1040,
   "failed": 0,
-  "total": 39,
+  "total": 1040,
   "checks": [
     {
       "name": "ordinary pain routes to REVIEW_NOTIFY without global TRAIN restriction",
@@ -200,6 +200,5011 @@
       "name": "fresh persistent state starts at cycle 1 only",
       "pass": true,
       "detail": ""
+    },
+    {
+      "name": "lab case none|high|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|high|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-recovery|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-sleep|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|low-nutrition|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case none|symptom|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegan|high|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|high|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-recovery|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-sleep|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|low-nutrition|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegan|symptom|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:false"
+    },
+    {
+      "name": "lab case vegetarian|high|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|high|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-recovery|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-sleep|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|low-nutrition|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case vegetarian|symptom|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|high|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-recovery|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-sleep|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|low-nutrition|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case pescatarian|symptom|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case dairy-free|high|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|high|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-recovery|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-sleep|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|low-nutrition|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:false"
+    },
+    {
+      "name": "lab case dairy-free|symptom|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:false"
+    },
+    {
+      "name": "lab case gluten-free|high|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|high|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-recovery|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-sleep|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|low-nutrition|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case gluten-free|symptom|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|high|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-recovery|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-sleep|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|low-nutrition|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case pork-free|symptom|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|high|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-recovery|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-sleep|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/consolidate/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|low-nutrition|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/progress/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m1|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m1|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m1|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m1|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m1|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m2|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m2|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m2|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m2|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m2|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m3|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m3|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m3|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m3|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m3|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m7|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m7|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m7|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m7|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m7|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m12|clear",
+      "pass": true,
+      "detail": "CLEAR/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m12|knee",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m12|red-flag",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m12|pro-no-exercise",
+      "pass": true,
+      "detail": "RESTRICTED/hold/dairy:true"
+    },
+    {
+      "name": "lab case peanut-note|symptom|m12|pro-other",
+      "pass": true,
+      "detail": "REVIEW_NOTIFY/hold/dairy:true"
+    },
+    {
+      "name": "lab case matrix is 1000 distinct ids",
+      "pass": true,
+      "detail": "1000"
     }
   ]
 }

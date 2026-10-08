@@ -1,3 +1,4 @@
+import {runLabCases} from './lab-case-matrix.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import {buildSignals,deterministicDelta,clampDelta,validateDelta,applyDelta,dedupeDailyCheckins,dedupeSessionCompletions,week4Complete,milestoneTimeValid,stateCycleWriteAllowed} from '../netlify/functions/cycle-lib.mts';
@@ -82,6 +83,7 @@ check('state save permits same cycle only',stateCycleWriteAllowed(true,3,3)===tr
 check('state save rejects direct next-cycle write',stateCycleWriteAllowed(true,3,4)===false);
 check('fresh persistent state starts at cycle 1 only',stateCycleWriteAllowed(false,1,1)===true&&stateCycleWriteAllowed(false,1,2)===false);
 
+await runLabCases({check,safetyRouting,mealAllowedByPreferences,buildSignals,deterministicDelta,validateDelta,makeTrace,state,basePlan});
 const passed=checks.filter(x=>x.pass).length,failed=checks.length-passed;
 const report={release:'0.14.1',suite:'adaptive-engine',generatedAt:new Date().toISOString(),passed,failed,total:checks.length,checks};
 fs.writeFileSync(path.join(process.cwd(),'ADAPTIVE_REPORT_v0.14.1.json'),JSON.stringify(report,null,2)+'\n');

@@ -1,10 +1,10 @@
 {
   "version": "0.14.1",
   "scope": "family-friends-beta-hardening",
-  "generatedAt": "2026-10-08T01:15:15.853642Z",
+  "generatedAt": "2026-10-08T01:40:16.229684Z",
   "status": "PASS",
-  "passed": 255,
-  "total": 255,
+  "passed": 1256,
+  "total": 1256,
   "suites": [
     {
       "file": "QA_REPORT_v0.14.1.json",
@@ -14,8 +14,8 @@
     },
     {
       "file": "ADAPTIVE_REPORT_v0.14.1.json",
-      "passed": 39,
-      "total": 39,
+      "passed": 1040,
+      "total": 1040,
       "failed": 0
     },
     {
@@ -26,8 +26,8 @@
     }
   ],
   "notes": [
-    "Reports regenerated on main after the post-release QA commits. Suite totals are 180/39/36, not the 161/30/34 snapshot from 2026-10-04.",
-    "Asset payload remains the verified v0.14.0 image bundle; application/runtime release is v0.14.1.",
-    "GitHub Actions on main runs npm ci, check:syntax and check, then fails if committed reports differ from the suite except for generatedAt."
+    "Lab regression matrix adds 1000 distinct cases (diet x signal x month x safety route) to the adaptive suite. These are checks, not device traces.",
+    "Device Trace Lab retains at most 40 records, matching TraceSchema.",
+    "Asset payload remains the verified v0.14.0 image bundle; application/runtime release is v0.14.1."
   ]
 }
