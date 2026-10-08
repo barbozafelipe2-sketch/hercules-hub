@@ -7,7 +7,7 @@ import path from 'node:path';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const bundle=path.join(root,'hercules-assets-v0.14.0.tar.gz');
 const chunksDir=path.join(root,'asset-bundle-v0.14.0');
-const expected='84548c65c9d996ca50b80c9d4752a63832cf69f58c56ddb0b0579f4bd1d9682b';
+const expected='017ac1afd8128a5f6d31c63d3744666b144585721f01f30d7107ace7711b6a9c';
 const manifest=path.join(root,'public/assets/asset-manifest.json');
 
 function sha256(bytes){return createHash('sha256').update(bytes).digest('hex')}

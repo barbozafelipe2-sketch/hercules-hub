@@ -231,7 +231,9 @@ const FOOD={
   ['FOOD-010',['Cottage cheese + abacaxi + nozes','Cottage cheese + pineapple + walnuts','Cottage cheese + piña + nueces'],'assets/food/FOOD-010_cottage_cheese_pineapple_bowl.webp',{protein:'dairy',grain:'',veggies:[],styles:['cold_bowl']}],
   ['FOOD-011',['Burrito de café com peru e ovos','Turkey & egg breakfast burrito','Burrito de desayuno con pavo y huevos'],'assets/food/FOOD-011_turkey_breakfast_burrito.webp',{protein:'turkey',grain:'bread_tortilla',veggies:['pepper'],styles:['grilled']}],
   ['FOOD-012',['Bagel de avocado e salmão','Avocado smoked-salmon bagel','Bagel de aguacate y salmón ahumado'],'assets/food/FOOD-012_avocado_smoked_salmon_bagel.webp',{protein:'salmon',grain:'bread_tortilla',veggies:['cucumber'],styles:['cold_bowl']}],
-  ['FOOD-008',['Shakshuka + pita','Shakshuka + pita','Shakshuka + pita'],'assets/food/FOOD-008_shakshuka_with_pita.webp',{protein:'eggs',grain:'bread_tortilla',veggies:['tomato','pepper'],styles:['stovetop']}]
+  ['FOOD-008',['Shakshuka + pita','Shakshuka + pita','Shakshuka + pita'],'assets/food/FOOD-008_shakshuka_with_pita.webp',{protein:'eggs',grain:'bread_tortilla',veggies:['tomato','pepper'],styles:['stovetop']}],
+  ['tofu-scramble',['Tofu scramble + espinafre + torrada','Tofu scramble + spinach + toast','Tofu scramble + espinaca + tostada'],'assets/food/tofu-scramble.webp',{protein:'tofu',grain:'bread_tortilla',veggies:['leafy'],styles:['stovetop']}],
+  ['acai-bowl',['Açaí protein bowl + banana + granola','Acai protein bowl + banana + granola','Bowl de açaí proteico + banana + granola'],'assets/food/acai-protein-bowl.webp',{protein:'',grain:'oats',veggies:[],styles:['cold_bowl']}]
  ],
  lunch:[
   ['chicken-rice',['Frango + arroz + feijão + salada','Chicken + rice + beans + salad','Pollo + arroz + frijoles + ensalada'],'assets/food/almoco-a.webp',{protein:'chicken',grain:'rice',veggies:['leafy'],styles:['grilled'],metadataStatus:'verified_by_label'}],
@@ -246,7 +248,12 @@ const FOOD={
   ['FOOD-007',['Tofu + soba + vegetais','Tofu soba stir-fry','Tofu + soba + vegetales'],'assets/food/FOOD-007_tofu_soba_stir_fry.webp',{protein:'tofu',grain:'pasta',veggies:['broccoli','pepper'],styles:['stir_fry']}],
   ['FOOD-013',['Pimentões recheados com frango + quinoa','Chicken quinoa stuffed peppers','Pimientos rellenos de pollo + quinoa'],'assets/food/FOOD-013_chicken_quinoa_stuffed_peppers.webp',{protein:'chicken',grain:'quinoa',veggies:['pepper'],styles:['roasted']}],
   ['FOOD-015',['Chili de peru + feijão + avocado','Turkey chili + beans + avocado','Chili de pavo + frijoles + aguacate'],'assets/food/FOOD-015_turkey_chili_avocado_bowl.webp',{protein:'turkey',grain:'',veggies:['tomato'],styles:['soup']}],
-  ['FOOD-017',['Wraps de alface com peru + arroz','Turkey lettuce wraps + rice','Wraps de lechuga con pavo + arroz'],'assets/food/FOOD-017_turkey_lettuce_wraps.webp',{protein:'turkey',grain:'rice',veggies:['leafy','carrot','cucumber'],styles:['stir_fry']}]
+  ['FOOD-017',['Wraps de alface com peru + arroz','Turkey lettuce wraps + rice','Wraps de lechuga con pavo + arroz'],'assets/food/FOOD-017_turkey_lettuce_wraps.webp',{protein:'turkey',grain:'rice',veggies:['leafy','carrot','cucumber'],styles:['stir_fry']}],
+  ['edamame-bowl',['Bowl de edamame + grão-de-bico','Edamame chickpea bowl','Bowl de edamame + garbanzos'],'assets/food/edamame-chickpea-bowl.webp',{protein:'beans_lentils',grain:'',veggies:['cucumber'],styles:['cold_bowl']}],
+  ['tempeh-bowl',['Tempeh + quinoa + brócolis','Tempeh quinoa bowl','Tempeh + quinoa + brócoli'],'assets/food/tempeh-quinoa-bowl.webp',{protein:'tempeh',grain:'quinoa',veggies:['broccoli'],styles:['grilled']}],
+  ['arepas',['Arepas de feijão preto + avocado','Black bean arepas + avocado','Arepas de frijol negro + aguacate'],'assets/food/arepas-black-bean.webp',{protein:'beans_lentils',grain:'bread_tortilla',veggies:['avocado'],styles:['grilled']}],
+  ['lentil-penne',['Penne de lentilha + cogumelos','Lentil penne + mushrooms','Penne de lentejas + champiñones'],'assets/food/lentil-penne.webp',{protein:'beans_lentils',grain:'pasta',veggies:['mushroom'],styles:['stovetop']}],
+  ['paneer',['Paneer tikka masala + arroz','Paneer tikka masala + rice','Paneer tikka masala + arroz'],'assets/food/paneer-tikka-masala.webp',{protein:'dairy',grain:'rice',veggies:['peas'],styles:['stovetop']}]
  ],
  snack:[
   ['yogurt',['Iogurte + aveia/granola + frutas','Yogurt + oats/granola + fruit','Yogur + avena/granola + fruta'],'assets/food/iogurte-granola-frutas.webp',{protein:'dairy',grain:'oats',veggies:[],styles:['cold_bowl'],metadataStatus:'verified_by_label'}],
@@ -267,7 +274,10 @@ const FOOD={
   ['FOOD-016',['Falafel + hummus + tabule','Falafel + hummus + tabbouleh','Falafel + hummus + tabulé'],'assets/food/FOOD-016_falafel_hummus_bowl.webp',{protein:'beans_lentils',grain:'bread_tortilla',veggies:['tomato','cucumber'],styles:['cold_bowl']}],
   ['FOOD-018',['Almôndegas bovinas + polenta + espinafre','Beef meatballs + polenta + spinach','Albóndigas de res + polenta + espinaca'],'assets/food/FOOD-018_beef_meatballs_polenta.webp',{protein:'beef',grain:'',veggies:['leafy','tomato'],styles:['stovetop']}],
   ['FOOD-019',['Bowl de feijão preto + batata-doce','Black bean + sweet potato bowl','Bowl de frijoles negros + batata'],'assets/food/FOOD-019_black_bean_sweet_potato_bowl.webp',{protein:'beans_lentils',grain:'potato',veggies:['tomato'],styles:['roasted']}],
-  ['FOOD-020',['Sopa de frango + feijão branco + kale','Chicken white-bean soup + kale','Sopa de pollo + frijoles blancos + kale'],'assets/food/FOOD-020_chicken_white_bean_soup.webp',{protein:'chicken',grain:'',veggies:['leafy','carrot'],styles:['soup']}]
+  ['FOOD-020',['Sopa de frango + feijão branco + kale','Chicken white-bean soup + kale','Sopa de pollo + frijoles blancos + kale'],'assets/food/FOOD-020_chicken_white_bean_soup.webp',{protein:'chicken',grain:'',veggies:['leafy','carrot'],styles:['soup']}],
+  ['miso-salmon',['Salmão miso + arroz de couve-flor','Miso salmon + cauliflower rice','Salmón miso + arroz de coliflor'],'assets/food/miso-salmon.webp',{protein:'salmon',grain:'cauliflower',veggies:['bok_choy'],styles:['roasted']}],
+  ['tuna-nicoise',['Salada Niçoise de atum','Tuna Nicoise salad','Ensalada Niçoise de atún'],'assets/food/tuna-nicoise.webp',{protein:'tuna',grain:'potato',veggies:['green_beans','tomato','leafy'],styles:['cold_bowl']}],
+  ['pumpkin-soup',['Sopa de abóbora + coco','Pumpkin coconut soup','Sopa de calabaza + coco'],'assets/food/pumpkin-coconut-soup.webp',{protein:'',grain:'',veggies:['pumpkin'],styles:['soup']}]
  ]
 };
 const ROLE_LABEL={breakfast:['CAFÉ DA MANHÃ','BREAKFAST','DESAYUNO'],lunch:['ALMOÇO','LUNCH','ALMUERZO'],snack:['LANCHE','SNACK','MERIENDA'],dinner:['JANTAR','DINNER','CENA']};
