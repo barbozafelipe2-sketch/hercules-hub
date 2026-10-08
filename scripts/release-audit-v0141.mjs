@@ -52,7 +52,7 @@ try{
   const encoded=assetChunkFiles.map(f=>fs.readFileSync(path.join(assetChunkDir,f),'utf8').trim()).join('');
   chunkBundleHash=crypto.createHash('sha256').update(Buffer.from(encoded,'base64')).digest('hex');
 }catch{}
-add('asset_chunk_transport_integrity',chunkBundleHash==='017ac1afd8128a5f6d31c63d3744666b144585721f01f30d7107ace7711b6a9c',chunkBundleHash);
+add('asset_chunk_transport_integrity',chunkBundleHash==='25fecf17e97c4dd1a62044094eae0aaee684cd6a221bcc9bcacdf3986bbfd247',chunkBundleHash);
 const prepareAssets=read('scripts/prepare-assets.mjs');
 add('asset_prepare_reconstructs_chunks',includes(prepareAssets,'asset-bundle-v0.14.0','Buffer.from(encoded,\'base64\')','writeFileSync(bundle,bytes)'));
 add('package_lock_present',exists('package-lock.json'));
@@ -225,7 +225,7 @@ for(const item of assetManifest.assets||[]){
 add('asset_manifest_fingerprints_match',manifestHashesOk,manifestMissing.slice(0,12).join(','));
 const actualAssets=[];
 for(const dir of ['public/assets/exercises','public/assets/home','public/assets/food'])for(const f of fs.readdirSync(path.join(root,dir)))if(fs.statSync(path.join(root,dir,f)).isFile())actualAssets.push(path.relative(path.join(root,'public'),path.join(root,dir,f)));
-add('catalog_asset_counts',assetManifest.counts.exercise===27&&assetManifest.counts.home===13&&assetManifest.counts.food===56&&assetManifest.counts.brand===3&&assetManifest.counts.total===99,JSON.stringify(assetManifest.counts));
+add('catalog_asset_counts',assetManifest.counts.exercise===34&&assetManifest.counts.home===13&&assetManifest.counts.food===56&&assetManifest.counts.brand===3&&assetManifest.counts.total===106,JSON.stringify(assetManifest.counts));
 add('asset_payload_under_10mb',assetManifest.totalBytes<10*1024*1024,String(assetManifest.totalBytes));
 const literalAssetRefs=[...new Set([...html.matchAll(/(?:src|href)="(assets\/[A-Za-z0-9_./-]+)"/g)].map(m=>m[1]).concat([...js.matchAll(/["'](assets\/[A-Za-z0-9_./-]+\.(?:webp|png))["']/g)].map(m=>m[1])) )];
 const missingRefs=literalAssetRefs.filter(r=>!exists('public/'+r));
