@@ -66,6 +66,11 @@ add('changelog_0141',exists('CHANGELOG_v0.14.1.md'));
 add('no_login_screen',!html.includes('loginScreen')&&!html.includes('loginForm'));
 add('no_logout_ui',!/\b(logout|log out|sign out)\b/i.test(html+js));
 add('first_launch_language_onboarding',includes(js,"if(!lang){showOnly('languageScreen');return}","else showOnboarding()"));
+
+add('language_listener_collections_safe',js.includes("$$('[data-lang]').forEach")&&!/(?<!\$)\$\([^)]*\)\.(?:forEach|map|filter|find|some|every|reduce)\s*\(/.test(js));
+const modeHelper=js.match(/^function reconcileTrainingMode\(\)\{.*\}$/m)?.[0]||'';
+function trainingModeCase(location,current,expected){const sandbox={profile:{location},state:{trainingMode:current},KEYS:{state:'test'},saveJSON:()=>{},scheduleCloudSync:()=>{}};try{vm.runInNewContext(modeHelper+';reconcileTrainingMode();',sandbox,{timeout:1500});return sandbox.state.trainingMode===expected}catch{return false}}
+add('training_location_mode_coherence',includes(js,'function renderAll(){if(!profile||!plan)return;reconcileTrainingMode();')&&trainingModeCase('home','gym','home')&&trainingModeCase('gym','home','gym')&&trainingModeCase('both','home','home')&&trainingModeCase('both','gym','gym'));
 add('default_language_is_english',html.includes('<html lang="en-US">')&&js.includes("lang||'en-US'")&&!html.includes('Escolha seu idioma • Elige tu idioma'));
 add('safety_answers_are_explicit',js.includes("currentPain:'',painAreas:[]")&&js.includes("redFlags:''")&&js.includes("professionalRestrictions:''")&&js.includes('validateOnboardingStep'));
 add('review_notify_nonblocking_pain',js.includes("status:trainingRestricted?'RESTRICTED':ownerReviewRequired?'REVIEW_NOTIFY':'CLEAR'")&&generate.includes('conservative shaping and owner review notification'));

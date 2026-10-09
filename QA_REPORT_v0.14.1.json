@@ -2,8 +2,8 @@
   "version": "0.14.1",
   "generatedAt": "2026-10-08T01:40:15.737Z",
   "status": "PASS",
-  "passed": 180,
-  "total": 180,
+  "passed": 182,
+  "total": 182,
   "checks": [
     {
       "name": "package_version_0141",
@@ -87,6 +87,16 @@
     },
     {
       "name": "first_launch_language_onboarding",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "language_listener_collections_safe",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "training_location_mode_coherence",
       "pass": true,
       "detail": ""
     },
