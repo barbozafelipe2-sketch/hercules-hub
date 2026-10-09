@@ -82,7 +82,7 @@ function applyStaticTranslations(){
 }
 
 function setLanguage(newLang){lang=newLang;localStorage.setItem(KEYS.lang,lang);onboardingDraft.language=lang;if(profile){profile.language=lang;if(plan){plan.summary.language=lang;plan.summary.goal=goalLabel(profile.primaryGoal);const tp=chooseTraining(profile);plan.training.splitReason=tp.splitReason;plan.training.progression=localPlan(profile).training.progression;saveJSON(KEYS.plan,plan)}saveJSON(KEYS.profile,profile)}applyStaticTranslations()}
-$('[data-lang]').forEach(b=>b.onclick=async()=>{const hadSystem=!!(profile&&plan);setLanguage(b.dataset.lang);await ensureDeviceSession();await refreshSystemStatus();if(hadSystem){await syncCloudNow();showApp();return}await loadCloudState();if(profile&&plan)showApp();else showOnboarding()});
+$$('[data-lang]').forEach(b=>b.onclick=async()=>{const hadSystem=!!(profile&&plan);setLanguage(b.dataset.lang);await ensureDeviceSession();await refreshSystemStatus();if(hadSystem){await syncCloudNow();showApp();return}await loadCloudState();if(profile&&plan)showApp();else showOnboarding()});
 
 function stepDefs(){return [
  {title:L('Sua realidade','Your reality','Tu realidad'),copy:L('Só coletamos o que muda o sistema. Campos ausentes continuam desconhecidos — não viram suposições.','We only collect what changes the system. Missing fields stay unknown — they do not become assumptions.','Solo recopilamos lo que cambia el sistema. Los campos ausentes siguen desconocidos — no se convierten en suposiciones.'),render:()=>`
