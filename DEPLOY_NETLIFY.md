@@ -41,3 +41,6 @@ Run `npm run check` (it prepares the verified asset bundle automatically). After
 
 ## 5. Rollback
 Revert/redeploy the parent commit of v0.14.1. The Supabase table migration is additive; do not delete user state during an application rollback. A user can also restore from their latest Hercules PDF if local browser data is lost.
+
+## Beta EXTRA / snapshot update
+After deployment test all three onboarding languages, the optional sport selection and specific days, EXTRA for training / sports / rest days, clickable guides and completion, PDF export at Day 0 before Final Mark, and restore that PDF on a clean device. Do not confuse snapshot export with the unchanged 28-day next-cycle requirement.

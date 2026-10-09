@@ -53,3 +53,11 @@ Identity is the device id. Bootstrap creates a signed HttpOnly session with `Max
 Request rate limits live in memory on each function instance (`netlify/functions/request-lib.mts`). They bound one isolate, not the whole site. The durable cap is the persisted AI quota, not the in-memory limiter.
 
 Optional Supabase rows are written with the service role under a server-side `owner_key`. The committed policies compare `owner_key` to `auth.uid()`, which this beta never sets. Do not query `hercules_user_state` with the anon key; the service role bypasses RLS, and those policies do not match the device key.
+
+## Beta freeze — EXTRA + portable snapshots (2026-10-09)
+- Settings → Export Monthly Report exports a restorable PDF at **any point** after a system exists. An in-progress report is a snapshot, not an end-of-month evaluation; the 28-day + final-week + Final Mark gate still controls the **next cycle only**.
+- The visible MIND tab is renamed **EXTRA** (internal `MIND` key retained for compatibility). EXTRA contains clickable mind, gentle stretching, hydration and (only if explicitly reported) other-activity guides across seven days. Suggestions on strength-rest days are optional; safety restrictions continue to govern physical activity.
+- Onboarding asks for at most one additional sport/activity and its explicit usual days; frequency is derived from the selected days. Older profiles default to no activity. The activity is retained in device/server state and restorable exports through optional schema fields.
+- This family/friends beta checkpoint is **FROZEN for further review**: approved brand, existing data schema, training, nutrition, Coach and EVOLVE safety authority remain unchanged. No commercial-auth or Stripe scope is introduced. New modifications require a new explicit instruction.
+
+Sources for optional general well-being tips: American Heart Association stretching guidance; American College of Sports Medicine exercise hydration position stand. This does not replace individualized medical care.

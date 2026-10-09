@@ -1,5 +1,5 @@
-const CACHE='hercules-hub-v0.14.1';
-const CORE=['/','/index.html','/app.css?v=0.14.1','/app.js?v=0.14.1','/manifest.webmanifest','/assets/asset-manifest.json','/assets/hercules-hub-logo.png','/assets/hercules-hub-logo-light.png','/assets/hercules-hub-mark-light.png'];
+const CACHE='hercules-hub-v0.14.1-extra1';
+const CORE=['/','/index.html','/app.css?v=0.14.1','/app.js?v=0.14.1-extra1','/extra.js?v=0.14.1-extra1','/manifest.webmanifest','/assets/asset-manifest.json','/assets/hercules-hub-logo.png','/assets/hercules-hub-logo-light.png','/assets/hercules-hub-mark-light.png'];
 async function precacheRelease(){const cache=await caches.open(CACHE);await cache.addAll(CORE);try{const res=await fetch('/assets/asset-manifest.json',{cache:'no-store'});if(!res.ok)return;const manifest=await res.json(),paths=[...new Set((manifest.assets||[]).map(x=>String(x?.path||'')).filter(x=>x.startsWith('/assets/')))];await Promise.allSettled(paths.map(p=>cache.add(p)))}catch{}}
 self.addEventListener('install',event=>{event.waitUntil(precacheRelease().then(()=>self.skipWaiting()))});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});

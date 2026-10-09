@@ -9,6 +9,7 @@ export const ProfileSchema=z.object({
   primaryGoal:z.enum(["build_muscle","general_fitness","fat_loss","consistency","strength"]),
   level:z.enum(["beginner","intermediate","advanced"]),
   days:z.array(z.enum(["Mon","Tue","Wed","Thu","Fri","Sat","Sun"])).min(2).max(7),
+  activityType:z.enum(["none","swimming","soccer","running","cycling","walking","yoga","dancing","other"]).default("none"),activityOther:z.string().max(80).default(""),activityDays:z.array(z.enum(["Mon","Tue","Wed","Thu","Fri","Sat","Sun"])).max(7).default([]),
   location:z.enum(["gym","home","both"]),minutes:z.enum(["20","30","45","60"]),preferredTime:z.string().max(120).optional().default(""),
   units:z.enum(["metric","imperial"]).default("imperial"),height:z.string().max(12).optional().default(""),weight:z.string().max(12).optional().default(""),targetWeight:z.string().max(12).optional().default(""),
   meals:z.enum(["2","3","4","5"]),cooking:z.enum(["minimal","basic","comfortable"]),foodPreferences:z.string().max(1200).optional().default(""),dislikes:z.string().max(1200).optional().default(""),allergies:z.string().max(1200).optional().default(""),
