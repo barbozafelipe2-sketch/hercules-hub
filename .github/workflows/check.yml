@@ -20,4 +20,5 @@ jobs:
       - run: npm run check:syntax
       - run: npm run check
       - run: npm run check:trace-lab
+      - run: npm run check:historical-lab
       - run: node scripts/assert-reports-match.mjs /tmp/hercules-reports

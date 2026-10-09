@@ -3,3 +3,6 @@
 node_modules/
 .netlify/
 .DS_Store
+
+# Generated only by the immutable historical fixture verification step.
+/lab/trace-stress/fixtures/historical-28500.csv.gz
