@@ -1,0 +1,81 @@
+{
+  "schema": "hercules-historical-engine-regression-v1",
+  "authority": "EXPERIMENTAL_QA_ONLY",
+  "sourceFile": "Hércules Drive > Hércules hub > Lab > lab-cases-unico.csv",
+  "sourceSha256": "b1b5bb021161483db4ad5204093cd7e8637363c71099523a04ce2fef0096bdc1",
+  "historicalRows": 28500,
+  "compositeKeys": 28500,
+  "distinctRawIds": 27500,
+  "repeatedRawIds": 1000,
+  "sourceFiles": {
+    "lab-casos-4000.csv": 4000,
+    "lab-ronda-1-2000.csv": 2000,
+    "lab-ronda-2-2000.csv": 2000,
+    "lab-ronda-3-2000.csv": 2000,
+    "lab-ronda-4-2000.csv": 2000,
+    "lab-ronda-5-2000.csv": 2000,
+    "lab-esportes-100.csv": 4200,
+    "lab-jiu-capoeira-sambo.csv": 300,
+    "lab-var-r1-1000.csv": 1000,
+    "lab-var-r2-1000.csv": 1000,
+    "lab-var-r3-1000.csv": 1000,
+    "lab-var-r4-1000.csv": 1000,
+    "lab-var-r5-1000.csv": 1000,
+    "lab-var-r6-1000.csv": 1000,
+    "lab-var-r7-1000.csv": 1000,
+    "lab-var-r8-1000.csv": 1000,
+    "lab-var-r9-1000.csv": 1000,
+    "lab-var-r10-1000.csv": 1000
+  },
+  "engineFunctions": [
+    "safetyRouting",
+    "buildSignals",
+    "deterministicDelta",
+    "validateDelta",
+    "clampDelta",
+    "applyDelta",
+    "week4Complete",
+    "milestoneTimeValid",
+    "makeTrace"
+  ],
+  "partialOnboardingCompatibleCoreRows": 53,
+  "missingFields": {
+    "language": 14000,
+    "sport": 1225,
+    "limit": 2401,
+    "minutes": 4500,
+    "age": 4500,
+    "venue": 10000
+  },
+  "incompatibleNativeOnboarding": {
+    "minutes": 24106,
+    "goal": 21781,
+    "venue": 23934,
+    "missing_language": 14000,
+    "days": 1373
+  },
+  "notInOnboarding": {
+    "sport": 27275,
+    "age": 24000,
+    "country": 28500
+  },
+  "unknownSafetyInput": {
+    "limitation_unknown": 2401
+  },
+  "safetyRoutes": {
+    "REVIEW_NOTIFY": 23649,
+    "CLEAR": 4851
+  },
+  "actions": {
+    "consolidate": 28500
+  },
+  "digestSamples": 57,
+  "hypotheticalAdaptationEvaluations": 28500,
+  "faults": [],
+  "faultCount": 0,
+  "knownLimits": "Named source.limit interpreted as explicit ordinary-limitation challenge; not medical clearance.",
+  "missingHistory": "No TRACK inputs in source => UNKNOWN, never assert a month is eligible.",
+  "sourceEvaluationSeparation": "Never read source.expected labels to drive engine, no fake adherence, no fabricated review decisions.",
+  "validationBoundary": "Real engine functions are exercised; not full app, real client, clinical or nutritional correctness validation.",
+  "counterfactualRestrictedSafetyChecks": 57000
+}

@@ -15,6 +15,7 @@
     "check": "npm run prepare:assets && npm run check:core",
     "build": "npm run check",
     "check:syntax": "node --check public/app.js && node --check public/sw.js && node --experimental-strip-types --check netlify/functions/ai-lib.mts && node --experimental-strip-types --check netlify/functions/catalog-lib.mts && node --experimental-strip-types --check netlify/functions/cycle-lib.mts && node --experimental-strip-types --check netlify/functions/next-cycle.mts && node --experimental-strip-types --check netlify/functions/restore.mts && node --experimental-strip-types --check netlify/functions/schemas.mts",
-    "check:trace-lab": "node --experimental-strip-types lab/trace-stress/trace-stress.mjs"
+    "check:trace-lab": "node --experimental-strip-types lab/trace-stress/trace-stress.mjs && node --experimental-strip-types lab/trace-stress/review-flag-regression.mjs",
+    "check:historical-lab": "node --experimental-strip-types lab/trace-stress/historical-28500.mjs"
   }
 }
