@@ -26,19 +26,19 @@
       "detail": ""
     },
     {
-      "name": "asset_manifest_release_0140",
+      "name": "asset_manifest_release_0141",
       "pass": true,
       "detail": ""
     },
     {
       "name": "asset_chunk_transport_present",
       "pass": true,
-      "detail": "13"
+      "detail": "15"
     },
     {
       "name": "asset_chunk_transport_integrity",
       "pass": true,
-      "detail": "84548c65c9d996ca50b80c9d4752a63832cf69f58c56ddb0b0579f4bd1d9682b"
+      "detail": "25fecf17e97c4dd1a62044094eae0aaee684cd6a221bcc9bcacdf3986bbfd247"
     },
     {
       "name": "asset_prepare_reconstructs_chunks",
@@ -878,12 +878,12 @@
     {
       "name": "catalog_asset_counts",
       "pass": true,
-      "detail": "{\"total\":89,\"exercise\":27,\"home\":13,\"food\":46,\"brand\":3}"
+      "detail": "{\"exercise\":34,\"home\":13,\"food\":56,\"brand\":3,\"total\":106}"
     },
     {
       "name": "asset_payload_under_10mb",
       "pass": true,
-      "detail": "1727530"
+      "detail": "1957708"
     },
     {
       "name": "all_literal_asset_refs_exist",

@@ -43,7 +43,7 @@ add('package_version_0141',pkg.version==='0.14.1',pkg.version);
 add('app_version_0141',js.includes("const APP_VERSION='0.14.1'"));
 add('index_asset_versions_0141',html.includes('app.css?v=0.14.1')&&html.includes('app.js?v=0.14.1'));
 add('service_worker_cache_0141',sw.includes("hercules-hub-v0.14.1")&&sw.includes('/app.js?v=0.14.1')&&sw.includes('/app.css?v=0.14.1'));
-add('asset_manifest_release_0140',assetManifest.release==='0.14.0');
+add('asset_manifest_release_0141',assetManifest.release==='v0.14.1');
 const assetChunkDir=path.join(root,'asset-bundle-v0.14.0');
 const assetChunkFiles=fs.existsSync(assetChunkDir)?fs.readdirSync(assetChunkDir).filter(x=>/^part\d+\.b64$/.test(x)).sort():[];
 add('asset_chunk_transport_present',assetChunkFiles.length>=2,String(assetChunkFiles.length));
@@ -177,7 +177,7 @@ add('catalog_allergy_conservative',includes(catalog,'if(plan?.allergyReview)retu
 add('catalog_carries_forward',includes(catalog,'...existing.meals,...generatedMeals','...existing.exercises,...generatedExercises','carried-forward'));
 add('catalog_trace_provenance',includes(next,'generatedMealCount','generatedExerciseCount','bundled-assets+adaptive-catalog'));
 add('trace_counts_current_cycle_only',next.includes('generatedMeals:catalogMeta.generatedMealCount||0')&&next.includes('generatedExercises:catalogMeta.generatedExerciseCount||0'));
-add('drive_not_runtime_dependency',assetManifest.liveGoogleDriveDependency===false&&assetManifest.runtimeSource==='bundled-release-assets');
+add('drive_not_runtime_dependency',assetManifest.liveGoogleDriveDependency===false&&assetManifest.runtimeSource==='versioned-asset-bundle');
 add('no_drive_runtime_url',!/(drive\.google\.com|docs\.google\.com)/i.test(html+js+ai+catalog+generate+next));
 
 // Trace Lab.
