@@ -143,6 +143,7 @@ export function deterministicDelta(signals:CycleSignals,currentPlan:any):NextCyc
 
   let trainingAction:NextCycleDelta["trainingAction"]="maintain";
   if(currentPlan?.trainingHold||signals.symptomFlag)trainingAction="hold";
+  else if(currentPlan?.reviewRouting?.ownerReviewRequired)trainingAction="consolidate";
   else if(signals.painFlag)trainingAction="consolidate";
   else if(signals.trainingCompletion<60||(signals.avgTraining!==null&&signals.avgTraining<2.6)||(signals.avgEnergy!==null&&signals.avgEnergy<2.6)||(signals.avgSleep!==null&&signals.avgSleep<2.6))trainingAction="consolidate";
   else if(signals.trainingCompletion>=80&&signals.avgTraining!==null&&signals.avgTraining>=3.4&&signals.avgEnergy!==null&&signals.avgEnergy>=3&&signals.avgSleep!==null&&signals.avgSleep>=3)trainingAction="progress";
@@ -181,6 +182,7 @@ export function clampDelta(input:any,fallback:NextCycleDelta):NextCycleDelta{
 export function validateDelta(delta:NextCycleDelta,signals:CycleSignals,currentPlan:any){
   const issues:string[]=[];
   if((currentPlan?.trainingHold||signals.symptomFlag)&&delta.trainingAction!=="hold")issues.push("Active safety HOLD/symptom cannot produce a non-HOLD training action.");
+  if(currentPlan?.reviewRouting?.ownerReviewRequired&&delta.trainingAction==="progress")issues.push("Pending owner review cannot authorize material training progression.");
   if(delta.trainingAction==="progress"){
     if(signals.trainingCompletion<80)issues.push("Progress requires >=80% training completion.");
     if(signals.avgTraining===null||signals.avgTraining<3.4)issues.push("Progress requires explicit training feedback >=3.4/5.");
