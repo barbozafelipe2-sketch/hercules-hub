@@ -1,9 +1,9 @@
 {
   "version": "0.14.1",
-  "generatedAt": "2026-10-08T01:40:15.737Z",
+  "generatedAt": "2026-10-13T22:18:11.375Z",
   "status": "PASS",
-  "passed": 182,
-  "total": 182,
+  "passed": 183,
+  "total": 183,
   "checks": [
     {
       "name": "package_version_0141",
@@ -357,6 +357,11 @@
     },
     {
       "name": "server_syntax_auth.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "server_syntax_beta-feedback.mts",
       "pass": true,
       "detail": ""
     },
