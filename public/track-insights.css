@@ -1,0 +1,20 @@
+/* Stage 4/10 • Read-only TRACK insights, using Hercules theme tokens. */
+.trackInsightPanel{margin:18px 0 12px;display:grid;gap:12px;min-width:0}
+.trackInsightHeading h2,.trackInsightHeading h3{margin:5px 0 0;font-size:1.28rem;line-height:1.22}
+.trackInsightHeading p,.trackInsightAdvice p{margin:8px 0 0;color:var(--muted);font-size:.91rem;line-height:1.55}
+.trackInsightAdvice{border:1px solid var(--line);background:var(--surface);border-radius:16px;padding:16px;min-width:0}
+.trackInsightAdvice>b{font-size:1rem;color:var(--ink)}
+.trackInsightAdvice button{margin-top:12px;max-width:100%;white-space:normal}
+.trackInsightWarn{border-left:3px solid var(--gold)}
+.trackInsightDanger{border-left:3px solid var(--danger)}
+.trackInsightSamples{color:var(--muted);font-size:.85rem;display:flex;gap:5px;flex-wrap:wrap}
+.trackInsightSamples b{color:var(--ink)}
+.trackInsightGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.trackInsightMetric{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:12px;display:grid;gap:4px;min-width:0}
+.trackInsightMetric>b{font-size:.86rem}
+.trackInsightMetric strong{font-size:1.4rem;line-height:1.1;letter-spacing:-.02em;color:var(--ink)}
+.trackInsightMetric strong small{font-size:.65rem;font-weight:500;color:var(--muted)}
+.trackInsightMetric>span,.trackInsightMetric>small{font-size:.77rem;line-height:1.4;color:var(--muted)}
+.trackInsightEmpty{background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:13px;color:var(--muted);font-size:.88rem;line-height:1.5}
+.trackInsightFoot{font-size:.76rem;color:var(--muted);line-height:1.5}
+@media(max-width:360px){.trackInsightGrid{grid-template-columns:1fr}.trackInsightMetric strong{font-size:1.24rem}}

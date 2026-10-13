@@ -1,0 +1,22 @@
+.betaCenter{padding:10px 0 24px;display:grid;gap:14px}
+.betaCenter p{color:var(--muted);line-height:1.55;margin:0}
+.betaCenter h3{font-size:1.03rem;line-height:1.3;margin:0}
+.betaCenter .betaGroup{display:grid;gap:7px}
+.betaCenter label{font-size:.92rem;font-weight:650}
+.betaCenter select,.betaCenter textarea{width:100%;max-width:100%;min-height:44px;display:block;box-sizing:border-box;border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--surface2);color:var(--ink);font:inherit}
+.betaCenter textarea{min-height:142px;resize:vertical}
+.betaCenter .betaConsent{display:flex;align-items:flex-start;gap:10px;font-size:.88rem;line-height:1.5;color:var(--muted)}
+.betaCenter .betaConsent input{margin-top:3px;flex:none}
+.betaCenter .betaActions{display:flex;gap:10px;flex-wrap:wrap}
+.betaCenter .betaActions button{flex:1 1 140px}
+.betaCenter .betaStatus{border:1px solid var(--line);border-radius:12px;padding:12px;overflow-wrap:anywhere;line-height:1.5}
+.betaCenter .betaStatus[hidden]{display:none}
+.betaCenter .betaNote{font-size:.81rem}
+/* Stage 8: readable, usable feedback on small Safari/iPhone viewports. */
+.betaCenter .betaGroup button[hidden]{display:none}
+.betaCenter textarea:focus-visible,.betaCenter select:focus-visible,.betaCenter button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.betaCenter .betaActions button{min-height:44px}
+.betaCenter button:disabled{opacity:.65;cursor:wait}
+@media(max-width:390px){.betaCenter{gap:12px;padding-bottom:calc(20px + env(safe-area-inset-bottom))}.betaCenter .betaActions{flex-direction:column}.betaCenter .betaActions button{flex-basis:auto;width:100%}.betaCenter textarea{min-height:126px}}
+
+@media(prefers-reduced-motion:reduce){.betaCenter *, .betaCenter *::before, .betaCenter *::after{scroll-behavior:auto}}

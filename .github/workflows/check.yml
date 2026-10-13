@@ -21,5 +21,14 @@ jobs:
       - run: npm run check
       - run: npm run check:trace-lab
       - run: npm run check:extra
+      - run: npm run check:my-day
+      - run: npm run check:grocery
+      - run: npm run check:track-insights
+      - run: npm run check:beta-center
+      - run: npm run check:beta-cycle-sim
+      - run: npm run check:my-day-boundary
+      - run: npm run check:extra-week-bridge
+      - run: npm run check:backup-health
+      - run: npm run check:backup-preview
       - run: npm run check:historical-lab
       - run: node scripts/assert-reports-match.mjs /tmp/hercules-reports

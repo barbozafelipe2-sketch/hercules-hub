@@ -1,0 +1,32 @@
+/* Beta stage 2: MEU DIA. Tokens inherit Hercules Light/Dark palette. */
+.myDay{padding:0 0 14px;display:grid;gap:13px}
+.myDayHead{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-top:4px}
+.myDayHead h2{font-family:inherit;font-size:clamp(1.5rem,6vw,2rem);line-height:1.2;margin:5px 0 2px;letter-spacing:-.035em}
+.myDayHead p,.myDayFoot{font-size:.82rem;color:var(--muted);margin:3px 0 0}
+.myDayDate{color:var(--gold);font-weight:650;margin-left:9px}
+.myDayDays{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}
+.myDayDay{border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:12px;min-height:63px;cursor:pointer;display:flex;align-items:center;flex-direction:column;justify-content:center;gap:5px;position:relative;padding:6px 1px;font:inherit}
+.myDayDay b{font-size:clamp(.65rem,2.15vw,.75rem);font-weight:650;white-space:nowrap}
+.myDayDay small{font-size:.75rem;color:var(--muted)}
+.myDayDay.isSelected{border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold);background:var(--surface)}
+.myDayDay.isToday:after{content:'';position:absolute;top:4px;right:4px;width:4px;height:4px;background:var(--gold);border-radius:100%}
+.myDayDay i,.myDayDay em{width:5px;height:5px;border-radius:100%;background:var(--gold);display:block}
+.myDayDay em{background:var(--muted)}
+.myDayItems{display:grid;gap:9px}
+.myDayItem{width:100%;display:flex;align-items:center;text-align:left;gap:10px;min-width:0;min-height:70px;padding:11px 13px;border:1px solid var(--line);background:var(--surface);border-radius:17px;color:var(--ink);font:inherit;cursor:pointer;transition:border-color .2s,transform .2s}
+.myDayItem:active{transform:scale(.99)}.myDayItem:focus-visible,.myDayDay:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.myDayIcon{width:35px;height:35px;min-width:35px;display:grid;place-items:center;border-radius:10px;color:var(--gold);border:1px solid var(--line2);background:var(--surface2);font-weight:750;font-size:.85rem}
+.myDayBody{min-width:0;flex:1;display:grid;gap:4px}.myDayBody strong{font-size:.93rem;line-height:1.2}.myDayBody small{font-size:.76rem;line-height:1.4;color:var(--muted)}
+.myDayTag{white-space:nowrap;font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.025em;color:var(--muted)}
+.myDayDone{color:var(--ok)}.myDayChevron{font-size:1.25rem;color:var(--gold)}
+.myDayRest,.myDayRestricted{display:grid;gap:4px;padding:13px;border:1px solid var(--line);border-radius:16px;background:var(--surface2)}
+.myDayRest b,.myDayRestricted b{font-size:.9rem}.myDayRest small,.myDayRestricted p{margin:0;font-size:.78rem;line-height:1.55;color:var(--muted)}
+.myDayRestricted{border-color:var(--danger)}.myDayRestricted b{color:var(--danger)}
+.myDayNote{margin:0!important}.myDayFoot{line-height:1.45}
+@media(max-width:355px){.myDayDays{gap:3px}.myDayDay{min-height:58px}.myDayItem{gap:7px;padding:10px}.myDayTag{font-size:.58rem}}
+
+/* 9/10: consistent touch/focus behavior across narrow light and dark layouts. */
+@media(prefers-reduced-motion:reduce){.myDayItem{transition:none}.myDayItem:active{transform:none}}
+
+/* Keep all seven weekdays touch-friendly on very narrow phones. */
+@media(max-width:359px){.myDayDays{display:flex;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;padding:2px 1px 7px;scrollbar-width:thin}.myDayDay{flex:0 0 44px;min-width:44px;min-height:64px;scroll-snap-align:start}}

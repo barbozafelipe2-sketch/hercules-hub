@@ -1,0 +1,6 @@
+/* Stage 5: fit status details to narrow phone screens in both approved themes. */
+.backupStatus{align-items:flex-start;gap:12px}
+.backupStatus>div{min-width:0;flex:1}
+.backupStatus .pill{font-size:.66rem;letter-spacing:.02em;white-space:normal;text-align:center;max-width:35%}
+.backupStatus small{overflow-wrap:anywhere}
+@media(max-width:380px){.backupStatus{flex-direction:column}.backupStatus .pill{max-width:100%}}

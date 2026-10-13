@@ -1,0 +1,34 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+const src=fs.readFileSync(new URL('../public/my-day.js',import.meta.url),'utf8');
+const ctx={Date,console,profile:null,plan:null,state:null,MY_DAY_CODES:undefined};
+vm.createContext(ctx);vm.runInContext(src,ctx);
+const profile={activityType:'swimming',activityDays:['Sun']};
+const plan={summary:{selectedDays:['Mon','Fri'],minutes:45,meals:3},training:{pattern:['fullA','fullB']},nutrition:{reviewRequired:false},trainingHold:false};
+const start='2026-10-02T12:00:00.000Z',view='2026-10-09T12:00:00.000Z';
+const state={startedAt:start,cycleNumber:1,completedSessions:{'w1:fullA':true,'w2:fullB':true},habits:{'extra:1:w1:Mon:mind':true,'extra:1:w2:Sun:sport':true},checkins:[{dayKey:'2026-10-05'}]};
+const m=()=>ctx.myDayModel(profile,plan,state,new Date(view),2),day=(d)=>m().days.find(x=>x.code===d);
+let n=0;const check=(desc,fn)=>{fn();n++;console.log('PASS '+desc)};
+check('reproduced Mon Oct 5 completion in w1 remains visible in w2 calendar',()=>{assert.equal(day('Mon').week,1);assert.equal(day('Mon').completed,true)});
+check('Fri Oct 9 belongs to w2 and completion remains visible',()=>{assert.equal(day('Fri').week,2);assert.equal(day('Fri').completed,true)});
+check('today aligns to TRAIN before cycle start-hour anniversary',()=>{
+ const earlier=ctx.myDayModel(profile,plan,state,new Date('2026-10-09T09:00:00.000Z'),1);
+ const fri=earlier.days.find(x=>x.code==='Fri');
+ assert.equal(fri.week,1);
+ const mon=earlier.days.find(x=>x.code==='Mon');assert.equal(mon.week,1);
+});
+check('today aligns to TRAIN after anniversary',()=>{
+ const later=ctx.myDayModel(profile,plan,state,new Date('2026-10-09T13:00:00.000Z'),2);
+ assert.equal(later.days.find(x=>x.code==='Fri').week,2);
+});
+check('Mon extra mind completion matches real w1',()=>assert.equal(day('Mon').mindDone,true));
+check('Sun extra sport completion belongs w2 and reported activity only',()=>{assert.equal(day('Sun').week,2);assert.equal(day('Sun').activity,true);assert.equal(day('Sun').sportDone,true)});
+check('Mon checkin uses absolute dateKey and not displayed week',()=>assert.equal(day('Mon').recorded,true));
+check('precycle dates never display strength, activity or habit completions',()=>{const s={...state,startedAt:'2026-10-09T12:00:00.000Z'};const x=ctx.myDayModel(profile,plan,s,new Date(view),1).days[0];assert.equal(x.beforeStart,true);assert.equal(x.strength,false);assert.equal(x.completed,false);assert.equal(x.mindDone,false);assert.equal(x.week,null)});
+check('civil-date UTC arithmetic immune to DST local hour changes',()=>{const s={...state,startedAt:'2026-10-02T23:30:00.000Z'};const x=ctx.myDayModel(profile,plan,s,new Date('2026-10-09T23:59:00.000Z'),2).days.find(d=>d.code==='Mon');assert.equal(x.week,1)});
+check('month crossing into another year retains anchored week',()=>{const s={...state,startedAt:'2026-12-29T12:00:00.000Z'};const x=ctx.myDayModel(profile,plan,s,new Date('2027-01-04T12:00:00.000Z'),1).days.find(d=>d.code==='Mon');assert.equal(x.week,1)});
+check('never infer completed current week from prior week marker',()=>{const s={...state,completedSessions:{'w1:fullB':true}};const x=ctx.myDayModel(profile,plan,s,new Date(view),2).days.find(d=>d.code==='Fri');assert.equal(x.completed,false)});
+check('calendar is pure and never changes canonical completion state',()=>{const before=JSON.stringify(state);m();assert.equal(JSON.stringify(state),before)});
+check('HOME reentry helper resets manual day selection',()=>{vm.runInContext("myDaySelectedDay='Sun';myDayFocusToday()",ctx);assert.equal(vm.runInContext('myDaySelectedDay',ctx),'')});
+console.log(`my-day-boundary ${n}/${n} PASS`);

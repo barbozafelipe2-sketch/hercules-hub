@@ -1,0 +1,23 @@
+/* Stage 3/10 • NOURISH weekly groceries. Inherits official Hercules theme tokens. */
+.groceryPanel{margin:18px 0 28px;display:grid;gap:12px;overflow:visible}
+.groceryHeading{display:flex;align-items:center;justify-content:space-between;gap:9px}
+.groceryHeading h2{margin:5px 0 0;font-size:clamp(1.22rem,5vw,1.5rem);letter-spacing:-.025em;color:var(--ink)}
+.groceryTools{display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.groceryTools label{display:flex;align-items:center;gap:8px;font-weight:600;font-size:.84rem;color:var(--ink)}
+.groceryTools select{border:1px solid var(--line2);background:var(--surface2);color:var(--ink);font:inherit;padding:7px 10px;border-radius:10px;min-width:55px;min-height:44px}
+.groceryTools small{font-size:.75rem;color:var(--muted)}
+.groceryCaution{line-height:1.55}
+.groceryGroup{border:1px solid var(--line);border-radius:15px;background:var(--surface2);padding:10px 12px 4px}
+.groceryGroup h3{font-size:.81rem;text-transform:uppercase;letter-spacing:.035em;color:var(--gold);margin:4px 0 9px}
+.groceryLine{display:flex;align-items:center;gap:10px;min-height:57px;border-top:1px solid var(--line);padding:9px 1px;cursor:pointer}
+.groceryLine input{appearance:auto;width:19px;height:19px;min-width:19px;accent-color:var(--gold);cursor:pointer}
+.groceryText{min-width:0;flex:1;display:grid;gap:3px}
+.groceryText b{font-size:.86rem;line-height:1.25;overflow-wrap:anywhere;color:var(--ink)}
+.groceryText small{font-size:.69rem;color:var(--muted);line-height:1.4}
+.groceryOwned .groceryText b{text-decoration:line-through;text-decoration-color:var(--muted);opacity:.7}
+.groceryOwnedTag{font-size:.63rem;font-weight:750;white-space:nowrap;letter-spacing:.025em;color:var(--gold)}
+.groceryOwned .groceryOwnedTag{color:var(--ok)}
+.groceryFooter{display:grid;gap:7px}.groceryFooter button{width:100%}
+.groceryFooter small{font-size:.74rem;color:var(--muted);line-height:1.5}
+.groceryPanel button:focus-visible,.groceryPanel select:focus-visible,.groceryPanel input:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media(max-width:370px){.groceryGroup{padding:8px}.groceryLine{gap:8px}.groceryOwnedTag{font-size:.58rem}.groceryPanel{gap:10px}}

@@ -12,6 +12,11 @@
   <link rel="apple-touch-icon" href="assets/hercules-hub-logo.png">
   <title>Hercules Hub</title>
 <link rel="stylesheet" href="app.css?v=0.14.1">
+<link rel="stylesheet" href="my-day.css?v=0.14.1-beta9">
+<link rel="stylesheet" href="grocery.css?v=0.14.1-beta9">
+<link rel="stylesheet" href="track-insights.css?v=0.14.1-beta4">
+<link rel="stylesheet" href="backup-health.css?v=0.14.1-beta5">
+<link rel="stylesheet" href="beta-center.css?v=0.14.1-beta9">
 </head>
 <body data-theme="light">
 <div class="app">
@@ -67,11 +72,17 @@
   <div class="overlay" id="coachOverlay" aria-hidden="true"><div class="sheet"><div class="sheetHandle"></div><div class="sheetHead"><div><h2>Coach Hercules</h2><div class="kicker" id="coachKicker"></div></div><button class="iconBtn" data-close="coach">×</button></div><div class="coachLog" id="coachLog"></div><div class="coachInput"><textarea id="coachText"></textarea><button class="btn btnGold" id="coachSend">→</button></div><div class="notice" style="margin-top:9px" id="coachNotice"></div></div></div>
   <div class="overlay" id="exerciseOverlay" aria-hidden="true"><div class="sheet exerciseSheet"><div class="sheetHandle"></div><div class="sheetHead"><div><h2 id="exerciseSheetHead"></h2><div class="kicker" id="exerciseSheetKicker"></div></div><button class="iconBtn" data-close="exercise">×</button></div><div id="exerciseDetail"></div></div></div>
   <div class="overlay" id="postWorkoutOverlay" aria-hidden="true"><div class="sheet"><div class="sheetHandle"></div><div class="sheetHead"><div><h2 id="postWorkoutTitle"></h2><div class="kicker">TRAIN → RECOVER → MIND → TRACK</div></div><button class="iconBtn" data-close="postWorkout">×</button></div><div id="postWorkoutContent"></div></div></div>
+  <div class="overlay" id="betaOverlay" aria-hidden="true"><div class="sheet"><div class="sheetHandle"></div><div class="sheetHead"><h2 id="betaTitle">HERCULES • BETA</h2><button type="button" class="iconBtn" data-close="beta" aria-label="Close">×</button></div><div id="betaContent"></div></div></div>
   <input id="restoreFile" class="visuallyHiddenInput" type="file" accept=".pdf,.hercules,.json,application/pdf,application/json" aria-hidden="true" tabindex="-1">
   <form name="hercules-review" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" hidden aria-hidden="true"><input type="hidden" name="form-name" value="hercules-review"><input type="hidden" name="subject" value="Hercules review requested"><input name="bot-field" tabindex="-1" autocomplete="off"><input name="review_id"><input name="client"><input name="module"><input name="status"><input name="reason"><input name="created_at"></form>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </div>
-<script src="app.js?v=0.14.1-extra1" defer></script>
-<script src="extra.js?v=0.14.1-extra1" defer></script>
+<script src="my-day.js?v=0.14.1-beta9" defer></script>
+<script src="grocery.js?v=0.14.1-beta3" defer></script>
+<script src="track-insights.js?v=0.14.1-beta4" defer></script>
+<script src="backup-health.js?v=0.14.1-beta8" defer></script>
+<script src="beta-center.js?v=0.14.1-beta8" defer></script>
+<script src="app.js?v=0.14.1-beta9" defer></script>
+<script src="extra.js?v=0.14.1-beta9" defer></script>
 </body>
 </html>

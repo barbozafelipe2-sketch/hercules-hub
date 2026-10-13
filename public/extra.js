@@ -28,7 +28,7 @@ function extraDetail(kind,day) {
   return null;
 }
 function renderExtra() {
-  const day=extraSelectedDay,week=currentWeek(),cycle=state.cycleNumber||1,s=extraScheduleDay(day);
+  const day=extraSelectedDay,week=typeof myDayExtraTargetWeek!=='undefined'&&Number.isInteger(myDayExtraTargetWeek)&&myDayExtraTargetWeek>=1&&myDayExtraTargetWeek<=4?myDayExtraTargetWeek:currentWeek(),cycle=state.cycleNumber||1,s=extraScheduleDay(day);
   const post=!!state.postWorkout?.pending&&!state.postWorkout?.mindDone;
   const key=k=>`extra:${cycle}:w${week}:${day}:${k}`;
   const done=k=>!!state.habits?.[key(k)];
@@ -48,7 +48,7 @@ function renderExtra() {
     <div class="actionList" style="margin-top:12px">${cards.map(([kind,label,desc])=>`<div class="actionCard"><div class="actionIcon">${kind==='water'?'H₂O':kind==='stretch'?'↗':kind==='mind'?'✦':'●'}</div><div><b>${esc(label)} ${done(kind)?'✓':''}</b><small>${esc(desc)}</small></div><button class="btn btnGhost" type="button" data-extra-open="${kind}" aria-label="${esc(label)}">›</button></div>`).join('')}</div>
     ${detail?`<div class="card miniCard" id="extraDetail" style="margin-top:12px"><div class="kicker">EXTRA • ${dayLabel(day)}</div><h2>${esc(detail[0])}</h2><p>${esc(detail[1])}</p><div class="notice" style="margin-top:10px">${esc(detail[2])}</div><button id="extraMarkDone" class="btn ${done(extraOpened)?'btnGhost':'btnGold'}" style="width:100%;margin-top:12px">${done(extraOpened)?L('✓ Concluído — desfazer','✓ Done — undo','✓ Hecho — deshacer'):L('Marcar concluído','Mark complete','Marcar completado')}</button></div>`:`<div class="notice" style="margin-top:12px">${L('Toque em uma atividade para ver como fazer.','Tap an activity for guidance.','Toca una actividad para ver cómo hacerla.')}</div>`}
     <div class="fieldHint" style="margin-top:10px">${L('Referências gerais: AHA (alongamento) e ACSM (hidratação).','General references: AHA (stretching), ACSM (hydration).','Referencias generales: AHA (estiramiento) y ACSM (hidratación).')}</div>`;
-  $$('[data-extra-day]').forEach(b=>b.onclick=()=>{extraSelectedDay=b.dataset.extraDay;extraOpened='';renderExtra()});
+  $$('[data-extra-day]').forEach(b=>b.onclick=()=>{extraSelectedDay=b.dataset.extraDay;extraOpened='';if(typeof myDayExtraTargetWeek!=='undefined')myDayExtraTargetWeek=null;renderExtra()});
   $$('[data-extra-open]').forEach(b=>b.onclick=()=>{extraOpened=b.dataset.extraOpen;renderExtra()});
   const mark=$('#extraMarkDone');if(mark)mark.onclick=()=>{state.habits=state.habits||{};state.habits[key(extraOpened)]=!done(extraOpened);saveState()};
   const m=$('#mindDone');if(m)m.onclick=()=>{state.postWorkout.mindDone=true;saveState();navigate('TRACK')};
