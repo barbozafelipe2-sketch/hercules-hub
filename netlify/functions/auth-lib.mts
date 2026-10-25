@@ -65,3 +65,7 @@ export function sessionCookie(req: Request, token: string, maxAge=31536000) {
   const secure = new URL(req.url).protocol === "https:" ? "; Secure" : "";
   return `${COOKIE_NAME}=${token}; Path=/; HttpOnly; SameSite=Lax; Max-Age=${maxAge}${secure}`;
 }
+export function clearSessionCookie(req: Request) {
+  const secure = new URL(req.url).protocol === "https:" ? "; Secure" : "";
+  return `${COOKIE_NAME}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0${secure}`;
+}
