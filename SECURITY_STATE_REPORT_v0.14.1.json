@@ -1,7 +1,7 @@
 {
   "release": "0.14.1",
   "suite": "security-state",
-  "generatedAt": "2026-10-08T01:40:16.197Z",
+  "generatedAt": "2026-10-25T19:49:11.145Z",
   "passed": 36,
   "failed": 0,
   "total": 36,
@@ -37,7 +37,7 @@
       "detail": ""
     },
     {
-      "name": "auth accepts only bootstrap action",
+      "name": "auth supports legacy bootstrap and account login only",
       "pass": true,
       "detail": ""
     },

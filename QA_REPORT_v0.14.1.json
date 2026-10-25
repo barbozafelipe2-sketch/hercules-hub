@@ -1,9 +1,9 @@
 {
   "version": "0.14.1",
-  "generatedAt": "2026-10-13T22:18:11.375Z",
+  "generatedAt": "2026-10-25T19:49:10.528Z",
   "status": "PASS",
-  "passed": 183,
-  "total": 183,
+  "passed": 187,
+  "total": 187,
   "checks": [
     {
       "name": "package_version_0141",
@@ -346,6 +346,16 @@
       "detail": ""
     },
     {
+      "name": "server_syntax_account-state-lib.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "server_syntax_accounts-lib.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
       "name": "server_syntax_ai-lib.mts",
       "pass": true,
       "detail": ""
@@ -381,7 +391,17 @@
       "detail": ""
     },
     {
+      "name": "server_syntax_encryption-lib.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
       "name": "server_syntax_generate.mts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "server_syntax_netlify-database-lib.mts",
       "pass": true,
       "detail": ""
     },
@@ -846,7 +866,7 @@
       "detail": ""
     },
     {
-      "name": "no_logout_action_backend",
+      "name": "account_logout_revokes_and_clears_session",
       "pass": true,
       "detail": ""
     },
