@@ -3,12 +3,13 @@ import vm from 'node:vm';
 import fs from 'node:fs';
 
 const src=fs.readFileSync(new URL('../public/my-day.js',import.meta.url),'utf8');
+class FrozenDate extends Date{constructor(...args){super(...(args.length?args:[2026,9,9,12,0,0,0]))}static now(){return new FrozenDate().getTime()}}
 const checks=[];
 function check(label,run){try{run();checks.push([label,true]);console.log('PASS '+label)}catch(err){checks.push([label,false]);console.error('FAIL '+label+' — '+err.message)}}
 const profile={language:'pt-BR',activityType:'swimming',activityDays:['Sun'],location:'gym'};
 const plan={summary:{selectedDays:['Mon','Tue','Thu','Fri'],minutes:45,meals:3},training:{pattern:['upperA','lowerA','upperB','lowerB']},trainingHold:false,nutrition:{reviewRequired:false},reviewRouting:{ownerReviewRequired:false,trainingRestricted:false}};
 const state={cycleNumber:1,habits:{},completedSessions:{},checkins:[]};
-const ctx={Date,profile,plan,state,console,
+const ctx={Date:FrozenDate,profile,plan,state,console,
  L:(p,e,s)=>({ 'pt-BR':p,'en-US':e,es:s})[ctx.lang||'pt-BR'],lang:'pt-BR',
  esc:x=>String(x??'').replace(/[&<>"']/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s])),
  dayLabel:k=>({Mon:'Seg',Tue:'Ter',Wed:'Qua',Thu:'Qui',Fri:'Sex',Sat:'Sáb',Sun:'Dom'})[k],
