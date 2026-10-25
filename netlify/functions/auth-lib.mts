@@ -1,6 +1,7 @@
 import { createHash, createHmac, randomBytes, timingSafeEqual } from "node:crypto";
 import { getStore } from "@netlify/blobs";
 import { supabaseConfig } from "./supabase-lib.mts";
+import { readAccountSession } from "./accounts-lib.mts";
 
 export const COOKIE_NAME = "hh_session";
 const SESSION_SECRET_KEY = "hercules:session-secret:v2";
@@ -28,7 +29,7 @@ async function sessionSecret() {
   throw new Error("session_secret_unavailable");
 }
 async function sign(payload: string) { return createHmac("sha256", await sessionSecret()).update(payload).digest("base64url"); }
-export type SessionPayload={scope:"hercules",subject:string,provider:"device",exp:number};
+export type SessionPayload={scope:"hercules",subject:string,provider:"device"|"account",exp:number,accountId?:string,profileId?:string};
 export function normalizeDeviceId(raw:string){
   const id=String(raw||"").trim();
   if(!/^[A-Za-z0-9._:-]{16,128}$/.test(id))throw new Error("invalid_device_id");
@@ -47,6 +48,9 @@ export async function readSession(req: Request):Promise<SessionPayload|null> {
   const cookie = req.headers.get("cookie") || "";
   const raw = cookie.split(";").map(x=>x.trim()).find(x=>x.startsWith(COOKIE_NAME+"="))?.slice(COOKIE_NAME.length+1);
   if(!raw) return null;
+  if(!raw.includes(".")){
+    try{return await readAccountSession(raw) as SessionPayload|null}catch{return null}
+  }
   const [payload, sig] = raw.split("."); if(!payload || !sig) return null;
   const expected = await sign(payload);
   try {

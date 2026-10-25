@@ -16,7 +16,7 @@ const scope='audit-fixed-'+Date.now();const a=rateLimit(rateReq,scope,2,60_000),
 check('rate limiter blocks after limit',a.allowed&&b.allowed&&!c.allowed);
 
 check('no password UI or credential constants',!/<input[^>]+password/i.test(html)&&!/HERCULES_ADMIN_PASSWORD|DEFAULT_USERNAME|admin123|123456/i.test(js+auth+authlib));
-check('auth accepts only bootstrap action',auth.includes('action === "bootstrap"')&&!/action === "login"|action === "signup"/.test(auth));
+check('auth supports legacy bootstrap and account login only',auth.includes('action === "bootstrap"')&&auth.includes('action === "login"')&&auth.includes('loginAccount')&&!/action === "signup"|adminPassword/i.test(auth));
 check('session cookie HttpOnly',authlib.includes('HttpOnly; SameSite=Lax'));
 check('device ids are hashed before subject storage',authlib.includes('createHash("sha256")')&&authlib.includes('device:'));
 check('session signature uses HMAC SHA-256',authlib.includes('createHmac("sha256"'));

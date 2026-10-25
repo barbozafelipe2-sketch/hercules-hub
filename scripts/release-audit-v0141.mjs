@@ -85,7 +85,7 @@ add('returning_user_direct_home',includes(js,'if(profile&&plan)', 'showApp()'));
 add('device_bootstrap_auth',includes(authFn,'action === "bootstrap"','makeDeviceSession','deviceId'));
 add('device_cookie_httponly',includes(auth,'HttpOnly','SameSite=Lax','Secure'));
 add('device_id_hashed_server_side',includes(auth,'deviceSubject','createHash("sha256")'));
-add('no_password_admin_auth',!auth.includes('HERCULES_ADMIN_PASSWORD')&&!authFn.includes('password'));
+add('no_password_admin_auth',!auth.includes('HERCULES_ADMIN_PASSWORD')&&!authFn.includes('HERCULES_ADMIN_PASSWORD')&&!/admin.{0,24}password|password.{0,24}admin/i.test(auth+authFn));
 
 // Branding preserved.
 const logoHashes={
