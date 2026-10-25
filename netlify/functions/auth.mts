@@ -1,5 +1,5 @@
-import { makeDeviceSession, normalizeDeviceId, readSession, sessionCookie } from "./auth-lib.mts";
-import { loginAccount } from "./accounts-lib.mts";
+import { COOKIE_NAME, clearSessionCookie, makeDeviceSession, normalizeDeviceId, readSession, sessionCookie } from "./auth-lib.mts";
+import { loginAccount, revokeAccountSession } from "./accounts-lib.mts";
 import { readJsonBounded, rateLimit } from "./request-lib.mts";
 function json(data: unknown, status=200, headers: Record<string,string>={}) { return new Response(JSON.stringify(data), {status,headers:{"Content-Type":"application/json; charset=utf-8","Cache-Control":"no-store",...headers}}); }
 export default async (req: Request) => {
@@ -8,6 +8,14 @@ export default async (req: Request) => {
   const rl=rateLimit(req,"auth:bootstrap",20,15*60_000);if(!rl.allowed)return json({error:"Too many requests"},429,{"Retry-After":String(rl.retryAfter)});
   let body:any; try { body=await readJsonBounded(req,4_000); } catch(e:any) { return json({error:e?.message||"Invalid JSON"},Number(e?.status)||400); }
   const action=String(body?.action||"");
+  if(action === "logout") {
+    const raw=(req.headers.get("cookie")||"").split(";").map(x=>x.trim()).find(x=>x.startsWith(COOKIE_NAME+"="))?.slice(COOKIE_NAME.length+1)||"";
+    if(raw && !raw.includes(".")) {
+      try { await revokeAccountSession(raw); }
+      catch { return json({error:"Could not revoke account session"},503); }
+    }
+    return json({ok:true},200,{"Set-Cookie":clearSessionCookie(req)});
+  }
   if(action === "login") {
     const loginLimit=rateLimit(req,"auth:login",8,15*60_000);if(!loginLimit.allowed)return json({error:"Too many login attempts"},429,{"Retry-After":String(loginLimit.retryAfter)});
     try{
