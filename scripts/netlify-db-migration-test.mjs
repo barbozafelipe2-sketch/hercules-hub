@@ -12,13 +12,13 @@ try {
   await db.start();
   const first = await db.applyMigrations("netlify/database/migrations");
   const second = await db.applyMigrations("netlify/database/migrations");
-  assert.equal(first.length, 1, "the Phase 1 migration should be applied");
+  assert.equal(first.length, 2, "the Phase 1 migrations should be applied");
   assert.equal(second.length, 0, "reapplying migrations should be idempotent");
 
   const { rows } = await db.query(
     "SELECT count(*)::int AS count FROM information_schema.tables WHERE table_schema = 'public' AND table_name LIKE 'hh_%'",
   );
-  assert.equal(rows[0].count, 13, "all 13 Phase 1 tables should exist");
+  assert.equal(rows[0].count, 14, "all 14 Phase 1 tables should exist");
 
   accountId = randomUUID();
   const profileId = randomUUID();

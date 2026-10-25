@@ -5,6 +5,9 @@ import { safetyRouting } from "./safety-lib.mts";
 import { queueOwnerReview } from "./review-lib.mts";
 import { readJsonBounded, rateLimit } from "./request-lib.mts";
 import { stateDelete, stateLoad, stateSave, supabaseConfig } from "./supabase-lib.mts";
+import { loadAccountState, saveAccountState } from "./account-state-lib.mts";
+import { dataEncryptionConfigured } from "./encryption-lib.mts";
+import { netlifyDatabaseReady } from "./netlify-database-lib.mts";
 function json(data:unknown,status=200,headers:Record<string,string>={}){return new Response(JSON.stringify(data),{status,headers:{"Content-Type":"application/json; charset=utf-8","Cache-Control":"no-store",...headers}})}
 function canonicalizeState(state:any,startedAt:string){
   const out=structuredClone(state);out.startedAt=startedAt;out.checkins=dedupeDailyCheckins(out.checkins||[]).slice(0,90);out.completedSessions=dedupeSessionCompletions(out.completedSessions||{});const now=Date.now();
@@ -20,12 +23,21 @@ export default async(req:Request)=>{
   let raw:any;try{raw=await readJsonBounded(req,120_000)}catch(e:any){return json({error:e?.message||"Invalid JSON"},Number(e?.status)||400)}
   const action=String(raw?.action||"");
   if(action==="load"){
+    if(session.provider==="account"){
+      try{
+        if(!session.accountId||!session.profileId||!dataEncryptionConfigured()||!await netlifyDatabaseReady())return json({ok:false,persistent:false,error:"Account storage unavailable"},503);
+        const stored=await loadAccountState(session.profileId,session.accountId);
+        return json({ok:true,persistent:true,data:stored.data,revision:stored.revision});
+      }catch{return json({ok:false,persistent:false,error:"Account storage unavailable"},503)}
+    }
     try{const data=await stateLoad(session.subject);return json({ok:true,persistent:!!data,data})}catch{return json({ok:false,persistent:false,error:"State storage unavailable"},200)}
   }
   if(action==="reset"){
+    if(session.provider==="account")return json({ok:false,error:"Account reset is not available yet"},409);
     try{const c=supabaseConfig();if(c.stateReady){const result=await stateDelete(session.subject);return json({ok:true,...result})}return json({ok:true,deleted:false,reason:"supabase_not_configured"})}catch{return json({ok:false,deleted:false,error:"State reset unavailable"},503)}
   }
   if(action==="reset-progress"){
+    if(session.provider==="account")return json({ok:false,error:"Account progress reset is not available yet"},409);
     try{
       const c=supabaseConfig();if(!c.stateReady)return json({ok:true,persistent:false,state:null,reason:"supabase_not_configured"});
       const existing=await stateLoad(session.subject);if(!existing?.state)return json({ok:false,error:"Authoritative state not found"},409);
@@ -36,6 +48,7 @@ export default async(req:Request)=>{
     }catch{return json({ok:false,error:"Progress reset unavailable"},503)}
   }
   if(action==="activate-cycle"){
+    if(session.provider==="account")return json({ok:false,error:"Account cycle activation is not available yet"},409);
     try{
       const c=supabaseConfig();if(!c.stateReady)return json({ok:false,error:"Persistent state is required for server-approved cycle activation"},409);
       const existing=await stateLoad(session.subject);if(!existing?.state||!existing?.plan||!existing?.profile)return json({ok:false,error:"Current cycle state is not available"},409);
@@ -53,6 +66,33 @@ export default async(req:Request)=>{
   }
   if(action==="save"){
     const parsed=StateSyncSchema.safeParse(raw?.payload);if(!parsed.success)return json({error:"Invalid state payload"},400);
+    if(session.provider==="account"){
+      try{
+        if(!session.accountId||!session.profileId||!dataEncryptionConfigured()||!await netlifyDatabaseReady())return json({ok:false,saved:false,error:"Account storage unavailable"},503);
+        const previous=await loadAccountState(session.profileId,session.accountId),previousData:any=previous.data||null;
+        const payload:any=structuredClone(parsed.data),now=new Date().toISOString(),incomingCycle=Number(payload.cycleNumber||payload.state?.cycleNumber||1),priorCycle=Number(previousData?.cycleNumber||previousData?.state?.cycleNumber||1),hasExisting=!!previousData?.state;
+        if(!stateCycleWriteAllowed(hasExisting,priorCycle,incomingCycle))return json({error:"Cycle changes require approved next-month activation",saved:false},409);
+        if(hasExisting)payload.state.nextCycle=previousData.state.nextCycle??null;
+        payload.state=canonicalizeState(payload.state,hasExisting?String(previousData.state.startedAt||now):now);
+        payload.state.cycleNumber=incomingCycle;payload.cycleNumber=incomingCycle;
+        const effectiveProfile=payload.profile||previousData?.profile||null,effectivePlan=payload.plan||previousData?.plan||null;
+        if(effectiveProfile&&effectivePlan){
+          const route=safetyRouting(effectiveProfile),priorRouting=previousData?.plan?.reviewRouting||{},latest=payload.state.checkins?.[0]||{},trackPain=latest?.painFlag===true,trackRed=latest?.redFlagSymptom===true||latest?.symptomFlag===true;
+          const reasons=[...new Set([...(priorRouting.ownerReviewRequired?priorRouting.reasons||[]:[]),...route.reasons,...(trackPain?["TRACK_PAIN"]:[]),...(trackRed?["TRACK_RED_FLAG"]:[])])],restricted=!!previousData?.plan?.trainingHold||route.trainingRestricted||trackRed,ownerReviewRequired=reasons.length>0;
+          effectivePlan.trainingHold=restricted;effectivePlan.risk=restricted?"red":ownerReviewRequired?"yellow":effectivePlan.risk;
+          effectivePlan.reviewRouting={...(effectivePlan.reviewRouting||{}),status:restricted?"RESTRICTED":ownerReviewRequired?"REVIEW_NOTIFY":"CLEAR",trainingRestricted:restricted,ownerReviewRequired,reasons,painAreas:route.painAreas,professionalRestrictionScope:route.professionalRestrictionScope};
+          effectivePlan.training={...effectivePlan.training,reviewRequired:restricted||ownerReviewRequired,painAware:{areas:route.painAreas,reviewStatus:restricted?"RESTRICTED":ownerReviewRequired?"REVIEW_NOTIFY":"CLEAR"}};
+          payload.profile=effectiveProfile;payload.plan=effectivePlan;
+          if(ownerReviewRequired){try{const notice=await queueOwnerReview(req,session.subject,effectiveProfile,effectivePlan.reviewRouting);effectivePlan.reviewRouting.notification=notice}catch{}}
+        }
+        const result=await saveAccountState({profileId:session.profileId,accountId:session.accountId,expectedRevision:raw?.expectedRevision,data:payload});
+        if(!result.ok)return json({ok:false,saved:false,error:result.reason==="STALE_VERSION"?"State changed on another device; reload before saving":"Account profile unavailable"},result.reason==="STALE_VERSION"?409:403);
+        return json({ok:true,saved:true,persistent:true,revision:result.revision,profile:payload.profile??null,plan:payload.plan??null,authoritativeStartedAt:payload.state?.startedAt||null,cycleNumber:payload.cycleNumber||incomingCycle});
+      }catch(error:any){
+        if(String(error?.message)==="account_state_version_invalid")return json({ok:false,saved:false,error:"Expected state version is required"},400);
+        return json({ok:false,saved:false,error:"Account storage unavailable"},503);
+      }
+    }
     try{
       const payload:any=structuredClone(parsed.data),c=supabaseConfig();
       if(c.stateReady){
@@ -67,7 +107,10 @@ export default async(req:Request)=>{
       const result=await stateSave(session.subject,payload);return json({ok:true,...result,profile:payload.profile??null,plan:payload.plan??null,authoritativeStartedAt:payload.state?.startedAt||null,cycleNumber:payload.cycleNumber||payload.state?.cycleNumber||1});
     }catch{return json({ok:false,saved:false,error:"State storage unavailable"},200)}
   }
-  if(action==="status"){const c=supabaseConfig();return json({ok:true,supabase:c.stateReady})}
+  if(action==="status"){
+    if(session.provider==="account")return json({ok:true,netlifyDatabase:await netlifyDatabaseReady(),dataEncryption:dataEncryptionConfigured()});
+    const c=supabaseConfig();return json({ok:true,supabase:c.stateReady});
+  }
   return json({error:"Invalid action"},400)
 };
 export const config={path:"/api/state"};

@@ -18,11 +18,15 @@ Keep `HERCULES_ALLOW_DIRECT_AI=false` unless you deliberately want to use your o
 
 The schema provides accounts, permanent profiles, sessions, onboarding versions, plans, meals, exercises, progress, reviews, blocks, monthly history, and audit events. The current app still uses its legacy device identity and optional Supabase state sync; do not treat the new tables as the active participant store until account authentication, scoped repositories, encryption, and restore procedures are connected.
 
+Account sessions now have a transitional full-state repository in `hh_profile_state`. It encrypts each snapshot with the profile ID as authenticated context and accepts writes only when the client supplies the current `expectedRevision`. Stale writes receive HTTP 409. Device sessions continue on their existing storage path. Account reset and next-cycle activation remain unavailable until their account-scoped operations are implemented.
+
 Participant payload encryption uses AES-256-GCM. In Netlify, set `HERCULES_DATA_ENCRYPTION_CURRENT_VERSION=1` and create `HERCULES_DATA_ENCRYPTION_KEY_V1` as a secret with the Functions scope across all deploy contexts. The key must decode from base64url to exactly 32 bytes. `.env.example` contains names only. Never commit real key values. Keep every old version available for decryption until all rows using it have been re-encrypted and verified. No participant records are currently encrypted with this key.
 
 After changing either encryption variable, trigger a new deploy before relying on the setting; confirm that `/api/status` reports both `dataEncryption: true` and `participantStorageReady: true`.
 
 `/api/status` reports booleans for `netlifyDatabase`, `dataEncryption`, and `participantStorageReady`; it never returns secret values. Run `npm run check:db` to verify the local migration, tenant constraints, and encryption behavior.
+
+Netlify takes a scheduled database backup once per day and another before each production publish. Retention depends on the site's credit plan: scheduled backups are retained for 3 days on Free, 7 on Personal, and 30 on Pro/Enterprise; on-publish backups retain the most recent 1, 3, or 10 published deploys, respectively. Restoring replaces the production database contents, so restore drills must target an isolated branch where supported and production restoration must be treated as a separate, explicit operation. Check the site's actual plan and current backup list under Data & Storage → Database before accepting participants; backup/restore has not yet been rehearsed against this site's production branch.
 
 ## 3. Legacy device persistence
 No login/password configuration is required for the current legacy flow. Hercules automatically creates a signed device session. This is not cross-device account authentication.
