@@ -3,8 +3,11 @@ import { getDatabase } from "@netlify/database";
 import { decryptParticipantData, encryptParticipantData } from "./encryption-lib.mts";
 
 type StateRow = { source_version: string | number; payload_ciphertext: Buffer | Uint8Array; encryption_key_version: number };
-type StateDatabase = {
+type StateQueryable = {
   query<T = Record<string, unknown>>(sql: string, params?: unknown[]): Promise<{ rows: T[] }>;
+};
+type StateDatabase = StateQueryable & {
+  transaction?: <T>(fn: (tx: StateQueryable) => Promise<T>) => Promise<T>;
   connect?: () => Promise<StateDatabase & { release: () => void }>;
 };
 
@@ -49,23 +52,17 @@ export async function saveAccountState(input: {
   const expectedRevision = Number(input.expectedRevision);
   if (!Number.isSafeInteger(expectedRevision) || expectedRevision < 0 || expectedRevision >= Number.MAX_SAFE_INTEGER) throw new Error("account_state_version_invalid");
   const encrypted = encryptParticipantData(input.data, { purpose: "profile-state", profileId });
-  if (!db.connect) throw new Error("account_state_database_unavailable");
-  const client = await db.connect();
-  try {
-    await client.query("BEGIN");
-    const current = await client.query<{ status: string; account_status: string }>(
+  const persist = async (tx: StateQueryable): Promise<AccountStateWrite> => {
+    const current = await tx.query<{ status: string; account_status: string }>(
       `SELECT p.status, a.status AS account_status
          FROM hh_profiles p JOIN hh_accounts a ON a.id = p.account_id
         WHERE p.id = $1 AND p.account_id = $2 AND a.deleted_at IS NULL
         FOR UPDATE OF p, a`, [profileId, accountId],
     );
     const row = current.rows[0];
-    if (!row || row.account_status !== "ACTIVE" || ["BLOCKED", "ARCHIVED"].includes(row.status)) {
-      await client.query("ROLLBACK");
-      return { ok: false, reason: "PROFILE_UNAVAILABLE" };
-    }
+    if (!row || row.account_status !== "ACTIVE" || ["BLOCKED", "ARCHIVED"].includes(row.status)) return { ok: false, reason: "PROFILE_UNAVAILABLE" };
     const nextRevision = expectedRevision + 1;
-    const stored = await client.query(
+    const stored = await tx.query(
       `INSERT INTO hh_profile_state (account_id, profile_id, source_version, payload_ciphertext, encryption_key_version, updated_at)
        VALUES ($1, $2, $3, $4, $5, now())
        ON CONFLICT (profile_id) DO UPDATE
@@ -78,16 +75,25 @@ export async function saveAccountState(input: {
        RETURNING source_version`,
       [accountId, profileId, nextRevision, encrypted.ciphertext, encrypted.keyVersion, expectedRevision],
     );
-    if (!stored.rows.length) {
-      await client.query("ROLLBACK");
-      return { ok: false, reason: "STALE_VERSION" };
-    }
-    await client.query(
+    if (!stored.rows.length) return { ok: false, reason: "STALE_VERSION" };
+    await tx.query(
       "INSERT INTO hh_audit_events (id, account_id, profile_id, actor_type, action, metadata) VALUES ($1, $2, $3, 'USER', 'PROFILE_STATE_SAVED', $4::jsonb)",
       [randomUUID(), accountId, profileId, JSON.stringify({ revision: nextRevision })],
     );
-    await client.query("COMMIT");
     return { ok: true, revision: nextRevision };
+  };
+  if (db.transaction) return db.transaction(persist);
+  if (!db.connect) throw new Error("account_state_database_unavailable");
+  const client = await db.connect();
+  try {
+    await client.query("BEGIN");
+    const result = await persist(client);
+    if (!result.ok) {
+      await client.query("ROLLBACK");
+      return result;
+    }
+    await client.query("COMMIT");
+    return result;
   } catch (error) {
     try { await client.query("ROLLBACK"); } catch {}
     throw error;

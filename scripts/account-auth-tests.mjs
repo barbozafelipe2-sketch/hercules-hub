@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { randomBytes, randomUUID } from "node:crypto";
 import { NetlifyDB } from "@netlify/database-dev";
 import { applyMigrations } from "@netlify/database-dev";
 import {
@@ -10,7 +11,12 @@ import {
   revokeAccountSession,
   verifyAccountEmail,
 } from "../netlify/functions/accounts-lib.mts";
+import { loadAccountState, saveAccountState } from "../netlify/functions/account-state-lib.mts";
 
+const previousEncryptionKey = process.env.HERCULES_DATA_ENCRYPTION_KEY_V1;
+const previousEncryptionVersion = process.env.HERCULES_DATA_ENCRYPTION_CURRENT_VERSION;
+process.env.HERCULES_DATA_ENCRYPTION_KEY_V1 = randomBytes(32).toString("base64url");
+process.env.HERCULES_DATA_ENCRYPTION_CURRENT_VERSION = "1";
 const db = new NetlifyDB({ logger: () => {} });
 try {
   await db.start();
@@ -44,9 +50,36 @@ try {
   const finalSession = await loginAccount({ email: "participant@example.test", password: "Replacement-password-2" }, db);
   assert.equal((await readAccountSession(finalSession.token, db)).profileId, pending.profileId);
 
+  const firstSnapshot = { profile: { note: "sensitive-marker" }, plan: null, state: { cycleNumber: 1 } };
+  const firstWrite = await saveAccountState({ profileId: pending.profileId, accountId: pending.accountId, expectedRevision: 0, data: firstSnapshot }, db);
+  assert.deepEqual(firstWrite, { ok: true, revision: 1 }, "a profile accepts its first versioned snapshot");
+  assert.deepEqual(await loadAccountState(pending.profileId, pending.accountId, db), { revision: 1, data: firstSnapshot }, "the profile snapshot decrypts only in its original profile context");
+  const encryptedRow = (await db.query("SELECT payload_ciphertext FROM hh_profile_state WHERE profile_id = $1", [pending.profileId])).rows[0];
+  assert.equal(Buffer.from(encryptedRow.payload_ciphertext).includes(Buffer.from("sensitive-marker")), false, "stored profile state is ciphertext, not plaintext");
+  await assert.rejects(loadAccountState(pending.profileId, randomUUID(), db), /account_state_profile_unavailable/, "another account cannot read the profile snapshot");
+  assert.deepEqual(await saveAccountState({ profileId: pending.profileId, accountId: pending.accountId, expectedRevision: 0, data: { stale: true } }, db), { ok: false, reason: "STALE_VERSION" }, "a stale snapshot cannot overwrite a newer version");
+
+  const concurrentWrites = await Promise.all([
+    saveAccountState({ profileId: pending.profileId, accountId: pending.accountId, expectedRevision: 1, data: { winner: "A" } }, db),
+    saveAccountState({ profileId: pending.profileId, accountId: pending.accountId, expectedRevision: 1, data: { winner: "B" } }, db),
+  ]);
+  assert.equal(concurrentWrites.filter(result => result.ok).length, 1, "only one concurrent write can claim a revision");
+  assert.equal(concurrentWrites.filter(result => !result.ok && result.reason === "STALE_VERSION").length, 1, "the other concurrent write is rejected as stale");
+  const latestState = await loadAccountState(pending.profileId, pending.accountId, db);
+  assert.equal(latestState.revision, 2, "concurrent writes advance the profile revision once");
+  assert.ok(["A", "B"].includes(latestState.data.winner), "the latest encrypted state is one complete winning snapshot");
+
+  await db.query("UPDATE hh_profiles SET status = 'BLOCKED' WHERE id = $1", [pending.profileId]);
+  assert.deepEqual(await saveAccountState({ profileId: pending.profileId, accountId: pending.accountId, expectedRevision: 2, data: { blocked: true } }, db), { ok: false, reason: "PROFILE_UNAVAILABLE" }, "blocked profiles cannot save state");
+  await assert.rejects(loadAccountState(pending.profileId, pending.accountId, db), /account_state_profile_unavailable/, "blocked profiles cannot read state");
+
   await assert.rejects(createPendingAccount({ email: "bad-email", password: "Long-enough-test-password-1" }, db), /email_invalid/);
   await assert.rejects(createPendingAccount({ email: "new@example.test", password: "short" }, db), /password_policy_failed/);
-  console.log("Account-auth checks passed: pending registration, email verification, password login/reset, profile identity, hashed tokens, session revocation, and password policy.");
+  console.log("Account and persistence checks passed: registration, verification, login/reset, permanent profile identity, token hashing, revocation, encryption, tenant isolation, stale/concurrent write rejection, and profile blocking.");
 } finally {
   await db.stop();
+  if (previousEncryptionKey === undefined) delete process.env.HERCULES_DATA_ENCRYPTION_KEY_V1;
+  else process.env.HERCULES_DATA_ENCRYPTION_KEY_V1 = previousEncryptionKey;
+  if (previousEncryptionVersion === undefined) delete process.env.HERCULES_DATA_ENCRYPTION_CURRENT_VERSION;
+  else process.env.HERCULES_DATA_ENCRYPTION_CURRENT_VERSION = previousEncryptionVersion;
 }
