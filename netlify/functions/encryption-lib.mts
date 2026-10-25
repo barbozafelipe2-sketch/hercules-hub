@@ -3,8 +3,11 @@ import { createCipheriv, createDecipheriv, randomBytes } from "node:crypto";
 const AAD_PREFIX = "hercules-hub|participant-data|";
 
 function env(name: string): string {
-  if (typeof Netlify !== "undefined" && Netlify?.env?.get) return String(Netlify.env.get(name) || "").trim();
-  return String(process.env[name] || "").trim();
+  let runtimeValue = "";
+  if (typeof Netlify !== "undefined" && Netlify?.env?.get) {
+    try { runtimeValue = String(Netlify.env.get(name) || "").trim(); } catch {}
+  }
+  return runtimeValue || String(process.env[name] || "").trim();
 }
 
 function currentKeyVersion(): number {
