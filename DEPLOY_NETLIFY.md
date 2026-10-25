@@ -20,6 +20,8 @@ The schema provides accounts, permanent profiles, sessions, onboarding versions,
 
 Participant payload encryption uses AES-256-GCM. In Netlify, set `HERCULES_DATA_ENCRYPTION_CURRENT_VERSION=1` and create `HERCULES_DATA_ENCRYPTION_KEY_V1` as a secret available to Functions. The key must decode from base64url to exactly 32 bytes. `.env.example` contains names only. Never commit real key values. Keep every old version available for decryption until all rows using it have been re-encrypted and verified. No participant records are currently encrypted with this key.
 
+After changing either encryption variable, trigger a new deploy before relying on the setting; confirm that `/api/status` reports both `dataEncryption: true` and `participantStorageReady: true`.
+
 `/api/status` reports booleans for `netlifyDatabase`, `dataEncryption`, and `participantStorageReady`; it never returns secret values. Run `npm run check:db` to verify the local migration, tenant constraints, and encryption behavior.
 
 ## 3. Legacy device persistence
