@@ -13,8 +13,17 @@ Optional model overrides:
 
 Keep `HERCULES_ALLOW_DIRECT_AI=false` unless you deliberately want to use your own provider account. AI Gateway avoids separate provider balances but still consumes Netlify credits.
 
-## 2. Device persistence
-No login/password configuration is required. Hercules automatically creates a signed device session.
+## 2. Participant database — Phase 1
+`@netlify/database` provisions PostgreSQL from the SQL files in `netlify/database/migrations/`. The test site's `production` database branch is provisioned and the core migration is applied. Keep these migrations additive; an applied migration file is immutable.
+
+The schema provides accounts, permanent profiles, sessions, onboarding versions, plans, meals, exercises, progress, reviews, blocks, monthly history, and audit events. The current app still uses its legacy device identity and optional Supabase state sync; do not treat the new tables as the active participant store until account authentication, scoped repositories, encryption, and restore procedures are connected.
+
+Participant payload encryption uses AES-256-GCM. In Netlify, set `HERCULES_DATA_ENCRYPTION_CURRENT_VERSION=1` and create `HERCULES_DATA_ENCRYPTION_KEY_V1` as a secret available to Functions. The key must decode from base64url to exactly 32 bytes. `.env.example` contains names only. Never commit real key values. Keep every old version available for decryption until all rows using it have been re-encrypted and verified. No participant records are currently encrypted with this key.
+
+`/api/status` reports booleans for `netlifyDatabase`, `dataEncryption`, and `participantStorageReady`; it never returns secret values. Run `npm run check:db` to verify the local migration, tenant constraints, and encryption behavior.
+
+## 3. Legacy device persistence
+No login/password configuration is required for the current legacy flow. Hercules automatically creates a signed device session. This is not cross-device account authentication.
 
 For optional authoritative server persistence, apply `supabase/migrations/20260909_hercules_user_state.sql` and set server-side:
 - `SUPABASE_URL`
@@ -22,11 +31,11 @@ For optional authoritative server persistence, apply `supabase/migrations/202609
 
 Also set a strong `HERCULES_SESSION_SECRET` where practical. If omitted, Hercules can derive a stable secret from the Supabase secret or Netlify Blobs.
 
-## 3. Runtime assets
+## 4. Runtime assets
 No Google Drive connection is required at runtime. Exercise, home-workout, food and official brand assets are stored as versioned text chunks under `asset-bundle-v0.14.0/`; Netlify runs `npm run build`, reconstructs the compressed bundle, verifies its SHA-256, expands it into `public/assets/`, then executes the full release gate. `asset-manifest.json` fingerprints the curated release. Drive remains the master/editorial library.
 
-## 4. Smoke test before deployment
-Run `npm run check` (it prepares the verified asset bundle automatically). After the first production deploy verify:
+## 5. Smoke test before deployment
+Run `npm run check` and `npm run check:db` (the first prepares the verified asset bundle automatically). After deployment verify:
 - first launch opens language/onboarding with no login screen;
 - Month 1 generation reaches Home;
 - official Hercules logos render in light/dark UI;
@@ -34,13 +43,14 @@ Run `npm run check` (it prepares the verified asset bundle automatically). After
 - Settings has Export Monthly Report and Restore Progress, and no Logout/Sign out control;
 - the exported PDF can restore progress on a clean browser profile;
 - Settings reports Netlify AI Gateway after activation;
+- `/api/status` reports `netlifyDatabase: true` and `participantStorageReady: true` before enabling participant writes;
 - adaptive catalog candidates are traced when created;
 - Month 2+ remains locked until 28 days + final training week + Final Mark;
 - symptom/safety HOLD cannot be auto-released;
 - the service worker updates to the current `hercules-hub-v0.14.1` cache.
 
-## 5. Rollback
-Revert/redeploy the parent commit of v0.14.1. The Supabase table migration is additive; do not delete user state during an application rollback. A user can also restore from their latest Hercules PDF if local browser data is lost.
+## 6. Rollback
+Revert/redeploy the parent application commit. The Supabase and Netlify database migrations are additive; an application rollback does not reverse them. Do not delete user state during rollback. A user can also restore from their latest Hercules PDF if local browser data is lost.
 
 ## Beta EXTRA / snapshot update
 After deployment test all three onboarding languages, the optional sport selection and specific days, EXTRA for training / sports / rest days, clickable guides and completion, PDF export at Day 0 before Final Mark, and restore that PDF on a clean device. Do not confuse snapshot export with the unchanged 28-day next-cycle requirement.
