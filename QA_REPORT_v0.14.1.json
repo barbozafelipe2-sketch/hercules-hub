@@ -1,6 +1,9 @@
+Warning: truncated output (original token count: 4598)
+Total output lines: 944
+
 {
   "version": "0.14.1",
-  "generatedAt": "2026-10-25T19:50:35.699Z",
+  "generatedAt": "2026-10-25T22:28:55.948Z",
   "status": "PASS",
   "passed": 187,
   "total": 187,
@@ -401,128 +404,7 @@
       "detail": ""
     },
     {
-      "name": "server_syntax_netlify-database-lib.mts",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "server_syntax_next-cycle.mts",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "server_syntax_request-lib.mts",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "server_syntax_restore.mts",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "server_syntax_review-lib.mts",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "server_syntax_safety-lib.mts",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "server_syntax_schemas.mts",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "server_syntax_state.mts",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "server_syntax_status.mts",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "server_syntax_supabase-lib.mts",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "server_syntax_trace-lib.mts",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "server_syntax_usage-lib.mts",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "secret_not_frontend_OPENAI_API_KEY",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "secret_not_frontend_GEMINI_API_KEY",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "secret_not_frontend_ANTHROPIC_API_KEY",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "secret_not_frontend_OPENROUTER_API_KEY",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "secret_not_frontend_SUPABASE_SECRET_KEY",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "secret_not_frontend_SUPABASE_SERVICE_ROLE_KEY",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "secret_not_frontend_HERCULES_SESSION_SECRET",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "gateway_provider_envs",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "direct_ai_default_blocked",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "provider_attempt_abort",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "fallback_budget_bounded",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "latency_defaults",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "next_cycle_stage_budgets",
-      "pass": true,
+      "name": "server_syntax_netlify-database-…598 tokens truncated… "pass": true,
       "detail": ""
     },
     {
@@ -731,7 +613,7 @@
       "detail": ""
     },
     {
-      "name": "reset_copy_mentions_server_sync",
+      "name": "reset_copy_explains_pending_server_delete",
       "pass": true,
       "detail": ""
     },
