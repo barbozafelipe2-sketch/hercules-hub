@@ -210,7 +210,7 @@ add('state_cycle_transition_guard',includes(stateFn,'stateCycleWriteAllowed','Cy
 add('state_server_started_at',includes(stateFn,'canonicalizeState(payload.state,startedAt)','payload.state.cycleNumber=incomingCycle'));
 add('reset_system_server_delete',includes(stateFn,'action==="reset"','stateDelete(session.subject)'));
 add('reset_progress_preserves_profile_plan',includes(stateFn,'action==="reset-progress"','profile:existing.profile??null','plan:existing.plan??null'));
-add('no_logout_action_backend',!authFn.includes('logout'));
+add('account_logout_revokes_and_clears_session',includes(authFn,'action === "logout"','revokeAccountSession(raw)','clearSessionCookie(req)'));
 
 // PWA/assets integrity.
 add('manifest_valid',manifest.name==='Hercules Hub'&&manifest.display==='standalone'&&manifest.start_url==='/'&&manifest.scope==='/');
