@@ -177,7 +177,7 @@ add('month_menu_cross_week_rotation',js.includes('function monthMenu()')&&js.inc
 add('nutrition_triple_audit_runtime',js.includes('function nutritionTripleAudit()')&&js.includes('mergeNutritionAudit')&&js.includes('NUTRITION QA'));
 add('generated_meal_asset_status',schema.includes('assetStatus:z.enum(["new_asset_required","approved_asset"])')&&catalog.includes('assetStatus:"new_asset_required"'));
 add('broken_asset_branded_fallback',js.includes("ph.className='assetFallback'")&&css.includes('.assetFallback'));
-add('reset_copy_mentions_server_sync',js.includes('synced server copy too'));
+add('reset_copy_explains_pending_server_delete',js.includes('removal of its copy stays pending')&&js.includes('will not reload old data'));
 add('catalog_allergy_conservative',includes(catalog,'if(plan?.allergyReview)return 0','!plan?.allergyReview'));
 add('catalog_carries_forward',includes(catalog,'...existing.meals,...generatedMeals','...existing.exercises,...generatedExercises','carried-forward'));
 add('catalog_trace_provenance',includes(next,'generatedMealCount','generatedExerciseCount','bundled-assets+adaptive-catalog'));

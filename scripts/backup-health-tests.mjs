@@ -28,10 +28,10 @@ check('updated export clears changed marker',()=>{ctx.backupMarkExportRequested(
 check('plan mutation marks dirty',()=>{ctx.plan.trainingHold=true;assert.equal(ctx.backupStatusModel().changed,true)});
 check('profile mutation marks dirty',()=>{ctx.backupMarkExportRequested();ctx.profile.primaryGoal='general_fitness';assert.equal(ctx.backupStatusModel().changed,true)});
 check('old marker format rejected',()=>{local.set('hh_proto_backup_export_marker_v1','{bad json');assert.equal(ctx.backupReadMarker(),null)});
-check('restore cancels before server overwrite',()=>{allowRestore=false;assert.equal(ctx.confirmBackupRestore(),false);assert.match(warned,/may replace its synced copy/)});
-check('restore approval can proceed',()=>{allowRestore=true;assert.equal(ctx.confirmBackupRestore(),true)});
+check('restore cancels before replacing local profile',()=>{allowRestore=false;assert.equal(ctx.confirmBackupRestore({summary:{exportedAt:'2026-10-08T12:00:00.000Z',cycle:2,checkins:1}}),false);assert.match(warned,/profile ID.*preserved/i)});
+check('restore approval can proceed',()=>{allowRestore=true;assert.equal(ctx.confirmBackupRestore({summary:{exportedAt:'2026-10-08T12:00:00.000Z',cycle:2,checkins:1}}),true)});
 check('first-launch restore has no overwrite confirm',()=>{ctx.profile=null;allowRestore=false;assert.equal(ctx.confirmBackupRestore(),true)});
 check('post-restore marker erased',()=>{ctx.profile={name:'Test'};ctx.backupMarkExportRequested();ctx.backupMarkRestoreCompleted();assert.equal(ctx.backupStatusModel().kind,'no-export')});
-check('all status strings are localized through L()',()=>assert.ok(src.includes('Ninguna exportación')&&src.includes('Exporta el estado actual')));
+check('all status strings are localized through L()',()=>assert.ok(src.includes('Ninguna exportación')&&src.includes('Exporte o estado atual')));
 check('no cryptographic trust attributed to UI marker',()=>assert.match(src,/NOT an integrity\/authentication checksum/));
 console.log(`backup-health ${n}/${n} PASS`);

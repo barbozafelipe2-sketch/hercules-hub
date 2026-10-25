@@ -27,8 +27,8 @@ check('language, activity selection and buttons wired',()=>{
  assert.match(app,/typeof renderExtra==='function'/);
 });
 check('scripts included and SW cache refreshed',()=>{
- assert.match(html,/app\.js\?v=0\.14\.1-beta10/);assert.match(html,/extra\.js\?v=0\.14\.1-beta9/);
- assert.match(sw,/app\.js\?v=0\.14\.1-beta10/);assert.match(sw,/extra\.js\?v=0\.14\.1-beta9/);assert.match(sw,/hercules-hub-v0\.14\.1-beta10/);
+ assert.match(html,/backup-health\.js\?v=0\.14\.1-beta9/);assert.match(html,/app\.js\?v=0\.14\.1-beta11/);assert.match(html,/extra\.js\?v=0\.14\.1-beta9/);
+ assert.match(sw,/backup-health\.js\?v=0\.14\.1-beta9/);assert.match(sw,/app\.js\?v=0\.14\.1-beta11/);assert.match(sw,/extra\.js\?v=0\.14\.1-beta9/);assert.match(sw,/hercules-hub-v0\.14\.1-beta11/);
 });
 const selectedProfile={...oldProfile,activityType:'swimming',activityDays:['Sun']};
 const plan={summary:{selectedDays:['Mon','Tue','Wed']},trainingHold:false};
