@@ -18,7 +18,7 @@ Keep `HERCULES_ALLOW_DIRECT_AI=false` unless you deliberately want to use your o
 
 The schema provides accounts, permanent profiles, sessions, onboarding versions, plans, meals, exercises, progress, reviews, blocks, monthly history, and audit events. The current app still uses its legacy device identity and optional Supabase state sync; do not treat the new tables as the active participant store until account authentication, scoped repositories, encryption, and restore procedures are connected.
 
-Participant payload encryption uses AES-256-GCM. In Netlify, set `HERCULES_DATA_ENCRYPTION_CURRENT_VERSION=1` and create `HERCULES_DATA_ENCRYPTION_KEY_V1` as a secret available to Functions. The key must decode from base64url to exactly 32 bytes. `.env.example` contains names only. Never commit real key values. Keep every old version available for decryption until all rows using it have been re-encrypted and verified. No participant records are currently encrypted with this key.
+Participant payload encryption uses AES-256-GCM. In Netlify, set `HERCULES_DATA_ENCRYPTION_CURRENT_VERSION=1` and create `HERCULES_DATA_ENCRYPTION_KEY_V1` as a secret with the Functions scope across all deploy contexts. The key must decode from base64url to exactly 32 bytes. `.env.example` contains names only. Never commit real key values. Keep every old version available for decryption until all rows using it have been re-encrypted and verified. No participant records are currently encrypted with this key.
 
 After changing either encryption variable, trigger a new deploy before relying on the setting; confirm that `/api/status` reports both `dataEncryption: true` and `participantStorageReady: true`.
 
