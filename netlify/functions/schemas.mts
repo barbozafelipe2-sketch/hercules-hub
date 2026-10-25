@@ -4,6 +4,7 @@ const boundedRecord=<T extends z.ZodTypeAny>(value:T,max:number)=>z.record(value
 const JsonPrimitive=z.union([z.string().max(5000),z.number().finite(),z.boolean(),z.null()]);
 export const BoundedJson:z.ZodType<unknown>=z.lazy(()=>z.union([JsonPrimitive,z.array(BoundedJson).max(250),boundedRecord(BoundedJson,500)]));
 export const ProfileSchema=z.object({
+  profileId:z.string().uuid().optional(),
   name:z.string().min(1).max(60),
   language:z.enum(["pt-BR","en-US","es"]),
   primaryGoal:z.enum(["build_muscle","general_fitness","fat_loss","consistency","strength"]),

@@ -24,7 +24,7 @@ Initial generation and each later-cycle adaptation produce `hercules-trace-v2` r
 Settings includes **Export Monthly Report**. The PDF contains the readable monthly summary plus an embedded, integrity-checked Hercules recovery payload. After reinstalling, changing devices or clearing browser data, **Restore Progress** can read the latest Hercules PDF and reconstruct the profile, plan, current month, progress history, adaptive catalog and trace state. Treat exported reports as private because they contain profile/progress data.
 
 ## Persistence and security
-A device-scoped signed HttpOnly session is created automatically; users do not enter credentials. Local storage provides on-device continuity. Optional Supabase persistence stores an authoritative copy under a server-side device owner key. Provider credentials and Supabase secrets remain server-only. Requests are bounded, validated with Zod and rate-limited.
+A device-scoped signed HttpOnly session is created automatically; users do not enter credentials. Each profile now receives a permanent UUID carried in its export/import payload, so a restored profile keeps its identity without a login screen. Local storage provides on-device continuity. Optional Supabase persistence still uses a device owner key; server-side cross-device identity, review/block enforcement by profile UUID, and recovery-token authorization are not enabled yet. Provider credentials and Supabase secrets remain server-only. Requests are bounded, validated with Zod and rate-limited.
 
 ## Verify
 ```bash
@@ -48,7 +48,7 @@ v0.14.1 is intentionally device-first for controlled family/friends testing. It 
 
 ## Beta limits that are intentional
 
-Identity is the device id. Bootstrap creates a signed HttpOnly session with `Max-Age=31536000` (one year). Anyone who obtains that device id can open a session for it. That is acceptable for this family/friends beta and is not commercial auth.
+Server session identity is the device id. Bootstrap creates a signed HttpOnly session with `Max-Age=31536000` (one year). The profile UUID in a backup preserves the participant identity across file transfers, but does not authenticate a person to the server or link device-scoped server copies yet. Anyone who obtains that device id can open a session for it. That is acceptable for this family/friends beta and is not commercial auth.
 
 Request rate limits live in memory on each function instance (`netlify/functions/request-lib.mts`). They bound one isolate, not the whole site. The durable cap is the persisted AI quota, not the in-memory limiter.
 

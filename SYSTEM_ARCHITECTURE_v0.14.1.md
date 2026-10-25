@@ -24,7 +24,7 @@ Google Drive is the master/editorial library, not a runtime dependency. The depl
 `hercules-trace-v2` stores hashes, deterministic gates, reviewer route/model/verdict metadata, catalog provenance and the final decision. It intentionally excludes raw prompts and raw profile payloads.
 
 ## Persistence and recovery
-Local storage is the device continuity layer. Optional Supabase persistence is keyed by a hashed device subject and written only by server-side Functions using a secret key. Ordinary state saves cannot advance the month; `/api/next-cycle` stages an approved transition server-side and the dedicated activation action advances the persistent cycle. Monthly PDF export embeds an integrity-checked `hercules-backup-v1` payload; Restore Progress validates it server-side before applying it.
+Local storage is the device continuity layer. Each participant profile has a permanent UUID that is included in `hercules-backup-v1` exports and preserved by restore, allowing the same profile identity to travel with the plan without a login screen. Optional Supabase persistence is still keyed by a hashed device subject and written only by server-side Functions using a secret key; the UUID is not yet a server authentication credential or a cross-device storage key. Ordinary state saves cannot advance the month; `/api/next-cycle` stages an approved transition server-side and the dedicated activation action advances the persistent cycle. Restore validates the payload server-side before applying it.
 
 ## Netlify AI Gateway
 Provider REST calls honor Netlify-injected `*_API_KEY` and `*_BASE_URL` variables. Direct provider routing is disabled by default. Provider attempts and fallback chains are time-bounded so one failing model cannot stall the product indefinitely.

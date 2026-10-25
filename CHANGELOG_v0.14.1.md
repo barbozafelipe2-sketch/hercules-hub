@@ -1,5 +1,8 @@
 # Hercules Hub v0.14.1 — Family beta hardening
 
+- Added a permanent UUID to each profile and carried it through PDF export, restore and validated server payloads, without introducing a login screen. Older backups without an ID remain restorable and receive an ID on import.
+- Bumped the app and service-worker cache version so existing mobile installs fetch the updated profile and backup code.
+- Documented the current boundary: the portable UUID preserves backup identity, while server persistence and authorization remain device-scoped until the cross-device recovery credential flow is implemented.
 - Kept the family/friends build device-first: no login, logout or Stripe.
 - Closed the direct cycle-number advance path. Persistent installs must stage the next month through `/api/next-cycle` and activate it through the server-approved state action.
 - Preserved server-staged `nextCycle` data against ordinary client state saves.
