@@ -223,7 +223,7 @@ CREATE TABLE IF NOT EXISTS hh_monthly_history (
   FOREIGN KEY (profile_id, account_id)
     REFERENCES hh_profiles(id, account_id) ON DELETE CASCADE,
   FOREIGN KEY (plan_id, profile_id, account_id)
-    REFERENCES hh_plans(id, profile_id, account_id) ON DELETE SET NULL,
+    REFERENCES hh_plans(id, profile_id, account_id) ON DELETE RESTRICT,
   CHECK (octet_length(payload_ciphertext) > 0),
   CHECK (encryption_key_version > 0),
   UNIQUE (profile_id, cycle_number)
