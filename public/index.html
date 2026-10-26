@@ -11,7 +11,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="assets/hercules-hub-logo.png">
   <title>Hercules Hub</title>
-<link rel="stylesheet" href="app.css?v=0.14.1">
+<link rel="stylesheet" href="app.css?v=0.14.1-locale1">
 <link rel="stylesheet" href="my-day.css?v=0.14.1-beta9">
 <link rel="stylesheet" href="grocery.css?v=0.14.1-beta9">
 <link rel="stylesheet" href="track-insights.css?v=0.14.1-beta4">
@@ -42,7 +42,7 @@
   </section>
 
   <section id="onboardingScreen" class="screen hidden">
-    <div class="brandRow" style="margin-bottom:14px"><img class="brandLogoLight lightOnlyLogo logoLight" src="assets/hercules-hub-mark-light.png" alt=""><img class="brandLogoDark darkOnlyLogo" src="assets/hercules-hub-logo.png" alt=""><div><b>HERCULES HUB</b><small id="onboardingSmall"></small></div></div>
+    <div class="onboardTop"><div class="brandRow"><img class="brandLogoLight lightOnlyLogo logoLight" src="assets/hercules-hub-mark-light.png" alt=""><img class="brandLogoDark darkOnlyLogo" src="assets/hercules-hub-logo.png" alt=""><div><b>HERCULES HUB</b><small id="onboardingSmall"></small></div></div><label class="onboardLanguage"><span class="srOnly" id="onboardLanguageLabel">Idioma</span><select id="onboardLanguage" aria-labelledby="onboardLanguageLabel"><option value="pt-BR">PT · Português</option><option value="en-US">EN · English</option><option value="es">ES · Español</option></select></label></div>
     <div class="progressBar"><span id="onboardProgress"></span></div>
     <div class="card onboardCard"><div class="kicker" id="stepKicker"></div><h1 class="stepTitle" id="stepTitle"></h1><p class="stepCopy" id="stepCopy"></p><form id="onboardForm"><div id="stepFields"></div><div class="navRow"><button type="button" class="btn btnGhost" id="stepBack"></button><button type="button" class="btn btnGold" id="stepNext"></button></div></form></div>
   </section>
@@ -82,7 +82,7 @@
 <script src="track-insights.js?v=0.14.1-beta4" defer></script>
 <script src="backup-health.js?v=0.14.1-beta9" defer></script>
 <script src="beta-center.js?v=0.14.1-beta8" defer></script>
-<script src="app.js?v=0.14.1-beta11" defer></script>
+<script src="app.js?v=0.14.1-beta12" defer></script>
 <script src="extra.js?v=0.14.1-beta9" defer></script>
 </body>
 </html>

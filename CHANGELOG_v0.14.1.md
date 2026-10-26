@@ -1,5 +1,9 @@
 # Hercules Hub v0.14.1 — Family beta hardening
 
+- Added an always-visible Portuguese/English/Spanish selector to onboarding. Switching language redraws the current step and preserves entered answers; the document language and profile language follow the selection.
+- Bumped the application and service-worker cache versions so existing installs receive the onboarding language selector and translations.
+- Set next-cycle eligibility to 30 complete days and require the final mark at or after day 30; missing daily tracking remains unknown.
+- Added CI coverage that renders all five onboarding steps in Portuguese, English and Spanish and verifies language changes keep the current step and answers.
 - Made portable import local-first: preflight and restore now work offline, preserve profile identity, and recover interrupted local writes. A pending-sync marker prevents stale device cloud data from replacing an imported backup.
 - Made full reset clear the device immediately; remote deletion is retried after connectivity returns, and a tombstone prevents old server state from being reloaded first.
 - Updated backup preflight to validate bounded profile, plan, progress and chat data locally; SHA-256 is described accurately as corruption detection, not ownership/authentication.

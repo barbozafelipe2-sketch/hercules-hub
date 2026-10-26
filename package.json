@@ -12,7 +12,7 @@
   },
   "scripts": {
     "prepare:assets": "node scripts/prepare-assets.mjs",
-    "check:core": "node scripts/release-audit-v0141.mjs && node --experimental-strip-types scripts/adaptive-tests-v0141.mjs && node --experimental-strip-types scripts/security-tests-v0141.mjs",
+    "check:core": "node scripts/release-audit-v0141.mjs && node scripts/onboarding-language-tests.mjs && node --experimental-strip-types scripts/adaptive-tests-v0141.mjs && node --experimental-strip-types scripts/security-tests-v0141.mjs",
     "check": "npm run prepare:assets && npm run check:core",
     "build": "npm run check",
     "check:syntax": "node --check public/app.js && node --check public/my-day.js && node --check public/grocery.js && node --check public/track-insights.js && node --check public/backup-health.js && node --check public/beta-center.js && node --experimental-strip-types --check netlify/functions/beta-feedback.mts && node --check public/extra.js && node --check public/sw.js && node --experimental-strip-types --check netlify/functions/auth.mts && node --experimental-strip-types --check netlify/functions/auth-lib.mts && node --experimental-strip-types --check netlify/functions/accounts-lib.mts && node --experimental-strip-types --check netlify/functions/account-state-lib.mts && node --experimental-strip-types --check netlify/functions/ai-lib.mts && node --experimental-strip-types --check netlify/functions/catalog-lib.mts && node --experimental-strip-types --check netlify/functions/cycle-lib.mts && node --experimental-strip-types --check netlify/functions/next-cycle.mts && node --experimental-strip-types --check netlify/functions/restore.mts && node --experimental-strip-types --check netlify/functions/schemas.mts && node --experimental-strip-types --check netlify/functions/state.mts && node --experimental-strip-types --check netlify/functions/status.mts && node --experimental-strip-types --check netlify/functions/netlify-database-lib.mts && node --experimental-strip-types --check netlify/functions/encryption-lib.mts",
@@ -26,6 +26,7 @@
     "check:backup-health": "node scripts/backup-health-tests.mjs",
     "check:beta-center": "node scripts/beta-center-tests.mjs",
     "check:beta-cycle-sim": "node --experimental-strip-types scripts/beta-cycle-sim-tests.mjs",
+    "check:onboarding-language": "node scripts/onboarding-language-tests.mjs",
     "check:my-day-boundary": "node scripts/my-day-boundary-tests.mjs",
     "check:backup-preview": "node scripts/backup-preview-tests.mjs",
     "check:extra-week-bridge": "node scripts/extra-week-bridge-tests.mjs"

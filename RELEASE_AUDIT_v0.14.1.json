@@ -3,13 +3,13 @@
   "scope": "family-friends-beta-hardening",
   "generatedAt": "2026-10-25T15:50:00.000-04:00",
   "status": "PASS",
-  "passed": 1263,
-  "total": 1263,
+  "passed": 1266,
+  "total": 1266,
   "suites": [
     {
       "file": "QA_REPORT_v0.14.1.json",
-      "passed": 187,
-      "total": 187,
+      "passed": 190,
+      "total": 190,
       "failed": 0
     },
     {

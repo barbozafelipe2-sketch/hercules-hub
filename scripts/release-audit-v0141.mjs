@@ -17,6 +17,7 @@ const pkg=JSON.parse(read('package.json'));
 const html=read('public/index.html');
 const js=read('public/app.js');
 const css=read('public/app.css');
+const workflow=read('.github/workflows/check.yml');
 const sw=read('public/sw.js');
 const manifest=JSON.parse(read('public/manifest.webmanifest'));
 const assetManifest=JSON.parse(read('public/assets/asset-manifest.json'));
@@ -68,6 +69,9 @@ add('no_logout_ui',!/\b(logout|log out|sign out)\b/i.test(html+js));
 add('first_launch_language_onboarding',includes(js,"if(!lang){showOnly('languageScreen');return}","else showOnboarding()"));
 
 add('language_listener_collections_safe',js.includes("$$('[data-lang]').forEach")&&!/(?<!\$)\$\([^)]*\)\.(?:forEach|map|filter|find|some|every|reduce)\s*\(/.test(js));
+add('onboarding_language_picker_all_locales',includes(html,'id="onboardLanguage"','value="pt-BR"','value="en-US"','value="es"')&&includes(js,"document.documentElement.lang=lang||'en-US'","onboardLanguage.value=lang||'en-US'"));
+add('onboarding_language_switch_preserves_answers_and_step',js.includes('function changeOnboardingLanguage(next){if(![\'pt-BR\',\'en-US\',\'es\'].includes(next))return false;syncDraft();setLanguage(next);renderStep();return true}')&&js.includes("$('#onboardLanguage').onchange=()=>changeOnboardingLanguage($('#onboardLanguage').value)"));
+add('onboarding_language_regression_runs_in_ci',pkg.scripts['check:onboarding-language']==='node scripts/onboarding-language-tests.mjs'&&workflow.includes('npm run check:onboarding-language'));
 const modeHelper=js.match(/^function reconcileTrainingMode\(\)\{.*\}$/m)?.[0]||'';
 function trainingModeCase(location,current,expected){const sandbox={profile:{location},state:{trainingMode:current},KEYS:{state:'test'},saveJSON:()=>{},scheduleCloudSync:()=>{}};try{vm.runInNewContext(modeHelper+';reconcileTrainingMode();',sandbox,{timeout:1500});return sandbox.state.trainingMode===expected}catch{return false}}
 add('training_location_mode_coherence',includes(js,'function renderAll(){if(!profile||!plan)return;reconcileTrainingMode();')&&trainingModeCase('home','gym','home')&&trainingModeCase('gym','home','gym')&&trainingModeCase('both','home','home')&&trainingModeCase('both','gym','gym'));

@@ -1,9 +1,9 @@
 {
   "version": "0.14.1",
-  "generatedAt": "2026-10-26T04:58:05.224Z",
+  "generatedAt": "2026-10-26T18:29:20.578Z",
   "status": "PASS",
-  "passed": 187,
-  "total": 187,
+  "passed": 190,
+  "total": 190,
   "checks": [
     {
       "name": "package_version_0141",
@@ -92,6 +92,21 @@
     },
     {
       "name": "language_listener_collections_safe",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "onboarding_language_picker_all_locales",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "onboarding_language_switch_preserves_answers_and_step",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "onboarding_language_regression_runs_in_ci",
       "pass": true,
       "detail": ""
     },
