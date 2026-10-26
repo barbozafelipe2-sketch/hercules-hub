@@ -2,7 +2,7 @@ import { readSession } from "./auth-lib.mts";
 import { availableProviders, callProvider, callWithFallback, type AIProvider } from "./ai-lib.mts";
 import { stateLoad, stateSave, supabaseConfig } from "./supabase-lib.mts";
 import { FinalApprovalSchema, NextCycleDeltaSchema, NextCycleRequestSchema, NextCycleStateSchema, PlanSchema, ProfileSchema, ReviewVerdictSchema, StateSyncSchema } from "./schemas.mts";
-import { applyDelta, buildSignals, clampDelta, dedupeDailyCheckins, deterministicDelta, daysSince, milestoneComplete, milestoneTimeValid, validateDelta, week4Complete } from "./cycle-lib.mts";
+import { applyDelta, buildSignals, clampDelta, dedupeDailyCheckins, deterministicDelta, daysSince, milestoneComplete, milestoneTimeValid, MIN_CYCLE_DAYS, validateDelta, week4Complete } from "./cycle-lib.mts";
 import { readJsonBounded, rateLimit } from "./request-lib.mts";
 import { makeTrace } from "./trace-lib.mts";
 import { consumeDailyQuota } from "./usage-lib.mts";
@@ -66,10 +66,10 @@ export default async(req:Request)=>{
   const pattern=currentPlan.training.pattern||[];
   const lastWeek=week4Complete(effectiveState,pattern);
   const finalMark=effectiveState.finalMark||null;
-  if(elapsed<28)return json({error:"Next month unlocks after at least 28 days of use.",eligible:false,elapsedDays:elapsed,authoritativeState},409);
+  if(elapsed<MIN_CYCLE_DAYS)return json({error:`Next month unlocks after at least ${MIN_CYCLE_DAYS} days of use.`,eligible:false,elapsedDays:elapsed,authoritativeState},409);
   if(!lastWeek)return json({error:"Complete the final training week before generating the next month.",eligible:false,elapsedDays:elapsed,authoritativeState},409);
   if(!milestoneComplete("finalMark",finalMark))return json({error:"Save a complete final mark before generating the next month.",eligible:false,elapsedDays:elapsed,authoritativeState},409);
-  if(!milestoneTimeValid("finalMark",effectiveState.startedAt,finalMark))return json({error:"Final Mark timing is invalid. It must be recorded on/after Day 28 and cannot be future-dated.",eligible:false,elapsedDays:elapsed,authoritativeState},409);
+  if(!milestoneTimeValid("finalMark",effectiveState.startedAt,finalMark))return json({error:`Final Mark timing is invalid. It must be recorded on/after Day ${MIN_CYCLE_DAYS} and cannot be future-dated.`,eligible:false,elapsedDays:elapsed,authoritativeState},409);
 
   effectiveState={
     ...effectiveState,

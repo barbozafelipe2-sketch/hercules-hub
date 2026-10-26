@@ -154,8 +154,8 @@ add('csp_frame_object_block',includes(netlify,"object-src 'none'","frame-ancesto
 add('cycle_number_high_bound',schema.includes('cycleNumber:z.number().int().min(1).max(600)'));
 add('next_cycle_increments_generic',next.includes('targetCycle=Number(effectiveState.cycleNumber||1)+1'));
 add('frontend_activation_uses_server_when_persistent',js.includes("action:'activate-cycle'")&&js.includes('systemStatus.supabaseState'));
-add('month28_gate_server',includes(next,'elapsed<28','week4Complete','milestoneComplete("finalMark"','milestoneTimeValid("finalMark"'));
-add('month28_gate_client',includes(js,'day>=28&&lastWeekComplete()&&milestoneComplete'));
+add('month30_gate_server',includes(next,'elapsed<MIN_CYCLE_DAYS','MIN_CYCLE_DAYS','week4Complete','milestoneComplete("finalMark"','milestoneTimeValid("finalMark"')&&includes(cycle,'MIN_CYCLE_DAYS=30','start+MIN_CYCLE_DAYS*86400000'));
+add('month30_gate_client',includes(js,'CYCLE_TARGET_DAYS=30','day>=CYCLE_TARGET_DAYS&&lastWeekComplete()&&milestoneComplete'));
 add('signals_rebuilt_server_side',includes(next,'buildSignals(effectiveState,currentPlan,{},elapsed)','Browser summaries are display hints only'));
 add('deterministic_delta_caps_ai',includes(cycle,'AI may make a candidate more conservative','ranks[c]<=ranks[base]'));
 add('safety_hold_controls_delta',includes(cycle,'currentPlan?.trainingHold||signals.symptomFlag','trainingAction="hold"'));

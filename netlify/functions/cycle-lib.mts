@@ -32,6 +32,8 @@ export type CycleSignals = {
   priorCycles:number;
 };
 
+export const MIN_CYCLE_DAYS=30;
+
 export type NextCycleDelta = {
   trainingAction:"hold"|"consolidate"|"maintain"|"progress";
   nutritionAction:"simplify"|"maintain"|"rotate";
@@ -87,7 +89,7 @@ export function milestoneTimeValid(type:"baseline"|"checkpoint"|"finalMark",star
   if(!Number.isFinite(start)||!Number.isFinite(ts))return false;
   // Five-minute clock-skew tolerance only; future-dated milestones cannot satisfy gates.
   if(ts>now+5*60*1000)return false;
-  const min=type==="finalMark"?start+28*86400000:type==="checkpoint"?start+15*86400000:start-86400000;
+  const min=type==="finalMark"?start+MIN_CYCLE_DAYS*86400000:type==="checkpoint"?start+15*86400000:start-86400000;
   return ts>=min;
 }
 

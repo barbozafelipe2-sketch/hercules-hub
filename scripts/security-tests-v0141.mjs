@@ -3,7 +3,7 @@ import path from 'node:path';
 import {readJsonBounded,rateLimit} from '../netlify/functions/request-lib.mts';
 const root=process.cwd(),read=p=>fs.readFileSync(path.join(root,p),'utf8');
 const checks=[];const check=(name,ok,detail='')=>{checks.push({name,pass:!!ok,detail});if(!ok)console.error('FAIL',name,detail)};
-const html=read('public/index.html'),js=read('public/app.js'),auth=read('netlify/functions/auth.mts'),authlib=read('netlify/functions/auth-lib.mts'),state=read('netlify/functions/state.mts'),restore=read('netlify/functions/restore.mts'),ai=read('netlify/functions/ai-lib.mts'),next=read('netlify/functions/next-cycle.mts'),coach=read('netlify/functions/coach.mts'),schemas=read('netlify/functions/schemas.mts'),toml=read('netlify.toml'),env=read('.env.example');
+const html=read('public/index.html'),js=read('public/app.js'),auth=read('netlify/functions/auth.mts'),authlib=read('netlify/functions/auth-lib.mts'),state=read('netlify/functions/state.mts'),restore=read('netlify/functions/restore.mts'),ai=read('netlify/functions/ai-lib.mts'),next=read('netlify/functions/next-cycle.mts'),cycle=read('netlify/functions/cycle-lib.mts'),coach=read('netlify/functions/coach.mts'),schemas=read('netlify/functions/schemas.mts'),toml=read('netlify.toml'),env=read('.env.example');
 
 const okReq=new Request('https://example.test/api',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({ok:true})});
 check('bounded JSON accepts small body',(await readJsonBounded(okReq,1000)).ok===true);
@@ -38,7 +38,7 @@ check('client cannot overwrite staged next month',state.includes('payload.state.
 check('month range is bounded to 600',schemas.includes('cycleNumber:z.number().int().min(1).max(600)'));
 check('trace privacy schema requires false',schemas.includes('rawProfileStoredInTrace:z.literal(false)')&&schemas.includes('rawPromptStoredInTrace:z.literal(false)'));
 
-check('next-month endpoint requires 28 days',next.includes('if(elapsed<28)'));
+check('next-month endpoint requires 30 days',next.includes('if(elapsed<MIN_CYCLE_DAYS)')&&cycle.includes('MIN_CYCLE_DAYS=30')&&cycle.includes('start+MIN_CYCLE_DAYS*86400000'));
 check('next-month endpoint requires final Week 4',next.includes('if(!lastWeek)'));
 check('next-month endpoint requires valid Final Mark time',next.includes('milestoneTimeValid("finalMark"'));
 check('browser summary is not canonical evidence',next.includes('Browser summaries are display hints only'));

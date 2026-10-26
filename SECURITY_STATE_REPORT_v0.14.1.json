@@ -1,7 +1,7 @@
 {
   "release": "0.14.1",
   "suite": "security-state",
-  "generatedAt": "2026-10-25T19:50:36.378Z",
+  "generatedAt": "2026-10-26T04:58:05.611Z",
   "passed": 36,
   "failed": 0,
   "total": 36,
@@ -132,7 +132,7 @@
       "detail": ""
     },
     {
-      "name": "next-month endpoint requires 28 days",
+      "name": "next-month endpoint requires 30 days",
       "pass": true,
       "detail": ""
     },
